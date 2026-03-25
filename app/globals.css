@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;1,9..40,300&display=swap');
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* Fonts */
+  --font-mono: 'DM Mono', 'Courier New', monospace;
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+
+  /* Backgrounds — dark forest, deep charcoal greens */
+  --bg-base: #1A2420;
+  --bg-mid:  #151D1A;
+  --bg-deep: #101612;
+
+  /* Text — light on dark */
+  --text-primary:   #E8EDE8;
+  --text-secondary: #B8C8B8;
+  --text-muted:     #6E8870;
+  --text-faint:     #3E5240;
+
+  /* Card — dark glass */
+  --card-bg:     rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.10);
+  --card-radius: 24px;
+  --card-shadow: 0 8px 40px rgba(0, 0, 0, 0.40),
+                 0 2px 8px rgba(0, 0, 0, 0.25);
+
+  /* Course accent colors — cool: teal, slate, sage, indigo */
+  --accent-body:        #4AADA8;
+  --accent-breathwork:  #6B8FBF;
+  --accent-mindfulness: #7BA688;
+  --accent-yoga:        #7B8FBF;
+
+  /* Group accent colors within Body in Motion */
+  --accent-movement: #4AADA8;
+  --accent-upper:    #6B8FBF;
+  --accent-core:     #7BA688;
+  --accent-lower:    #5A8FAA;
+  --accent-joints:   #8FA888;
+}
+
+/* ─── Base ──────────────────────────────────────────────────────────────────── */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(165deg, var(--bg-base) 0%, var(--bg-mid) 50%, var(--bg-deep) 100%);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ─── Grain Texture Overlay ─────────────────────────────────────────────────── */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.65;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* ─── Botanical Watermark ───────────────────────────────────────────────────── */
+
+body::after {
+  content: "❋";
+  position: fixed;
+  bottom: -40px;
+  right: -40px;
+  font-size: 280px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+  line-height: 1;
+  user-select: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+}
+
+/* ─── Typography Scale ──────────────────────────────────────────────────────── */
+
+/* Display — card terms, wordmark, course titles */
+.type-display {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+/* Heading — section titles, group names */
+.type-heading {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+}
+
+/* Body — descriptions, definitions, prose */
+.type-body {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--text-secondary);
+}
+
+/* Label — tabs, metadata, tags, UI chrome */
+.type-label {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 13px;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--text-muted);
+}
+
+/* ─── 3D Card Flip ──────────────────────────────────────────────────────────── */
+
+.card-flip-container {
+  perspective: 1400px;
+}
+
+.card-flip-inner {
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.35, 0, 0.2, 1), min-height 0.3s ease;
+}
+
+.card-flip-inner.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-flip-inner.exiting {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.card-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-face-back {
+  transform: rotateY(180deg);
+}
+
+/* ─── Utility ───────────────────────────────────────────────────────────────── */
+
+.z-content {
+  position: relative;
+  z-index: 1;
+}
