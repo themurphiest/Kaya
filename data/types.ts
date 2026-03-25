@@ -1,11 +1,42 @@
+export type Level = 1 | 2 | 3;
+
+export type BodyView = "anterior" | "posterior" | "both";
+
+export type MotionType =
+  | "adduction"
+  | "abduction"
+  | "flexion"
+  | "extension"
+  | "internal-rotation"
+  | "external-rotation"
+  | "anterior-tilt"
+  | "posterior-tilt";
+
+export interface MotionArrow {
+  type: MotionType;
+  label: string;
+}
+
+export interface BodyMap {
+  view: BodyView;
+  muscleIds: string[];
+  motion?: MotionArrow;
+}
+
+export interface CardTab {
+  label: string;
+  content: string | string[];
+}
+
 export interface Card {
+  id: string;
   term: string;
+  sanskrit?: string;
   brief: string;
   mnemonic: string;
-  tabs: {
-    label: string;
-    content: string | string[];
-  }[];
+  tabs: CardTab[];
+  bodyMap?: BodyMap;
+  diagram?: string;
 }
 
 export interface Group {
@@ -14,6 +45,7 @@ export interface Group {
   subtitle: string;
   icon: string;
   accent: string;
+  level: Level;
   cards: Card[];
 }
 

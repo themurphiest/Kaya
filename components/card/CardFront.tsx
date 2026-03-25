@@ -34,6 +34,23 @@ export default function CardFront({
         {card.term}
       </h2>
 
+      {/* Sanskrit (Level 3 only) */}
+      {card.sanskrit && (
+        <p
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "14px",
+            fontWeight: 300,
+            color: "var(--text-muted)",
+            letterSpacing: "0.02em",
+            fontStyle: "normal",
+            margin: "-8px 0 16px",
+          }}
+        >
+          {card.sanskrit}
+        </p>
+      )}
+
       {/* Brief */}
       <p className="type-body text-base mb-6 flex-1">
         {card.brief}

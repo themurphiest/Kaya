@@ -1,4 +1,5 @@
 import { Course } from "../types";
+import { level3Groups } from "./body-in-motion-level3";
 
 export const bodyInMotion: Course = {
   id: "body-in-motion",
@@ -751,5 +752,6 @@ export const bodyInMotion: Course = {
         },
       ],
     },
+    ...level3Groups,
   ],
 };
