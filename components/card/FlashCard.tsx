@@ -27,7 +27,7 @@ export default function FlashCard({
 
   return (
     <div
-      className="card-flip-container cursor-pointer mb-5 overflow-visible"
+      className="card-flip-container cursor-pointer mb-4 overflow-visible"
       onClick={onFlip}
     >
       <div
@@ -36,7 +36,6 @@ export default function FlashCard({
           flipped && "flipped",
           exiting && "exiting"
         )}
-        style={{ minHeight: flipped ? 420 : 340 }}
       >
         <CardFront card={card} groupLabel={groupLabel} accent={accent} />
         <CardBack

@@ -4,11 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { getCourseBySlug } from "@/data/courses";
-import {
-  loadProgress,
-  isGroupCompleted,
-  isGroupUnlocked,
-} from "@/lib/progress";
+import { loadProgress, isGroupCompleted } from "@/lib/progress";
 import type { ProgressStore } from "@/data/types";
 
 export default function CourseDetailPage() {
@@ -21,8 +17,6 @@ export default function CourseDetailPage() {
   }, []);
 
   if (!course || course.status !== "available") return null;
-
-  const allGroupIds = course.groups.map((g) => g.id);
 
   return (
     <main className="max-w-[520px] mx-auto px-5 pb-16">
@@ -71,56 +65,6 @@ export default function CourseDetailPage() {
           const completed =
             progress !== null &&
             isGroupCompleted(progress, course.slug, group.id);
-          const unlocked =
-            progress === null ||
-            isGroupUnlocked(progress, course.slug, group.id, allGroupIds);
-          const locked = !unlocked;
-
-          const indicator = completed ? "❋" : locked ? "—" : "→";
-
-          const row = (
-            <div
-              className="flex items-center py-4"
-              style={{
-                borderBottom: "1px solid var(--text-faint)",
-                opacity: locked ? 0.4 : 1,
-              }}
-            >
-              <span className="text-xl mr-4 w-8 text-center">{group.icon}</span>
-              <div className="flex-1 min-w-0">
-                <div
-                  className="text-sm font-medium"
-                  style={{ fontFamily: "var(--font-mono)" }}
-                >
-                  {group.label}
-                </div>
-                <div
-                  className="text-xs"
-                  style={{
-                    fontFamily: "var(--font-mono)",
-                    color: "var(--text-muted)",
-                  }}
-                >
-                  {group.cards.length} cards
-                </div>
-              </div>
-              <span
-                className="text-base ml-3"
-                style={{
-                  fontFamily: "var(--font-mono)",
-                  color: completed
-                    ? course.accent
-                    : "var(--text-muted)",
-                }}
-              >
-                {indicator}
-              </span>
-            </div>
-          );
-
-          if (locked) {
-            return <div key={group.id}>{row}</div>;
-          }
 
           return (
             <Link
@@ -129,7 +73,38 @@ export default function CourseDetailPage() {
               className="no-underline"
               style={{ color: "inherit" }}
             >
-              {row}
+              <div
+                className="flex items-center py-4"
+                style={{ borderBottom: "1px solid var(--text-faint)" }}
+              >
+                <span className="text-xl mr-4 w-8 text-center">{group.icon}</span>
+                <div className="flex-1 min-w-0">
+                  <div
+                    className="text-sm font-medium"
+                    style={{ fontFamily: "var(--font-mono)" }}
+                  >
+                    {group.label}
+                  </div>
+                  <div
+                    className="text-xs"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      color: "var(--text-muted)",
+                    }}
+                  >
+                    {group.cards.length} cards
+                  </div>
+                </div>
+                <span
+                  className="text-base ml-3"
+                  style={{
+                    fontFamily: "var(--font-mono)",
+                    color: completed ? course.accent : "var(--text-muted)",
+                  }}
+                >
+                  {completed ? "❋" : "→"}
+                </span>
+              </div>
             </Link>
           );
         })}

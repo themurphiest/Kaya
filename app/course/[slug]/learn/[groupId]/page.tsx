@@ -25,6 +25,7 @@ export default function GroupSessionPage() {
       <CardSession
         group={group}
         courseSlug={course.slug}
+        courseTitle={course.title}
         onComplete={handleComplete}
         backHref={`/course/${params.slug}`}
       />

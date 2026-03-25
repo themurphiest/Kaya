@@ -10,6 +10,7 @@ import { shuffle } from "@/lib/utils";
 interface CardSessionProps {
   group: Group;
   courseSlug: string;
+  courseTitle: string;
   onComplete: () => void;
   backHref: string;
 }
@@ -17,6 +18,7 @@ interface CardSessionProps {
 export default function CardSession({
   group,
   courseSlug,
+  courseTitle,
   onComplete,
   backHref,
 }: CardSessionProps) {
@@ -51,7 +53,7 @@ export default function CardSession({
     <div className="max-w-[520px] mx-auto px-5 pb-10">
       {/* Header */}
       <div className="flex justify-between items-center pt-10 mb-5">
-        <BackButton href={backHref} label="← Modules" />
+        <BackButton href={backHref} label={`← ${courseTitle}`} />
         <div className="text-right">
           <div className="type-heading text-sm">
             {group.label}

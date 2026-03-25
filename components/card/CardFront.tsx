@@ -16,13 +16,12 @@ export default function CardFront({
 }: CardFrontProps) {
   return (
     <div
-      className="card-face absolute inset-0 flex flex-col rounded-[var(--card-radius)] p-[44px_36px_28px]"
+      className="card-face relative flex flex-col rounded-[var(--card-radius)] p-[44px_36px_32px]"
       style={{
         background: "var(--card-bg)",
         backdropFilter: "blur(14px)",
         border: "1.5px solid var(--card-border)",
         boxShadow: "var(--card-shadow)",
-        minHeight: 340,
       }}
     >
       {/* Module tag */}

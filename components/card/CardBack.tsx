@@ -20,13 +20,12 @@ export default function CardBack({
 
   return (
     <div
-      className="card-face card-face-back absolute inset-0 flex flex-col rounded-[var(--card-radius)] p-[32px_28px_28px]"
+      className="card-face card-face-back absolute inset-0 flex flex-col rounded-[var(--card-radius)] p-[32px_28px_28px] overflow-y-auto"
       style={{
         background: "rgba(255, 255, 255, 0.08)",
         backdropFilter: "blur(14px)",
         border: `1.5px solid ${accent}20`,
         boxShadow: "var(--card-shadow)",
-        minHeight: 420,
       }}
     >
       {/* Header */}
