@@ -1,888 +1,755 @@
-import type { Course } from "@/data/types";
+import { Course } from "../types";
 
-const bodyInMotion: Course = {
+export const bodyInMotion: Course = {
   id: "body-in-motion",
   slug: "body-in-motion",
   title: "Body in Motion",
-  subtitle: "Muscle & Joint Anatomy",
-  description:
-    "Muscles, joints, and movement patterns — anatomy turned into understanding.",
+  subtitle: "Anatomy & Movement Science",
+  description: "Learn how your body moves — the muscles, joints, and patterns behind every posture and pain point.",
   status: "available",
   accent: "#4AADA8",
   groups: [
     {
-      id: "movement",
-      label: "Movement Fundamentals",
-      subtitle: "The language of how the body moves",
+      id: "breath-core",
+      label: "Breath & Deep Core",
+      subtitle: "The invisible inner architecture that everything else depends on",
       icon: "◎",
       accent: "#4AADA8",
+      level: 1,
       cards: [
         {
-          term: "Flexion",
-          brief:
-            "Bending a joint to decrease the angle between two body parts.",
-          mnemonic:
-            "Flex = fold. Think of folding a piece of paper — you're folding the joint closed.",
+          id: "core-canister",
+          term: "The Core Canister",
+          brief: "The body's true core — a pressurized chamber with the diaphragm as the lid, pelvic floor as the base, and transverse abdominis as the walls.",
+          mnemonic: "Think of a sealed soda can. The pressure inside is what keeps it rigid. Your core works the same way — internal pressure, not surface muscles, creates spinal stability.",
+          bodyMap: undefined,
           tabs: [
-            {
-              label: "Details",
-              content:
-                "Flexion occurs at nearly every joint in the body. At the elbow, it brings your hand toward your shoulder. At the hip, it lifts your thigh toward your chest. At the spine, it rounds you forward. It's one half of the most fundamental movement pairing in the body — always balanced by its opposite, extension.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Bicep curl",
-                "Leg curl",
-                "Child's pose",
-                "Forward fold",
-                "Seated row",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Overuse of flexion patterns without extension work creates postural imbalances — tight hip flexors, rounded shoulders, and compressed lumbar discs. Most desk-bound postures are chronic flexion patterns.",
-            },
+            { label: "Details", content: "The core canister is the clinical term for the deep stabilization system of the trunk. It comprises four structures working as a coordinated unit: the diaphragm (top), pelvic floor (base), transverse abdominis (anterior and lateral walls), and multifidus (posterior wall). When these four co-contract, they increase intra-abdominal pressure — a hydraulic mechanism that stiffens the spine and protects it under load. This system activates automatically before any limb movement in a healthy body. After injury or chronic pain, this automatic activation is often disrupted and requires specific retraining. The core canister is not about strength — it is about timing and coordination." },
+            { label: "Activates", content: ["Dead bug", "bird dog", "diaphragmatic breathing", "hollow body hold", "90/90 breathing"] },
+            { label: "Injury Risk", content: "When the canister fails to pressurize correctly — often due to chronic shallow breathing, injury, or postpartum changes — the body defaults to bracing with the larger, more superficial muscles (rectus abdominis, erector spinae). This surface bracing is less efficient and eventually leads to fatigue, compression, and pain." },
           ],
         },
         {
-          term: "Extension",
-          brief:
-            "Straightening a joint to increase the angle between two body parts.",
-          mnemonic:
-            "Extension = expand. You're opening and lengthening the joint back toward or past neutral.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "Extension is the counterpart to flexion. It opens joints rather than closing them. At the knee it straightens the leg; at the hip it drives the thigh backward (critical for walking and running power); at the spine it arches you back. Hyperextension — going past neutral — is normal at some joints but can compress structures at others, especially the lumbar spine.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Deadlift",
-                "Cobra pose",
-                "Tricep pushdown",
-                "Hip thrust",
-                "Back extension",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Lumbar hyperextension compresses the posterior discs and facet joints. Common in gymnasts, dancers, and anyone who repeatedly arches their lower back under load.",
-            },
-          ],
-        },
-        {
-          term: "Adduction",
-          brief: "Moving a limb toward the midline of the body.",
-          mnemonic:
-            "ADDuction = ADD the limb back to your body. You're adding it toward center.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "Adduction brings a limb inward — arms down to your sides, thighs squeezing together. At the hip, the adductor muscle group (inner thigh) drives this motion. At the shoulder, the lats and pec major are primary adductors. The movement is essential for stabilizing the pelvis during gait and generating power in throwing and striking.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Cable fly",
-                "Inner thigh squeeze",
-                "Yoga eagle arms",
-                "Pull-up (lats adduct the arm)",
-                "Side-lying leg lower",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Adductor (groin) strains are extremely common in soccer, hockey, and basketball — sports with rapid lateral cutting. The adductor longus is the most frequently torn.",
-            },
-          ],
-        },
-        {
-          term: "Abduction",
-          brief: "Moving a limb away from the midline of the body.",
-          mnemonic:
-            "ABduction = AB-sent from the body. The limb moves away, like it's leaving.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "Abduction moves limbs outward from center — raising your arm to the side, stepping a leg out laterally. The primary hip abductor is the gluteus medius, which also controls pelvic tilt during walking. Shoulder abduction is driven by the deltoid and supraspinatus. Weakness in hip abductors is one of the most common and consequential movement deficiencies in the general population.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Lateral raises",
-                "Clamshells",
-                "Side-lying leg lift",
-                "Warrior II",
-                "Lateral band walk",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Weak hip abductors cause the hip to drop on the opposite side during single-leg loading (Trendelenburg sign). Linked to IT band syndrome, runner's knee, and hip pain.",
-            },
-          ],
-        },
-        {
-          term: "Rotation",
-          brief:
-            "Turning a body part around its own long axis — inward or outward.",
-          mnemonic:
-            "Think of a door rotating on its hinge. The joint is the hinge; the limb is the door.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "Rotation describes a limb or segment spinning around its own axis. Internal rotation turns inward (toward the body's midline); external rotation turns outward. The hip and shoulder are the primary rotational joints. Rotational capacity is often undertrained — most gym programs work only in flexion and extension — leaving the body vulnerable to rotational injuries in real life and sport.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Cable external rotation",
-                "Thread-the-needle stretch",
-                "Seated spinal twist",
-                "Hip 90/90 stretch",
-                "Wood chop",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Limited hip external rotation is a major contributor to lower back pain and hip impingement. At the shoulder, poor rotator cuff control during internal rotation is a primary driver of impingement.",
-            },
-          ],
-        },
-        {
-          term: "Planes of Motion",
-          brief:
-            "Three imaginary planes that divide the body and describe the direction of movement.",
-          mnemonic:
-            "SAGittal = SAGging forward/back. FRONTal = side to side (the front of your body faces you). TRANSverse = TRANSlation, twisting across.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "Every movement occurs within or across these three planes. The sagittal plane divides left from right — squats, lunges, and bicep curls live here. The frontal plane divides front from back — lateral raises and side lunges live here. The transverse plane divides top from bottom — rotational movements live here. Most gym machines work only in the sagittal plane. Real-world movement combines all three simultaneously.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Sagittal: squat, deadlift",
-                "Frontal: lateral lunge, side raise",
-                "Transverse: wood chop, rotational throw",
-                "Multi-planar: Turkish get-up",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Training only in the sagittal plane (the most common gym pattern) leaves the body underprepared for frontal and transverse loads — a primary reason people get injured doing everyday rotational or lateral movements.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "upper",
-      label: "Upper Body",
-      subtitle: "Shoulders, chest, arms & upper back",
-      icon: "△",
-      accent: "#6B8FBF",
-      cards: [
-        {
-          term: "Rotator Cuff",
-          brief:
-            "Four muscles that wrap the shoulder joint and hold the ball in the socket.",
-          mnemonic:
-            "SITS: Supraspinatus, Infraspinatus, Teres minor, Subscapularis. 'The shoulder SITS on four muscles.'",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The rotator cuff is less about power and more about precision — it keeps the humeral head (the ball) centered in the shallow glenoid socket (the cup) during every arm movement. The four muscles act like a dynamic seatbelt for the shoulder. Without their coordinated activation, the deltoid would simply jam the humerus upward into the acromion with every overhead motion.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "External rotation with band",
-                "Face pull",
-                "Side-lying ER",
-                "Empty can raise",
-                "Prone Y-T-W",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "The most commonly torn tendon group in the body. The supraspinatus (top of the cuff) is torn most often — typically from repetitive overhead stress or a fall onto an outstretched arm. Cuff weakness is the underlying cause of most shoulder impingement.",
-            },
-          ],
-        },
-        {
-          term: "Trapezius",
-          brief:
-            "A large kite-shaped muscle spanning the upper back and neck with three distinct regions.",
-          mnemonic:
-            "TRAPezius = it TRAPs the shoulder blade. Think of it like a trapeze holding the scapula in place.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The trap is actually three muscles in one. The upper trap elevates the shoulder blade and extends the neck — it's chronically overactive in stressed, desk-bound people. The middle trap retracts the scapula (squeezes shoulder blades together). The lower trap depresses the scapula — critical for keeping the shoulder down during overhead movement. Most people need less upper trap and more lower trap activation.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Shrugs (upper)",
-                "Face pull / row (middle)",
-                "Y-raise (lower)",
-                "Overhead press (all regions)",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Upper trap dominance from chronic stress and poor posture leads to neck tension, headaches, and impinged shoulders. The upper trap is one of the most chronically hypertonic muscles in modern humans.",
-            },
-          ],
-        },
-        {
-          term: "Deltoid",
-          brief:
-            "The rounded three-headed muscle capping the shoulder — each head moves the arm differently.",
-          mnemonic:
-            "Delta = triangle (Δ). The deltoid is shaped like a triangle draped over the shoulder with three distinct points.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The anterior (front) deltoid flexes and internally rotates the arm — heavily recruited in pressing movements. The lateral (middle) deltoid abducts the arm — the primary target of lateral raises. The posterior (rear) deltoid extends and externally rotates — critical for shoulder health and posture, yet almost always undertrained relative to the front. Balanced deltoid development requires training all three heads intentionally.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Front raise (anterior)",
-                "Lateral raise (lateral)",
-                "Rear delt fly (posterior)",
-                "Arnold press (all three)",
-                "Overhead press",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Anterior deltoid overuse from excessive pressing creates internal rotation dominance, compresses the rotator cuff, and contributes to shoulder impingement syndrome.",
-            },
-          ],
-        },
-        {
-          term: "Pectoralis Major",
-          brief:
-            "The large fan-shaped chest muscle responsible for pushing and horizontal arm movement.",
-          mnemonic:
-            "PECTO-ralis = PECKing motion. Think of a bird's wing driving forward — the pec creates that same sweeping movement.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The pec major has two heads: the clavicular (upper) head flexes the arm and is emphasized by incline pressing; the sternal (lower/larger) head horizontally adducts the arm and is emphasized by flat and decline pressing. The pec connects the humerus to the sternum and clavicle, making it a powerful internal rotator — which is why heavy pressers often develop tight, internally rotated shoulders without counterbalancing pulling and stretching work.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Push-up",
-                "Bench press",
-                "Cable crossover",
-                "Dumbbell fly",
-                "Dips",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Pec major tendon tears occur most often at the humeral attachment (near the armpit) during heavy bench pressing — usually a sudden force overload. There's an audible pop and immediate visible deformity. Requires surgical repair.",
-            },
-          ],
-        },
-        {
-          term: "Latissimus Dorsi",
-          brief:
-            "The broadest muscle in the back — primary mover for pulling the arm down and back.",
-          mnemonic:
-            "LATissimus = LAT = LATeral width. It makes you wide. 'LAT me pull you down' — it literally pulls the arm toward the hip.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The lats span from the lower spine, iliac crest, and lower ribs up to the humerus — making them a bridge between the arm and the pelvis. They are the primary muscles used in climbing, rowing, and swimming. The lats also assist in spinal extension and lateral flexion. Tight lats limit overhead shoulder mobility — a common issue in people who train a lot of pulling without adequate stretching.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Pull-up",
-                "Lat pulldown",
-                "Bent-over row",
-                "Single-arm dumbbell row",
-                "Straight-arm pulldown",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Lat tightness restricts full shoulder flexion (reaching overhead), causing the lumbar spine to hyperextend to compensate. Common in heavy pullers who neglect mobility work.",
-            },
-          ],
-        },
-        {
-          term: "Biceps Brachii",
-          brief:
-            "Two-headed muscle on the front of the arm that flexes the elbow and turns the palm up.",
-          mnemonic:
-            "BI = two heads. BRACHii = arm. Two heads on the arm — and it does two jobs: bend the elbow AND twist the forearm.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The biceps crosses two joints — the shoulder and the elbow — making it a two-joint muscle. Its often-overlooked second function is supination: turning the palm upward. This is why a supinated (palm-up) curl maximally loads the bicep, while a neutral (hammer) curl shifts emphasis to the brachialis underneath. The brachialis is actually the stronger of the two elbow flexors — the bicep gets the glory, but the brachialis does much of the work.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Supinated curl (full bicep)",
-                "Hammer curl (brachialis)",
-                "Chin-up",
-                "Incline dumbbell curl (long head stretch)",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Distal biceps tendon rupture at the elbow — a dramatic 'pop' followed by a visible 'Popeye' bunching of the muscle — typically occurs from sudden eccentric overload (dropping a heavy weight). Proximal tears near the shoulder are more common but less debilitating.",
-            },
-          ],
-        },
-        {
-          term: "Triceps Brachii",
-          brief:
-            "Three-headed muscle on the back of the arm that straightens the elbow.",
-          mnemonic:
-            "TRI = three heads. The tricep makes up ~2/3 of upper arm mass. Want bigger arms? Train your triceps more than your biceps.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The triceps has three heads: the long head (crosses the shoulder joint — stretched by overhead position), the lateral head (outer arm — the most visible), and the medial head (deep — active in all elbow extension). The long head is only fully stretched when the arm is overhead, which is why overhead tricep extensions are particularly effective for complete development. The tricep also assists in shoulder extension and stabilization.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Tricep dip",
-                "Close-grip bench",
-                "Overhead extension (long head)",
-                "Tricep pushdown (lateral/medial)",
-                "Skull crusher",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Tricep tendinopathy at the olecranon (back of elbow) presents as aching pain behind the elbow during pressing or extension under load. Common in throwing athletes and heavy bench pressers.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "core",
-      label: "Core & Spine",
-      subtitle: "The body's center of power and stability",
-      icon: "□",
-      accent: "#7BA688",
-      cards: [
-        {
-          term: "Rectus Abdominis",
-          brief:
-            "The paired vertical muscle running down the front of the abdomen — the visible 'six-pack.'",
-          mnemonic:
-            "RECTUS = straight, running straight down like a ruler. It's the most superficial and visible ab muscle — but not the most important one.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The rectus abdominis runs from the pubic crest to the sternum and ribs, segmented by tendinous intersections (those visible lines). Its primary action is spinal flexion — rounding the trunk forward. It also compresses the abdomen. Despite its cultural status as the 'core,' it's actually the least functionally important ab muscle for spinal stability — that role belongs to the deeper transverse abdominis.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Crunch (partial ROM)",
-                "Hanging leg raise",
-                "Ab wheel rollout",
-                "Boat pose",
-                "Dragon flag",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Diastasis recti — a separation of the rectus along the midline linea alba — is common during pregnancy and can occur from excessive intra-abdominal pressure loading. Creates a visible 'gap' or 'dome' when the abs are tensed.",
-            },
-          ],
-        },
-        {
-          term: "Transverse Abdominis",
-          brief:
-            "The deepest abdominal layer — the body's internal weight belt and primary spine stabilizer.",
-          mnemonic:
-            "TRANSverse = crosses TRANSversely (horizontally). Think of it as your internal corset — it wraps around your trunk and cinches it tight.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The TVA runs horizontally around the abdomen like a corset, from the spine to the front midline. When it contracts, it increases intra-abdominal pressure (IAP) — the hydraulic mechanism that stiffens the spine and protects it from compression. The TVA activates before the limbs move — it's a pre-emptive stabilizer, not a reactive one. After injury or chronic pain, this automatic activation is often disrupted.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Dead bug",
-                "Hollow body hold",
-                "Pallof press",
-                "Diaphragmatic breathing",
-                "Bird dog",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "A non-activating or weak TVA is strongly associated with chronic lower back pain. Unlike other muscles, the TVA doesn't automatically strengthen with general exercise — it often requires specific retraining.",
-            },
-          ],
-        },
-        {
-          term: "Erector Spinae",
-          brief:
-            "Three vertical muscles running along either side of the spine that keep you upright.",
-          mnemonic:
-            "ERECTOR = it erects you upright. Like the columns of a building, these muscles hold the spine tall against gravity all day long.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The erectors comprise three muscles: iliocostalis (outermost, controls lateral flexion), longissimus (middle, longest), and spinalis (innermost, closest to the spine). Together they extend the spine, resist forward flexion under load, and laterally bend the trunk. They work continuously during sitting and standing to maintain posture. They're endurance muscles — designed for sustained low-level activation rather than peak power output.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Deadlift (isometric hold)",
-                "Good morning",
-                "Back extension / hyperextension",
-                "Bird dog",
-                "Superman",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "The most commonly strained back muscles. The classic mechanism: bending forward and rotating to lift something — combining spinal flexion, lateral flexion, and rotation simultaneously under load.",
-            },
-          ],
-        },
-        {
+          id: "diaphragm",
           term: "Diaphragm",
-          brief:
-            "The dome-shaped primary breathing muscle — and a key player in spinal stability.",
-          mnemonic:
-            "DIA = across, PHRAGM = partition. It's the partition across your trunk. When the dome drops, air rushes in to fill the vacuum.",
+          brief: "The primary breathing muscle — a dome-shaped sheet that forms the roof of the core canister and regulates spinal stability.",
+          mnemonic: "DIA = across, PHRAGM = partition. It's the partition across your trunk. When the dome drops, air rushes in — and your spine gets stiffer.",
+          bodyMap: undefined,
           tabs: [
-            {
-              label: "Details",
-              content:
-                "The diaphragm is simultaneously a breathing muscle and a core stabilizer. During inhalation, it flattens downward, creating negative pressure that draws air into the lungs. During bracing (like a heavy lift), it contracts to increase intra-abdominal pressure in concert with the TVA, pelvic floor, and multifidus — forming the 'core canister.' Shallow chest breathing that bypasses the diaphragm impairs this pressure system and is associated with chronic low back pain and stress.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Crocodile breathing",
-                "360° breathing into the sides and back",
-                "Box breathing",
-                "IAP bracing for lifting",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "A chronically elevated diaphragm (chest breather) impairs core stability, increases injury risk, and keeps the nervous system in a low-grade stress state. Diaphragmatic breathing is a clinical intervention for both back pain and anxiety.",
-            },
+            { label: "Details", content: "The diaphragm is a dome-shaped muscle sitting beneath the lungs, separating the thoracic and abdominal cavities. During inhalation, it contracts and flattens downward, creating negative pressure that draws air into the lungs while simultaneously increasing intra-abdominal pressure below. During exhalation, it relaxes back into its dome shape. Beyond breathing, the diaphragm is a critical postural stabilizer — it must coordinate with the pelvic floor, TVA, and multifidus to generate the intra-abdominal pressure that stiffens the spine before movement. Research by Hodges and Gandevia confirmed that the diaphragm increases its postural activity in anticipation of limb loading, independent of its respiratory role. Chronic chest breathing — bypassing the diaphragm — impairs this pressure system and keeps the nervous system in a low-grade stress state." },
+            { label: "Activates", content: ["Crocodile breathing", "360° breathing", "box breathing", "dead bug (exhale phase)", "diaphragmatic breathing in all positions"] },
+            { label: "Injury Risk", content: "A chronically elevated, underused diaphragm (common in anxious, stressed, or sedentary individuals) impairs core stability and increases the demand on the lumbar extensors. Studies show that patients with chronic low back pain often have measurably reduced diaphragmatic excursion compared to pain-free individuals (Kolar et al., 2012)." },
           ],
         },
         {
-          term: "Iliopsoas (Hip Flexors)",
-          brief:
-            "The primary hip flexor — a composite muscle connecting the spine directly to the thigh.",
-          mnemonic:
-            "ILIOpsoas = ILIO (ilium/pelvis) + PSOAS (Greek for 'loin'). It literally bridges your spine to your leg — the only muscle that does this.",
+          id: "transverse-abdominis",
+          term: "Transverse Abdominis (TVA)",
+          brief: "The deepest abdominal muscle — a horizontal corset that wraps around the trunk and is the body's first line of spinal defense.",
+          mnemonic: "TRANSverse = it runs TRANSversely (horizontally). Think of it as your internal weight belt — not the one you wear, the one you were born with.",
+          bodyMap: undefined,
           tabs: [
-            {
-              label: "Details",
-              content:
-                "The iliopsoas is actually two muscles — the iliacus (from the inner pelvis) and the psoas major (from the lumbar vertebrae) — that unite into a single tendon attaching to the femur. It's the most powerful hip flexor and also a significant lumbar spine stabilizer. Because it attaches directly to the lumbar vertebrae, a tight or overactive psoas pulls the low back into extension and the pelvis into anterior tilt — compressing lumbar discs.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Lunge hip flexor stretch",
-                "Hanging knee raise",
-                "Mountain climber",
-                "Warrior I",
-                "Psoas march",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Chronic sitting shortens the iliopsoas, causing anterior pelvic tilt and lumbar compression. This is arguably the single most common contributor to low back pain in desk workers. Regular hip flexor stretching and strengthening through full range is essential.",
-            },
+            { label: "Details", content: "The TVA runs horizontally from the thoracolumbar fascia at the back, around the sides, to the linea alba at the front — like a corset encircling the trunk. Unlike the rectus abdominis (which flexes the spine), the TVA's primary role is stabilization: it increases intra-abdominal pressure and stiffens the thoracolumbar fascia to protect the lumbar spine from shear forces. Research by Hodges and Richardson (1996) demonstrated that in healthy individuals, the TVA activates 30–110ms before limb movement — a pre-emptive stabilizing response. In people with chronic low back pain, this timing is consistently delayed. The TVA cannot function in isolation: it requires co-activation of the pelvic floor (below) and diaphragm (above) to effectively increase intra-abdominal pressure." },
+            { label: "Activates", content: ["Dead bug", "bird dog", "Pallof press", "hollow body hold", "drawing-in maneuver"] },
+            { label: "Injury Risk", content: "A non-activating or poorly coordinated TVA is one of the strongest predictors of low back pain recurrence. Unlike other muscles, the TVA often does not regain automatic function after injury without specific retraining — general exercise alone is insufficient." },
+          ],
+        },
+        {
+          id: "pelvic-floor",
+          term: "Pelvic Floor",
+          brief: "A hammock of muscles at the base of the pelvis — the floor of the core canister and an often-ignored foundation of whole-body stability.",
+          mnemonic: "The pelvic floor is the base of the can. Without a solid base, the can collapses — no matter how strong the sides are.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The pelvic floor is a group of muscles and connective tissues forming a hammock-like structure spanning the base of the pelvis, from the pubic bone at the front to the coccyx at the back. It supports the bladder, bowel, and reproductive organs, controls continence, and — critically — forms the base of the core pressure system. The pelvic floor and TVA are synergistic: they co-contract simultaneously. During inhalation, the diaphragm descends and the pelvic floor gently lengthens; during exhalation, the diaphragm rises and the pelvic floor lifts. This piston-like relationship is the foundation of efficient intra-abdominal pressure management. When this coordination is disrupted, the pelvic floor bears excessive load — contributing to incontinence, prolapse, and pelvic pain." },
+            { label: "Activates", content: ["Diaphragmatic breathing", "Kegel exercises (coordinated with breath)", "dead bug", "yoga boat pose", "functional movements like squatting and lifting with breath coordination"] },
+            { label: "Injury Risk", content: "Pelvic floor dysfunction is far more common than recognized, affecting men and women. It presents as excessive tension (hypertonicity), weakness, or poor coordination. Treating the pelvic floor in isolation from the diaphragm and TVA — as many conventional pelvic floor programs do — misses the systemic nature of the problem." },
+          ],
+        },
+        {
+          id: "multifidus",
+          term: "Multifidus",
+          brief: "The deepest back muscle — running along the spine's posterior wall and providing segment-by-segment stabilization of each vertebra.",
+          mnemonic: "MULTI = many, FIDUS = faithful (Latin). Many faithful supporters of the spine — one for each vertebra, holding each level steady.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The multifidus is a series of short, deep muscles running from the sacrum to the cervical spine, bridging adjacent vertebrae with overlapping fibers. Unlike the erector spinae (which acts over many spinal levels), the multifidus provides intersegmental stabilization — controlling the position of individual vertebrae in relation to each other. The lumbar multifidus is particularly important: it co-activates with the TVA as part of the intrinsic stabilization subsystem. Research by Hides et al. showed that the multifidus rapidly and specifically atrophies following a first episode of low back pain — and does not spontaneously recover even when pain resolves, making it a primary target in back pain rehabilitation." },
+            { label: "Activates", content: ["Bird dog", "quadruped holds", "McGill's Big Three (curl-up, side plank, bird dog)", "deadlift (isometric hold)", "yoga locust pose"] },
+            { label: "Injury Risk", content: "Multifidus atrophy — measurable via ultrasound — is consistently found in patients with chronic low back pain, disc herniation, and spondylolisthesis. Its failure shifts load to the passive structures (discs, ligaments) that are not designed for continuous stabilization." },
+          ],
+        },
+        {
+          id: "rectus-abdominis",
+          term: "Rectus Abdominis",
+          brief: "The paired vertical muscle running down the front of the abdomen — the visible \"six-pack\" and the most superficial of the abdominal muscles.",
+          mnemonic: "RECTUS = straight (Latin) — it runs straight down the front, like a ruler. It's the most visible ab muscle, but not the most important one for stability.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The rectus abdominis runs from the pubic crest to the sternum and ribs, divided into segments by tendinous intersections that create the visible \"six-pack\" appearance. Its primary action is spinal flexion (curling the trunk forward) and compression of the abdominal cavity. Despite its cultural status as the symbol of core fitness, the rectus abdominis plays a minor role in spinal stability compared to the deep core canister. It is a global mover, not a local stabilizer. A large, strong rectus combined with a dysfunctional deep core is a common and problematic pattern — appearing fit on the surface while being unstable underneath." },
+            { label: "Activates", content: ["Crunch", "hanging leg raise", "ab wheel rollout", "boat pose", "dragon flag"] },
+            { label: "Injury Risk", content: "Diastasis recti — a separation of the rectus abdominis along the midline linea alba — can occur from excessive loading, rapid increase in intra-abdominal pressure, or pregnancy. A focus on traditional crunches at the expense of deep core training is a common contributor." },
           ],
         },
       ],
     },
     {
-      id: "lower",
-      label: "Lower Body",
-      subtitle: "Hips, thighs, knees & calves",
-      icon: "▽",
-      accent: "#5A8FAA",
-      cards: [
-        {
-          term: "Gluteus Maximus",
-          brief:
-            "The largest muscle in the body — the primary driver of hip extension and lower body power.",
-          mnemonic:
-            "MAX-imus = the maximum, the biggest. The glute MAX is the main event of the posterior chain. If it's not working, something else is doing its job — and getting hurt.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The glute max runs from the ilium, sacrum, and coccyx to the femur and iliotibial band. Its primary role is hip extension — driving the thigh backward — which is fundamental to walking, running, jumping, and stair-climbing. It also externally rotates the hip and contributes to pelvic stability. Despite being the body's largest muscle, it is frequently inhibited and underactive — a phenomenon called 'gluteal amnesia' — particularly in people who sit for long periods.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Hip thrust",
-                "Deadlift",
-                "Glute bridge",
-                "Step-up",
-                "Single-leg hip thrust",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Underactive glutes shift load to the hamstrings and lower back. Hamstring strains, sacroiliac joint pain, and chronic lower back pain are all commonly linked to insufficient glute max activation and strength.",
-            },
-          ],
-        },
-        {
-          term: "Gluteus Medius",
-          brief:
-            "The hip stabilizer — controls pelvic level during walking, running, and single-leg movements.",
-          mnemonic:
-            "MEDius = the middle glute. Think of it as the HIP STABILIZER. Weak glute med = the hip sinks. Strong glute med = the pelvis stays level.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The glute med fans out on the outer ilium, attaching to the greater trochanter of the femur. Its most critical function is preventing the pelvis from dropping on the opposite side during single-leg stance — the action that occurs with every step you take. In walking and running, it fires on every single stride. It also abducts the hip and assists with internal and external rotation depending on fiber orientation.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Clamshell",
-                "Side-lying leg raise",
-                "Single-leg deadlift",
-                "Lateral band walk",
-                "Single-leg squat",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Weak glute med is linked to Trendelenburg gait (hip drop), IT band syndrome, runner's knee (patellofemoral pain), and hip bursitis. It's one of the most clinically important muscles in lower body rehabilitation.",
-            },
-          ],
-        },
-        {
-          term: "Quadriceps",
-          brief:
-            "Four muscles on the front of the thigh that extend the knee and absorb landing forces.",
-          mnemonic:
-            "QUAD = four. Four muscles, all pulling on one tendon, driving one motion: knee extension. The VMO (inner quad teardrop shape) is the key for knee tracking.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The quads — rectus femoris, vastus lateralis, vastus medialis, and vastus intermedius — converge on the patellar tendon, which attaches to the tibial tuberosity below the kneecap. The rectus femoris is unique: it also flexes the hip, crossing two joints. The vastus medialis oblique (VMO) is the lowest, innermost portion — critical for pulling the patella into proper alignment. Quad weakness causes the knee to collapse inward and the patella to track laterally, creating pain and wear.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Squat",
-                "Leg press",
-                "Lunge",
-                "Step-down (eccentric)",
-                "Terminal knee extension (VMO focus)",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Patellar tendinopathy ('jumper's knee') — pain at the tendon below the kneecap — is the most common quad overuse injury, caused by repetitive explosive loading. Patellofemoral pain syndrome (pain behind the kneecap) is linked to VMO weakness and poor hip control.",
-            },
-          ],
-        },
-        {
-          term: "Hamstrings",
-          brief:
-            "Three muscles on the back of the thigh that bend the knee and extend the hip.",
-          mnemonic:
-            "HAM-strings = they run along the back of the thigh like taut strings. HAM = where a pig's hind leg is cut — the same location as yours.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The hamstrings — biceps femoris (long and short head), semimembranosus, and semitendinosus — span from the ischial tuberosity (sit bone) to the tibia and fibula. Because they cross both the hip and knee, they simultaneously extend the hip and flex the knee. The hamstrings work eccentrically (lengthening under load) to decelerate the leg during running — this deceleration phase is when most hamstring strains occur.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Romanian deadlift (hip hinge, eccentric focus)",
-                "Leg curl",
-                "Nordic hamstring curl (most evidence-based for injury prevention)",
-                "Glute-ham raise",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Hamstring strains are the most common muscle injury in sprinting sports. The biceps femoris long head at the proximal attachment (sit bone) is the most frequent tear site. Nordic curls are the single best-evidenced exercise for prevention.",
-            },
-          ],
-        },
-        {
-          term: "Adductors (Inner Thigh)",
-          brief:
-            "Five muscles of the inner thigh that bring the legs together and assist hip movement.",
-          mnemonic:
-            "ADDuctor = ADD legs together. The inner thighs are the peacemakers — they bring everything back to center. Also think: a horse rider squeezing the saddle.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The adductor group — adductor longus, brevis, magnus, gracilis, and pectineus — runs from the pubis and ischium to the femur and tibia. The adductor magnus is the largest and strongest, also functioning as a hip extensor via its hamstring portion. The adductors are important for pelvic stability in the frontal plane, controlling how the femur moves during squatting and lunging. They're chronically undertrained in most programs.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Sumo squat",
-                "Copenhagen plank (highest adductor load)",
-                "Lateral lunge",
-                "Yoga goddess pose",
-                "Adductor squeeze with ball",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Groin strains (adductor tears) are common in sports with rapid direction change — soccer, hockey, basketball. The adductor longus is most frequently torn. Copenhagen planks are the gold-standard prevention exercise.",
-            },
-          ],
-        },
-        {
-          term: "Gastrocnemius & Soleus",
-          brief:
-            "The two calf muscles — one for power and speed, one for endurance and walking.",
-          mnemonic:
-            "GAS-trocnemius = has a belly (it bulges). SOLeus = SOLe — it works closest to the ground doing the slow, steady walking work. GAS = fast and powerful. SOL = slow and enduring.",
-          tabs: [
-            {
-              label: "Details",
-              content:
-                "The gastrocnemius is the larger, more superficial calf muscle with two heads that converge into the Achilles tendon. It crosses the knee — meaning it assists in knee flexion and is best trained with the knee straight. The soleus sits beneath it, deeper and shorter, crossing only the ankle. The soleus is dominant during walking and prolonged standing — it's a powerful blood pump returning venous blood from the lower leg back to the heart. Both muscles plantarflex the ankle (pointing the foot).",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Standing calf raise (gastrocnemius)",
-                "Seated calf raise with bent knee (soleus)",
-                "Jump rope",
-                "Single-leg calf raise",
-                "Downward dog",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Achilles tendinopathy affects their shared tendon — the strongest in the body. 'Tennis leg' is an acute gastrocnemius tear: a sudden tearing sensation mid-calf during explosive push-off. Soleus strains tend to be more insidious and slower to heal due to its poor blood supply.",
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "joints",
-      label: "Joints & Connective Tissue",
-      subtitle: "How the body connects and transfers force",
+      id: "pelvic-engine",
+      label: "The Pelvic Engine",
+      subtitle: "The body's keystone — everything moves from here",
       icon: "◇",
-      accent: "#8FA888",
+      accent: "#7BA688",
+      level: 1,
       cards: [
         {
-          term: "Tendon",
-          brief:
-            "Dense connective tissue attaching muscle to bone — the force transmitter of the body.",
-          mnemonic:
-            "TENDon = it TENDS the connection between muscle and bone. Muscle → Tendon → Bone. Tendons are the cables of your body's pulley system.",
+          id: "the-pelvis",
+          term: "The Pelvis",
+          brief: "The basin-shaped ring of bones at the center of the body — the structural keystone connecting the spine to the legs.",
+          mnemonic: "The pelvis is the keystone of an arch. Remove or misalign the keystone and the whole structure shifts. Everything above and below depends on where it sits.",
+          bodyMap: undefined,
           tabs: [
-            {
-              label: "Details",
-              content:
-                "Tendons are composed primarily of type I collagen fibers arranged in parallel — an architecture optimized for tensile strength along one axis. They transmit muscular force to the skeleton to create movement. Tendons can store and release elastic energy (like a spring), which is why running and jumping are more efficient than they'd otherwise be. Despite their strength, tendons have a poor blood supply — which is why tendon injuries heal slowly and incompletely.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Eccentric loading (slow lowering) is the most evidence-based tendon rehabilitation method",
-                "Isometric holds reduce pain acutely",
-                "Heavy slow resistance training rebuilds tendon collagen",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Tendinopathy (degeneration) is far more common than tendinitis (inflammation) in chronic tendon pain — the distinction matters because anti-inflammatories don't treat degeneration. Load management and progressive loading are the primary treatment.",
-            },
+            { label: "Details", content: "The pelvis is formed by three bones — the ilium, ischium, and pubis — fused together on each side, joined at the front by the pubic symphysis and at the back by the sacrum. Its orientation in space (pelvic tilt) directly determines the lumbar curve above and the angle of the hip joints below. Key landmarks: the ASIS (anterior superior iliac spine) at the front, the PSIS (posterior superior iliac spine) at the back, and the ischial tuberosities (the sit bones) at the base. Neutral pelvis — the position in which the lumbar spine maintains its natural lordosis without compression or flattening — is the foundational reference point for all movement assessment. Every major lower body and spinal muscle attaches to the pelvis, making it the literal center of the musculoskeletal system." },
+            { label: "Activates", content: ["Pelvic tilts (cat-cow)", "hip hinge", "all standing lower body movements"] },
+            { label: "Injury Risk", content: "There is no such thing as a \"perfect\" pelvic position — individual anatomy varies. However, fixed deviations from neutral (anterior or posterior tilt) create predictable patterns of muscle overload and underuse that accumulate into chronic pain over time." },
           ],
         },
         {
-          term: "Ligament",
-          brief:
-            "Fibrous connective tissue that connects bone to bone — the joint's passive stabilizer.",
-          mnemonic:
-            "LIGA-ment = LIGA = to tie (Latin). Ligaments tie bones together. LIG-aments Link bones. They're the body's zip ties — strong but not stretchy.",
+          id: "anterior-pelvic-tilt",
+          term: "Anterior Pelvic Tilt",
+          brief: "A forward rotation of the pelvis that increases the lumbar curve — associated with tight hip flexors, weak glutes, and lower back pain.",
+          mnemonic: "ANTErior = front. The front of the pelvis tips DOWN (like pouring water from the front of a bowl). The lower back arches up as a result.",
+          bodyMap: undefined,
           tabs: [
-            {
-              label: "Details",
-              content:
-                "Ligaments stabilize joints passively — they cannot contract like muscles. They are richly innervated with mechanoreceptors, making them important for proprioception (joint position sense) in addition to mechanical stability. When a ligament is torn, this sensory function is also disrupted, which is why proprioception retraining is critical in rehabilitation. Ligaments have poor vascularity and regenerate poorly — most significant ligament tears require surgical reconstruction.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Balance and proprioception training (balance board, single-leg work) rebuilds ligament sensory function",
-                "Strength training around the joint reduces load on ligaments indirectly",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "ACL tears (anterior cruciate ligament of the knee) are among the most devastating sports injuries. The classic mechanism is a non-contact deceleration with the foot planted and the knee collapsing inward — common in soccer, basketball, and skiing.",
-            },
+            { label: "Details", content: "Anterior pelvic tilt (APT) occurs when the front of the pelvis (ASIS) drops lower than the back (PSIS), increasing lumbar lordosis. Clinically, it is associated with a pattern described by Vladimir Janda as \"Lower Crossed Syndrome\": tight hip flexors (iliopsoas) and lumbar extensors pull the pelvis forward, while weak glutes and abdominals fail to resist. The result is a constantly arched lower back, compressed posterior lumbar discs and facet joints, and chronically shortened hip flexors. Importantly, mild APT is normal — the clinical significance is not the position itself but whether the surrounding muscles can control movement through that position. Modern research notes that people with significant APT often have no pain, while those with minimal tilt can have severe pain — it's the dynamic control that matters, not static posture alone." },
+            { label: "Activates", content: ["Hip flexor stretching", "glute bridges", "hip thrusts", "dead bugs", "posterior pelvic tilt exercises"] },
+            { label: "Injury Risk", content: "Sustained APT compresses the posterior elements of the lumbar spine (facet joints, posterior disc). Over time this contributes to facet joint irritation, disc herniation, and sacroiliac joint dysfunction. It also puts the glutes in a shortened, mechanically disadvantaged position — contributing to \"gluteal amnesia.\"" },
           ],
         },
         {
-          term: "The Knee Joint",
-          brief:
-            "The body's largest joint — a modified hinge between the femur, tibia, and patella.",
-          mnemonic:
-            "Think of the knee as a door hinge that can also slightly rotate. The four ligaments are its hinges — remove one and the whole door wobbles. The menisci are its shock-absorbing door stop.",
+          id: "posterior-pelvic-tilt",
+          term: "Posterior Pelvic Tilt",
+          brief: "A backward rotation of the pelvis that flattens the lumbar curve — often driven by tight hamstrings and associated with disc pressure and chronic sitting.",
+          mnemonic: "POSTerior = back. The back of the pelvis tips DOWN. The lumbar curve flattens or even reverses — the \"tucked under\" posture.",
+          bodyMap: undefined,
           tabs: [
-            {
-              label: "Details",
-              content:
-                "The knee primarily flexes and extends, but also permits slight internal and external rotation in flexed positions. It is stabilized by four major ligaments (ACL, PCL, MCL, LCL), two crescent-shaped menisci (fibrocartilaginous shock absorbers), and the patella. The patella acts as a pulley, increasing the mechanical advantage of the quadriceps. The knee is inherently less stable than the hip because it sits between two long levers (femur and tibia) — making force control at the hip and ankle critical for knee health.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Terminal knee extension (VMO + joint stability)",
-                "Step-down (eccentric quad control)",
-                "Single-leg squat (functional stability)",
-                "Wall sit (isometric quad + joint health)",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "The 'unhappy triad' — simultaneous tears of the ACL, MCL, and medial meniscus — is the classic contact knee injury in sports. Patellofemoral pain (pain behind the kneecap) is the most prevalent overuse injury in the general population.",
-            },
+            { label: "Details", content: "Posterior pelvic tilt (PPT) occurs when the PSIS drops lower than the ASIS, reducing or reversing the normal lumbar lordosis. It is the characteristic posture of prolonged sitting and is strongly associated with tight hamstrings (which pull the ischial tuberosities backward) and weak hip flexors. The flattened lumbar spine increases anterior disc pressure and places the posterior ligaments under sustained tension. Research by Braman (2016) demonstrated that hamstring tightness directly influences pelvic tilt during functional movement, affecting the entire lumbopelvic kinematic chain. PPT also places the glutes in a lengthened (and therefore weaker) position, reducing their capacity to extend the hip effectively." },
+            { label: "Activates", content: ["Hip flexor strengthening", "lumbar extension work", "cat-cow (focusing on the anterior tilt direction)", "standing hip flexor stretches"] },
+            { label: "Injury Risk", content: "The \"flat back\" posture of sustained PPT increases anterior disc pressure — a primary mechanism in intervertebral disc degeneration. It is particularly common in cyclists, rowers, and desk workers who spend extended periods in hip flexion." },
           ],
         },
         {
+          id: "iliopsoas",
+          term: "Iliopsoas (Hip Flexors)",
+          brief: "The most powerful hip flexor — a composite of two muscles (iliacus and psoas major) that connects the lumbar spine directly to the femur.",
+          mnemonic: "ILIOpsoas = ILIO (ilium/pelvis) + PSOAS (Greek for \"loin\"). It literally bridges your spine to your leg — the only muscle that does this. Pull it short and your lumbar spine comes with it.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The iliopsoas is formed by the union of the iliacus (originating from the inner surface of the ilium) and the psoas major (originating from the bodies and transverse processes of T12-L5 vertebrae). They merge into a single tendon attaching to the lesser trochanter of the femur. Because the psoas attaches directly to the lumbar vertebrae, a tight or overactive psoas creates an anterior pull on the lumbar spine — increasing lordosis and contributing to anterior pelvic tilt. The iliopsoas is also a critical stabilizer of the lumbar spine in upright posture, functioning differently in standing than in sitting. Chronic shortening from prolonged sitting is one of the most prevalent movement dysfunctions in modern humans." },
+            { label: "Activates", content: ["Lunge hip flexor stretch", "couch stretch", "warrior I", "psoas march", "hanging knee raise"] },
+            { label: "Injury Risk", content: "Chronic shortening of the iliopsoas is a primary driver of anterior pelvic tilt and lumbar compression. Hip flexor tightness has also been linked to hamstring strain injuries in athletes (Mendiguchia et al., 2021), as the pelvis tilts forward and places the hamstrings in a lengthened, vulnerable position." },
+          ],
+        },
+        {
+          id: "gluteus-maximus",
+          term: "Gluteus Maximus",
+          brief: "The largest muscle in the body — the primary driver of hip extension and a critical counterbalance to the hip flexors.",
+          mnemonic: "MAX = the maximum, the biggest. The glute MAX is the main event of the posterior chain. If it goes quiet, something else has to do its job — and that something else eventually gets hurt.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The gluteus maximus originates from the ilium, sacrum, and coccyx and inserts into the femur and iliotibial band. Its primary function is hip extension — driving the thigh backward — which is fundamental to walking, running, jumping, and rising from a seated position. It also externally rotates the hip and contributes to pelvic stability. Despite being the body's largest muscle, the glute max is frequently inhibited in people who sit for long periods — a phenomenon Janda called \"gluteal amnesia.\" When the glute max underperforms, the hamstrings and lower back compensate, taking on loads they are not designed to sustain." },
+            { label: "Activates", content: ["Hip thrust", "glute bridge", "deadlift", "step-up", "single-leg hip thrust", "Bulgarian split squat"] },
+            { label: "Injury Risk", content: "Glute max inhibition shifts load to the hamstrings and lumbar extensors. The result is a predictable pattern of hamstring strains, sacroiliac joint pain, and chronic lower back pain. Research by Brookbush Institute confirms the central role of glute max strengthening in lumbo-pelvic hip complex rehabilitation." },
+          ],
+        },
+        {
+          id: "gluteus-medius",
+          term: "Gluteus Medius",
+          brief: "The hip stabilizer — a fan-shaped muscle on the outer hip that controls pelvic level with every step you take.",
+          mnemonic: "MEDius = the middle glute. Think of it as the HIP STABILIZER. Weak glute med = the hip sinks when you walk. Strong glute med = the pelvis stays level.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The gluteus medius fans out on the outer surface of the ilium, attaching to the greater trochanter of the femur. Its most critical function is preventing the pelvis from dropping on the opposite side during single-leg stance — the action that occurs with every single step during walking and running. This frontal-plane pelvic control is tested by the Trendelenburg sign: if the hip drops during single-leg stance, glute med is insufficient. The glute med also abducts the hip and contributes to internal and external rotation depending on which fiber group is engaged." },
+            { label: "Activates", content: ["Clamshell", "side-lying leg raise", "lateral band walk", "single-leg deadlift", "single-leg squat"] },
+            { label: "Injury Risk", content: "Weak glute med is linked to a cascade of downstream problems: IT band syndrome (lateral knee pain), patellofemoral pain (anterior knee pain), hip bursitis, and low back pain. It is one of the most clinically significant muscles in lower body rehabilitation and is consistently undertrained in conventional fitness programs." },
+          ],
+        },
+        {
+          id: "adductors",
+          term: "Adductors (Inner Thigh)",
+          brief: "Five muscles of the inner thigh that bring the legs together and play a critical role in pelvic stability during movement.",
+          mnemonic: "ADDuctor = ADD legs together. The inner thighs are the peacemakers — they bring everything back to center. Think of a horse rider squeezing the saddle.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The adductor group — adductor longus, adductor brevis, adductor magnus, gracilis, and pectineus — runs from the pubic bone and ischium to the femur and tibia. Collectively they adduct the hip (draw the thigh toward the midline), but their role is more complex: the adductor magnus also assists in hip extension, making it functionally a posterior chain muscle as well as an inner thigh muscle. The adductors are important for pelvic stability in the frontal plane — they work in balance with the glute med to prevent lateral pelvic shift during gait. They are frequently undertrained in conventional fitness programs." },
+            { label: "Activates", content: ["Sumo squat", "Copenhagen plank (highest adductor load)", "lateral lunge", "adductor squeeze with ball", "yoga goddess pose"] },
+            { label: "Injury Risk", content: "Adductor (groin) strains are among the most common sports injuries in activities involving rapid direction change — soccer, hockey, basketball. The adductor longus is most frequently torn. The Copenhagen plank is the highest-evidence exercise for adductor injury prevention." },
+          ],
+        },
+      ],
+    },
+    {
+      id: "spine",
+      label: "The Spine",
+      subtitle: "The central column — how it curves, moves, and protects",
+      icon: "☰",
+      accent: "#6B8FBF",
+      level: 1,
+      cards: [
+        {
+          id: "spinal-curves",
+          term: "The Spinal Curves",
+          brief: "Four natural curves of the spine — cervical lordosis, thoracic kyphosis, lumbar lordosis, and sacral kyphosis — that function as a shock-absorbing spring system.",
+          mnemonic: "The spine is shaped like a spring-loaded S. The curves don't exist despite each other — they depend on each other. Change one and they all adjust.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The spine has four natural curves when viewed from the side. The cervical (neck) and lumbar (lower back) regions curve anteriorly — these are lordoses. The thoracic (mid-back) and sacral (base) regions curve posteriorly — these are kyphoses. Together they form an S-shape that distributes the body's weight across multiple segments, absorbs compressive forces, and provides flexibility while protecting the spinal cord. Research published in PMC's spine biomechanics literature confirms that this harmonious relationship — involving cervical lordosis, thoracic kyphosis, lumbar lordosis, and pelvic anatomy — maintains sagittal balance with minimum energy expenditure. When any curve is altered (excessive or reduced), all other curves compensate, propagating stress throughout the system." },
+            { label: "Activates", content: ["Cat-cow (exploring full range of each curve)", "spinal extension exercises", "thoracic mobility work"] },
+            { label: "Injury Risk", content: "A flattened lumbar curve (hypolordosis) increases anterior disc pressure. An excessive lumbar curve (hyperlordosis) compresses posterior facet joints. Thoracic hyperkyphosis (the \"tech neck\" posture) forces compensatory hyperextension in the cervical and lumbar regions, compressing those segments." },
+          ],
+        },
+        {
+          id: "neutral-spine",
+          term: "Neutral Spine",
+          brief: "The position in which all four spinal curves are present and balanced — the reference point for all safe, efficient movement.",
+          mnemonic: "Neutral doesn't mean flat. It means all four curves are present. A neutral spine is a loaded spring — ready to absorb and transmit force efficiently.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "Neutral spine refers to the alignment in which the natural lordoses and kyphoses of the spine are maintained simultaneously — the lumbar spine has its gentle inward curve, the thoracic spine its gentle outward curve, and the cervical spine its gentle inward curve. In this position, the intervertebral discs bear load evenly, the facet joints are not compressed, and the deep stabilizing muscles (multifidus, TVA) are in their optimal length-tension relationship. Stuart McGill's research at the University of Waterloo established that most spinal injuries occur when the spine is moved away from neutral under load — the combination of flexion and compression or rotation and compression is particularly destructive. Neutral spine is not a fixed position but a functional reference — it shifts slightly with task demands." },
+            { label: "Activates", content: ["Bracing before any loaded movement", "quadruped holds", "standing posture awareness", "deadlift setup", "plank (properly executed)"] },
+            { label: "Injury Risk", content: "The most dangerous spinal loading patterns combine two or three planes simultaneously: flexion + rotation, or flexion + compression. These patterns — common in asymmetric sports and poor lifting mechanics — are the primary mechanisms of disc herniation and facet joint injury." },
+          ],
+        },
+        {
+          id: "intervertebral-discs",
+          term: "Intervertebral Discs",
+          brief: "The fibrocartilaginous shock absorbers between each vertebra — the spine's cushioning system and one of its most commonly injured structures.",
+          mnemonic: "Think of the disc as a jelly doughnut: tough outer ring (annulus fibrosus), soft inner core (nucleus pulposus). Repetitive bending under load squeezes the jelly toward the back of the doughnut — where the nerves are.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "Between each pair of vertebrae sits an intervertebral disc — a structure consisting of a tough outer fibrous ring (annulus fibrosus) and a gel-like inner core (nucleus pulposus). The disc functions as a shock absorber, load distributor, and spacer that allows spinal movement. It receives nutrition through diffusion, not direct blood supply — which is why disc injuries heal slowly. Under compressive load, the nucleus distributes force radially to the annulus. Under repeated flexion (like rounding the back to lift), the nucleus migrates posteriorly toward the thinnest and most vulnerable part of the annulus — where the spinal nerves exit. This is the mechanism of disc herniation. McGill's research shows that the spine tolerates high compressive forces well when neutral, but fails quickly under repeated flexion-compression cycles." },
+            { label: "Activates", content: ["McKenzie extension exercises", "lumbar extension (carefully)", "core stabilization to reduce disc load", "swimming", "walking"] },
+            { label: "Injury Risk", content: "Disc herniation is the protrusion of nucleus material through the annulus — most commonly posterolateral, compressing adjacent nerve roots. The L4-L5 and L5-S1 discs are by far the most commonly herniated, accounting for the majority of cases of sciatica." },
+          ],
+        },
+        {
+          id: "erector-spinae",
+          term: "Erector Spinae",
+          brief: "Three vertical muscles running along either side of the spine that keep you upright against gravity and resist forward bending under load.",
+          mnemonic: "ERECTOR = they erect you upright. Like the columns of a building, these muscles hold the spine tall. They work all day, every day — they are endurance muscles, not power muscles.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The erector spinae group consists of three columns: the iliocostalis (outermost, controls lateral flexion), longissimus (middle, longest — runs from the sacrum to the cervical spine), and spinalis (innermost, closest to the spinous processes). Together they extend the spine, resist forward flexion under load, and contribute to lateral bending and rotation. They are classified as global stabilizers and global mobilizers — meaning they produce and resist movement, but work over multiple spinal segments rather than providing the segment-by-segment stabilization of the multifidus. The erectors work continuously during sitting and standing to maintain posture against gravity — they are designed for sustained low-level endurance, not peak power." },
+            { label: "Activates", content: ["Deadlift (isometric hold)", "good morning", "back extension", "bird dog", "Superman hold"] },
+            { label: "Injury Risk", content: "The erector spinae are the most commonly strained muscles in the back. The classic injury mechanism: bending forward and rotating simultaneously to lift — combining spinal flexion, lateral flexion, and rotation under load. The erectors are also chronically overloaded when the deep core system (TVA, multifidus) is underperforming." },
+          ],
+        },
+        {
+          id: "quadratus-lumborum",
+          term: "Quadratus Lumborum (QL)",
+          brief: "The \"hip hiker\" — a deep quadrilateral muscle connecting the lowest rib to the iliac crest that laterally stabilizes the lumbar spine.",
+          mnemonic: "QUADRATUS = square-shaped. It sits deep in the back at the waist — the muscle that makes one hip higher than the other when you stand on one leg. If it's tight, your whole spine shifts.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The QL is a deep quadrilateral muscle spanning from the 12th rib and lumbar transverse processes to the posterior iliac crest. Its primary functions are lateral flexion of the lumbar spine (side-bending), hip hiking (elevating the pelvis on one side), and assisting in lumbar extension. Critically, the QL acts as a stabilizer of the lumbar spine in the frontal plane — preventing lateral collapse during single-leg activities. The QL is one of the most commonly implicated muscles in non-specific low back pain — not because it is weak, but because it is chronically overloaded when the glute med, deep core, and hip flexors are not doing their jobs." },
+            { label: "Activates", content: ["Lateral plank (side plank)", "suitcase carry", "single-leg stance", "hip drop and hike exercise"] },
+            { label: "Injury Risk", content: "QL trigger points refer pain to the lower back, sacroiliac region, and outer hip — mimicking many other common pain patterns. Asymmetrical loading (carrying a heavy bag on one side, sitting with a wallet in the back pocket) chronically shortens one QL while lengthening the other, contributing to lateral pelvic shift and scoliosis-like posture." },
+          ],
+        },
+      ],
+    },
+    {
+      id: "posterior-chain",
+      label: "The Posterior Chain",
+      subtitle: "The power line from heel to skull",
+      icon: "↕",
+      accent: "#5A8FAA",
+      level: 1,
+      cards: [
+        {
+          id: "posterior-chain",
+          term: "The Posterior Chain",
+          brief: "A continuous line of interconnected muscles and fascia running from the plantar fascia of the foot to the suboccipital muscles at the base of the skull.",
+          mnemonic: "Think of the posterior chain as a single long cable running up the back of your body. Tighten one end and the whole cable pulls taut — including the far end.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The posterior chain is the collective term for the muscles along the back of the body that work together to extend, support, and drive the body. In functional anatomy, it refers specifically to: plantar fascia → Achilles tendon → gastrocnemius and soleus → hamstrings → sacrotuberous ligament → thoracolumbar fascia → erector spinae → suboccipital muscles. Thomas Myers mapped this entire line in Anatomy Trains (4th ed., Elsevier, 2020) as the Superficial Back Line — a continuous myofascial connection from the bottom of the foot to the top of the skull, verified by dissection and research (Wilke et al., 2016, Archives of Physical Medicine and Rehabilitation). Tension in one part — tight calves, for example — transmits along the entire chain and can manifest as tightness in the hamstrings, lower back, or even neck." },
+            { label: "Activates", content: ["Deadlift", "Romanian deadlift", "Nordic curl", "glute-ham raise", "back extension", "any hip hinge pattern"] },
+            { label: "Injury Risk", content: "Overuse of the posterior chain without adequate stretching and recovery leads to accumulating stiffness along the entire line. A particularly common pattern: tight calves → tight hamstrings → posterior pelvic tilt → flattened lumbar → increased disc pressure. Treating only the symptomatic location (tight hamstrings) while ignoring the origin (tight calves) is a common reason why stretching provides only temporary relief." },
+          ],
+        },
+        {
+          id: "hamstrings",
+          term: "Hamstrings",
+          brief: "Three muscles on the back of the thigh that flex the knee and extend the hip — critical for running, decelerating, and protecting the pelvis.",
+          mnemonic: "HAM-strings = taut strings running along the back of the thigh. HAM = where a pig's hind leg is cut — the same region as yours. They string from the sit bone to the shin.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The hamstrings consist of three muscles: biceps femoris (long and short head), semimembranosus, and semitendinosus. They originate from the ischial tuberosity (the sit bone) and insert into the tibia and fibula. Because they cross both the hip and the knee, they simultaneously extend the hip and flex the knee. The hamstrings work eccentrically (lengthening under load) during the late swing phase of running to decelerate the leg — this eccentric loading phase is where most hamstring strains occur. The hamstrings also exert a posterior tilting force on the pelvis — when tight, they flatten the lumbar curve and limit hip flexion. Hamstring flexibility is described in peer-reviewed literature as \"the most important muscle influencing pelvic position\" in the sagittal plane (PMC, 2023)." },
+            { label: "Activates", content: ["Romanian deadlift (eccentric focus)", "Nordic hamstring curl (injury prevention gold standard)", "leg curl", "glute-ham raise", "yoga forward fold"] },
+            { label: "Injury Risk", content: "Hamstring strains are the single most common muscle injury in sprinting sports. The biceps femoris long head at the proximal attachment (near the sit bone) is the most frequent tear site. Nordic hamstring curls are the highest-evidence exercise for prevention, reducing injury rate by up to 51% (Petersen et al., BJSM)." },
+          ],
+        },
+        {
+          id: "gastrocnemius-soleus",
+          term: "Gastrocnemius & Soleus",
+          brief: "The two calf muscles — one for power and speed, one for endurance and posture — sharing the Achilles tendon and the base of the posterior chain.",
+          mnemonic: "GAS = fast and powerful (it has a visible belly). SOL = steady and enduring (think: SOLe of the foot — it does the slow, sustained work). They share one tendon but have different jobs.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The gastrocnemius is the larger, more superficial calf muscle with two heads merging into the Achilles tendon. It crosses both the knee and the ankle — functioning as both a knee flexor and a plantarflexor. It is best trained with the knee straight. The soleus is deeper, shorter, and crosses only the ankle. It is dominant during walking and prolonged standing — functioning as a powerful venous pump returning blood from the lower leg to the heart. Both muscles plantarflex the ankle (pointing the foot). Together they form the muscular base of the posterior chain, and their fascial connection to the hamstrings via the popliteal fascia means their tension directly influences the chain above." },
+            { label: "Activates", content: ["Standing calf raise (gastrocnemius)", "seated calf raise with bent knee (soleus)", "single-leg calf raise", "jump rope", "downward dog"] },
+            { label: "Injury Risk", content: "Achilles tendinopathy is one of the most prevalent overuse injuries — degeneration of the tendon from repetitive loading without adequate recovery. \"Tennis leg\" is an acute gastrocnemius tear: a sudden tearing sensation mid-calf during explosive push-off. Soleus strains are more insidious, slower to heal, and more associated with sustained endurance activity." },
+          ],
+        },
+        {
+          id: "thoracolumbar-fascia",
+          term: "Thoracolumbar Fascia",
+          brief: "The broad, diamond-shaped fascial sheet covering the lower and mid-back — the connective tissue hub of the posterior chain and core.",
+          mnemonic: "Think of it as the body's back panel. It connects the lats above, the glutes below, the erectors in the middle, and even the TVA through the side. Everything at the back of the trunk talks through this sheet.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The thoracolumbar fascia (TLF) is a multilayered connective tissue structure spanning the lower thoracic and lumbar spine. It provides attachment points for the latissimus dorsi (above), gluteus maximus (below), erector spinae (within), and — critically — the transverse abdominis (via its lateral raphe). This connection means the TVA increases tension in the TLF when it contracts, contributing to lumbar stabilization through the posterior as well as the anterior wall. The TLF also transmits forces between the upper and lower body during diagonal movements — like throwing, walking, and rotating. Myers identifies it as a key fascial junction in the Superficial Back Line." },
+            { label: "Activates", content: ["All deadlift and hinge patterns", "carries (farmer's walk, suitcase)", "rotational movements"] },
+            { label: "Injury Risk", content: "The TLF is implicated in a significant proportion of non-specific low back pain. When the TLF loses its normal tension and glide between layers (from sedentary behavior or chronic compression), it contributes to stiffness and pain that is often attributed incorrectly to the muscles it covers." },
+          ],
+        },
+      ],
+    },
+    {
+      id: "shoulder-complex",
+      label: "The Shoulder Complex",
+      subtitle: "The most mobile — and most vulnerable — joint system in the body",
+      icon: "◉",
+      accent: "#7B8FBF",
+      level: 1,
+      cards: [
+        {
+          id: "shoulder-joint",
+          term: "The Shoulder Joint",
+          brief: "A ball-and-socket joint with the greatest range of motion in the body — but very little inherent bony stability, making muscle coordination everything.",
+          mnemonic: "Compare the shoulder to the hip. The hip socket is deep (stable). The shoulder socket is shallow — like a golf ball on a tee. The rotator cuff muscles are the hands holding that ball in place.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The glenohumeral joint is formed by the head of the humerus (the ball) articulating with the glenoid fossa of the scapula (a shallow, slightly concave socket). The glenoid provides minimal bony stability — approximately 25–30% contact area — which is why the shoulder depends entirely on dynamic muscular stabilization. The shallow socket is deepened slightly by the glenoid labrum (a fibrocartilaginous ring). The shoulder complex also includes the acromioclavicular joint, sternoclavicular joint, and scapulothoracic articulation — all of which must move in coordinated patterns (scapulohumeral rhythm) for pain-free overhead movement. Dysfunction in any of these joints creates compensatory loading in the others." },
+            { label: "Activates", content: ["All shoulder exercises, particularly those emphasizing scapular control and rotator cuff coordination"] },
+            { label: "Injury Risk", content: "The shoulder is the most commonly dislocated large joint. The combination of large range of motion and shallow socket means it is entirely dependent on muscular coordination and soft tissue integrity. When any link in the shoulder complex is disrupted — poor thoracic mobility, scapular dyskinesis, rotator cuff weakness — the whole system compensates, often leading to impingement." },
+          ],
+        },
+        {
+          id: "rotator-cuff",
+          term: "Rotator Cuff (SITS)",
+          brief: "Four muscles wrapping the shoulder joint that act as a dynamic seatbelt — holding the ball in the socket during every arm movement.",
+          mnemonic: "SITS: Supraspinatus, Infraspinatus, Teres minor, Subscapularis. The shoulder SITS on four muscles. They don't create big movements — they control the small, precise positioning that allows big movements to happen safely.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The four rotator cuff muscles — supraspinatus (superior), infraspinatus (posterior-superior), teres minor (posterior-inferior), and subscapularis (anterior) — originate from the scapula and insert into the humeral head. Their collective function is dynamic joint compression: keeping the humeral head centered in the glenoid during arm movement. Without rotator cuff activation, the larger, more powerful muscles (deltoid, pec, lat) would simply lever the ball out of the socket. The rotator cuff fires before the prime movers to pre-stabilize the shoulder. This anticipatory function is impaired by pain, fatigue, and disuse. The supraspinatus is particularly vulnerable due to its passage through the subacromial space — it can be compressed by overhead movements when the cuff is weak or the scapula is poorly controlled." },
+            { label: "Activates", content: ["External rotation with band", "face pull", "prone Y-T-W", "side-lying ER", "empty can raise"] },
+            { label: "Injury Risk", content: "The rotator cuff is the most commonly torn tendon group in the body. The supraspinatus is torn most often — typically from repetitive overhead stress or a fall. Cuff weakness is the underlying cause of most shoulder impingement. Torn cuffs rarely heal without intervention due to poor blood supply in the tendon tissue." },
+          ],
+        },
+        {
+          id: "trapezius",
+          term: "Trapezius",
+          brief: "A kite-shaped muscle spanning the upper back and neck with three distinct regions that each do different — and often opposing — jobs.",
+          mnemonic: "TRAPezius = it TRAPs the shoulder blade, stabilizing it from three directions. But the upper trap is chronically overworked in stressed, desk-bound people. More lower trap, less upper trap — that's almost always the prescription.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The trapezius has three functionally distinct regions. The upper trapezius (descending) elevates the scapula and extends the neck — it is chronically overactive in people experiencing stress, prolonged sitting, and screen time. The middle trapezius (transverse fibers) retracts the scapula — pulling the shoulder blades together. The lower trapezius (ascending) depresses the scapula — pulling the shoulder blade downward, which is essential for creating space in the subacromial region during overhead movement. Most conventional training (shrugs, overhead pressing) heavily loads the upper trap while neglecting the lower trap. The resulting upper trap dominance is a primary driver of neck pain, headaches, and shoulder impingement." },
+            { label: "Activates", content: ["Shrugs (upper)", "face pull/row (middle)", "Y-raise (lower)", "prone cobra", "overhead press (all regions)"] },
+            { label: "Injury Risk", content: "Upper trap dominance from chronic stress and poor posture leads to neck tension, tension headaches, and compressed shoulders. This pattern is nearly universal in desk workers and is directly associated with Janda's Upper Crossed Syndrome." },
+          ],
+        },
+        {
+          id: "serratus-anterior",
+          term: "Serratus Anterior",
+          brief: "The \"boxer's muscle\" running along the ribcage — essential for rotating the scapula upward during any overhead movement.",
+          mnemonic: "SERRATE = saw-toothed. The serratus attaches with finger-like projections along the ribs — like a saw blade on the side of the chest. Without it, the scapula wings out and overhead movement becomes impossible.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The serratus anterior originates from the lateral surfaces of ribs 1–8 and inserts into the medial border and inferior angle of the scapula. Its critical function is protraction (pushing the scapula forward around the ribcage) and upward rotation (tilting the inferior angle away from the spine during overhead movement). This upward rotation is essential for raising the arm above 90 degrees — without it, the greater tuberosity of the humerus compresses against the acromion, causing impingement. The serratus anterior is one of the most undertrained yet clinically significant muscles in shoulder health. When weak, the scapula \"wings\" off the ribcage — visible as the medial border lifting away from the back during arm elevation." },
+            { label: "Activates", content: ["Serratus wall slide", "push-up plus (end-range protraction)", "band forward punch", "incline push-up"] },
+            { label: "Injury Risk", content: "Serratus anterior weakness or long thoracic nerve dysfunction causes scapular winging — the medial border of the scapula lifts away from the thorax. This disrupts scapulohumeral rhythm and is a primary driver of shoulder impingement, rotator cuff tendinopathy, and shoulder pain during overhead activities." },
+          ],
+        },
+        {
+          id: "latissimus-dorsi",
+          term: "Latissimus Dorsi",
+          brief: "The broadest muscle in the back — the primary puller of the arm toward the body and a bridge between the arm and the pelvis.",
+          mnemonic: "LATissimus = LATeral width. It makes you wide. \"LAT me pull you down\" — it literally pulls the arm toward the hip. And because it attaches to the pelvis, it connects the arm chain to the pelvic chain.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The latissimus dorsi spans from the lower thoracic and lumbar spine, iliac crest, and lower ribs to the humerus — making it a true bridge between the arm and the pelvis. It is the primary muscle used in climbing, rowing, and swimming. Its actions include shoulder extension, adduction, and internal rotation. Tight lats limit shoulder flexion (reaching overhead), forcing the lumbar spine to hyperextend to compensate — a common compensation pattern in overhead athletes. The lat also attaches to the thoracolumbar fascia, making it a functional contributor to lumbar stability during pulling movements." },
+            { label: "Activates", content: ["Pull-up", "lat pulldown", "bent-over row", "single-arm dumbbell row", "straight-arm pulldown"] },
+            { label: "Injury Risk", content: "Lat tightness restricts full shoulder flexion, causing the lumbar spine to arch excessively when reaching overhead. Common in swimmers, climbers, and gymnasts who train high volumes of pulling without corresponding mobility work." },
+          ],
+        },
+      ],
+    },
+    {
+      id: "hip-knee",
+      label: "The Hip & Knee Chain",
+      subtitle: "How force travels from the ground through the lower body",
+      icon: "△",
+      accent: "#8FA888",
+      level: 1,
+      cards: [
+        {
+          id: "hip-joint",
           term: "The Hip Joint",
-          brief:
-            "A deep ball-and-socket joint — the most mobile and inherently stable joint in the lower body.",
-          mnemonic:
-            "ACET-abulum = little cup (Latin: acetum = vinegar cup). The femoral ball sits in the hip's 'cup.' Deep socket = stable. Shallow shoulder socket = mobile but risky.",
+          brief: "A deep ball-and-socket joint — the most mobile and inherently stable joint in the lower body, capable of movement in all three planes.",
+          mnemonic: "ACET-abulum = little cup (Latin: acetum = vinegar cup). The femoral ball sits in the hip's \"cup.\" The deeper the cup, the more stable the joint. The hip's cup is deep — unlike the shoulder, the hip doesn't rely on muscles alone for stability.",
+          bodyMap: undefined,
           tabs: [
-            {
-              label: "Details",
-              content:
-                "The hip is a ball-and-socket joint where the femoral head sits within the deep acetabulum, reinforced by a fibrocartilaginous rim called the labrum. Unlike the shoulder (shallow socket), the hip's depth provides inherent bony stability. The hip moves in all three planes — flexion/extension, abduction/adduction, internal/external rotation — and has more than 20 muscles acting on it. Maintaining full hip mobility is one of the most impactful things a person can do for long-term lower body and back health.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "90/90 hip stretch",
-                "Hip CARs (controlled articular rotations)",
-                "Pigeon pose (external rotation)",
-                "Hip flexor stretch (extension)",
-                "Hip airplane (rotational control)",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Femoroacetabular impingement (FAI) occurs when the ball and socket pinch, often during deep squat or flexion. Hip labrum tears commonly accompany impingement. Both are increasingly diagnosed in active people and desk workers with limited hip mobility.",
-            },
+            { label: "Details", content: "The hip is a ball-and-socket joint where the femoral head sits within the deep acetabulum, reinforced by a fibrocartilaginous rim called the labrum. The depth of the acetabulum provides inherent bony stability — far greater than the shoulder. The hip is capable of flexion, extension, abduction, adduction, internal rotation, and external rotation, making it the most functionally versatile joint in the lower body. More than 20 muscles act on the hip. Maintaining full hip mobility — particularly in extension and rotation — is one of the most impactful things a person can do for long-term lower body and back health. When hip mobility is lost, the lumbar spine and knee are forced to compensate." },
+            { label: "Activates", content: ["90/90 hip stretch", "hip CARs (controlled articular rotations)", "pigeon pose", "hip flexor stretch", "single-leg hip hinge"] },
+            { label: "Injury Risk", content: "Femoroacetabular impingement (FAI) — where the ball and socket pinch, often in deep hip flexion — is increasingly common in athletes, yoga practitioners, and desk workers with limited hip extension. Hip labrum tears frequently accompany impingement. Both can be prevented with attention to hip mobility and movement quality." },
           ],
         },
         {
-          term: "Fascia",
-          brief:
-            "A continuous body-wide web of connective tissue that surrounds and connects everything.",
-          mnemonic:
-            "FASCIA = FASCIAating. When you learn about fascia, you're fascinated — it connects everything in ways you didn't expect. Tension anywhere ripples everywhere.",
+          id: "quadriceps",
+          term: "Quadriceps",
+          brief: "Four muscles on the front of the thigh that extend the knee and absorb the impact of landing — the primary decelerators of the lower body.",
+          mnemonic: "QUAD = four. Four muscles, all pulling on one tendon, driving one motion: knee extension. The VMO (the teardrop-shaped inner quad) is the key to proper knee tracking.",
+          bodyMap: undefined,
           tabs: [
-            {
-              label: "Details",
-              content:
-                "Fascia is a three-dimensional continuous network of collagen and elastin that surrounds every muscle fiber, muscle, organ, nerve, and blood vessel. It transmits mechanical tension across the entire body — meaning tightness in the plantar fascia of the foot can influence the hamstrings, lumbar spine, and even neck. The concept of 'myofascial lines' (popularized by Thomas Myers' Anatomy Trains) describes these tension pathways. Fascia is highly innervated and plays a role in proprioception and interoception.",
-            },
-            {
-              label: "Activates",
-              content: [
-                "Foam rolling (myofascial release — compresses and shears fascia)",
-                "Slow dynamic stretching (loads the fascial system)",
-                "Yoga (whole-body fascial integration)",
-                "Breathwork (the diaphragm is a fascial structure)",
-              ],
-            },
-            {
-              label: "Injury Risk",
-              content:
-                "Plantar fasciitis is inflammation of the plantar fascia on the sole — one of the most common foot conditions. IT band syndrome involves the lateral thigh fascia. Both respond better to load management and strengthening than to passive stretching alone.",
-            },
+            { label: "Details", content: "The quadriceps — rectus femoris, vastus lateralis, vastus medialis oblique (VMO), and vastus intermedius — converge on the patellar tendon, which attaches below the kneecap at the tibial tuberosity. The rectus femoris is unique in that it also crosses the hip, making it a hip flexor as well as a knee extensor. The VMO (the lowest, most medial portion) is critical for pulling the patella into proper tracking alignment — when weak, the patella tracks laterally, creating friction and pain. Quad weakness leads to the knee collapsing inward (valgus) during landing and squatting — a primary risk factor for ACL tears." },
+            { label: "Activates", content: ["Squat", "leg press", "lunge", "step-down (eccentric)", "terminal knee extension (VMO focus)", "leg extension"] },
+            { label: "Injury Risk", content: "Patellar tendinopathy (\"jumper's knee\") is pain at the tendon below the kneecap from repetitive explosive loading. Patellofemoral pain syndrome (pain behind the kneecap) is the most common overuse knee injury overall, linked to VMO weakness and poor hip control allowing lateral patellar tracking." },
+          ],
+        },
+        {
+          id: "knee-joint",
+          term: "The Knee Joint",
+          brief: "The body's largest joint — a modified hinge between the femur and tibia that is stabilized by four ligaments, two menisci, and the muscular control of the hip and ankle above and below.",
+          mnemonic: "Think of the knee as a door hinge that can also slightly rotate. The four ligaments are its hinges — remove one and the door wobbles. The menisci are its shock-absorbing door stop. The hip controls the door.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The knee primarily flexes and extends but permits slight internal and external rotation in flexed positions. It is stabilized by the ACL (anterior cruciate ligament, prevents forward tibial translation), PCL (posterior, prevents backward tibial translation), MCL (medial, resists valgus), and LCL (lateral, resists varus). The medial and lateral menisci are crescent-shaped fibrocartilaginous structures that deepen the tibial plateau, distribute load, and absorb shock. The patella increases the mechanical advantage of the quadriceps by acting as a pulley. Because the knee sits between two long levers (femur and tibia), its health depends heavily on the control provided by the hip above and the ankle and foot below — it is primarily a victim of problems elsewhere." },
+            { label: "Activates", content: ["Terminal knee extension", "step-down", "single-leg squat", "wall sit", "Bulgarian split squat"] },
+            { label: "Injury Risk", content: "The \"unhappy triad\" — simultaneous ACL, MCL, and medial meniscus tears — is the classic contact knee injury. Patellofemoral pain is the most common overuse injury. Both are often driven by hip weakness (glute med, glute max) and poor neuromuscular control rather than local knee weakness." },
+          ],
+        },
+        {
+          id: "it-band-tfl",
+          term: "IT Band & TFL",
+          brief: "The iliotibial band is a thick strip of fascia running from the hip to the shin — the lateral stabilizer of the knee, and one of the most commonly irritated structures in runners.",
+          mnemonic: "IT band = the body's lateral guy-wire. Like the cable on a sailboat mast, it keeps the knee from collapsing inward. But unlike a cable, it can't be stretched — it can only be loaded and unloaded differently.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The iliotibial band (IT band) is a thick strip of connective tissue (fascia, not muscle) running from the iliac crest down the lateral thigh to the tibia. It is tensioned by two muscles: the tensor fasciae latae (TFL) at the top and the gluteus maximus (which inserts into the IT band posteriorly). The IT band's primary function is lateral knee stabilization and shock absorption during running. Because it is fascia, not muscle, it cannot be \"stretched\" in the conventional sense — foam rolling and stretching targets the TFL and hip muscles that tension it, not the band itself. IT band friction syndrome occurs when the band repeatedly slides over the lateral femoral condyle — the result is lateral knee pain that typically worsens during running." },
+            { label: "Activates", content: ["Hip abduction exercises (to address TFL tightness)", "single-leg squat (neuromuscular control)", "foam rolling TFL", "glute strengthening"] },
+            { label: "Injury Risk", content: "IT band syndrome is the most common running injury. Its root cause is almost always hip weakness (glute med, glute max) rather than a \"tight IT band.\" Foam rolling the IT band directly may provide temporary pain relief but does not address the underlying cause." },
+          ],
+        },
+        {
+          id: "ankle-foot",
+          term: "Ankle & Foot",
+          brief: "The body's foundation — and a joint where limited mobility silently drives compensations all the way up to the knee, hip, and spine.",
+          mnemonic: "The ankle is the foundation of the lower body's tower. A compromised foundation forces every floor above it to compensate. Limited ankle range of motion is one of the most underappreciated drivers of knee and back pain.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "The ankle (talocrural joint) primarily plantarflexes and dorsiflexes (points and flexes). Dorsiflexion — the ability to bring the shin toward the foot — is critical for squatting, walking upstairs, and decelerating. Normal dorsiflexion range is approximately 20 degrees. When this is restricted (by tight calves, Achilles tightness, or ankle joint stiffness), the body compensates: the heel rises during squatting, the knee caves inward, the hip internally rotates, and the lumbar spine flexes. All of these compensations originate from the ankle. The foot — with its 26 bones, 33 joints, and over 100 muscles, tendons, and ligaments — is the primary sensory interface between the body and the ground. Foot arch mechanics directly influence knee alignment and hip rotation patterns." },
+            { label: "Activates", content: ["Calf stretching", "ankle dorsiflexion mobility drills", "single-leg balance", "barefoot walking", "toe spreading exercises"] },
+            { label: "Injury Risk", content: "Limited ankle dorsiflexion is consistently linked to increased ACL injury risk, patellofemoral pain, and Achilles tendinopathy. Plantar fasciitis — inflammation of the plantar fascia at the base of the foot — is one of the most common musculoskeletal complaints and is often the downstream result of limited ankle mobility and calf tightness." },
+          ],
+        },
+      ],
+    },
+    {
+      id: "movement-vocab",
+      label: "Movement Vocabulary",
+      subtitle: "The language of how the body moves",
+      icon: "⇄",
+      accent: "#A67C8A",
+      level: 1,
+      cards: [
+        {
+          id: "flexion-extension",
+          term: "Flexion & Extension",
+          brief: "The most fundamental pair of movements — bending to close a joint (flexion) and straightening to open it (extension).",
+          mnemonic: "Flex = fold (you're folding the joint closed). Extend = expand (you're opening and lengthening). Every joint in the body does these two things — just in different directions.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "Flexion decreases the angle between two body segments — elbow curl, knee bend, spinal rounding. Extension increases that angle — straightening the elbow, extending the knee, arching the back. In the hip, flexion brings the thigh toward the chest; extension drives the thigh backward. In the spine, flexion rounds forward; extension arches back. Most human daily activities (sitting, typing, driving) are dominated by flexion patterns — which is why intentional extension work is essential for musculoskeletal health. The body needs balance between these opposing movements to maintain joint health and posture." },
+            { label: "Activates", content: ["Flexion: bicep curl, leg curl, forward fold", "Extension: deadlift, back extension, cobra pose, hip thrust"] },
+            { label: "Injury Risk", content: "Sustained spinal flexion without counterbalancing extension compresses the anterior vertebral structures and stretches the posterior ligaments — the foundation of most disc pathology in desk workers." },
+          ],
+        },
+        {
+          id: "adduction-abduction",
+          term: "Adduction & Abduction",
+          brief: "Moving a limb toward the body's midline (adduction) or away from it (abduction) — the side-to-side language of the frontal plane.",
+          mnemonic: "ADDuction = ADD the limb back to your body (toward center). ABduction = ABsent from the body (moving away). Think of opening and closing a door — abduction opens, adduction closes.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "Adduction moves a limb toward the midline — arms lowering to the sides, thighs squeezing together. The primary hip adductors are the inner thigh muscles; shoulder adduction is primarily driven by the lats and pec major. Abduction moves a limb away from the midline — raising the arm to the side, stepping the leg laterally. Hip abduction is driven primarily by the glute med; shoulder abduction by the deltoid and supraspinatus. Both movements occur in the frontal plane. They are the most undertrained movement pattern in conventional fitness — most programs are dominated by sagittal plane (flexion/extension) movements, leaving the frontal plane underloaded and vulnerable." },
+            { label: "Activates", content: ["Adduction: cable fly, Copenhagen plank, inner thigh squeeze", "Abduction: lateral raise, clamshell, lateral band walk, side-lying leg raise"] },
+            { label: "Injury Risk", content: "Frontal plane weakness — specifically insufficient hip abduction strength — is the primary driver of Trendelenburg gait, IT band syndrome, patellofemoral pain, and hip impingement." },
+          ],
+        },
+        {
+          id: "internal-external-rotation",
+          term: "Internal & External Rotation",
+          brief: "Turning a limb inward toward the body's midline (internal rotation) or outward away from it (external rotation) — the rotational language of movement.",
+          mnemonic: "Think of a door hinge. The joint is the hinge; the limb is the door. Internal rotation turns the front of the limb toward the body; external rotation turns it away. Most people are stuck in internal rotation from how they live.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "Internal rotation turns a limb inward — the front of the thigh rotating toward the midline, or the palm facing the body. External rotation turns outward — the front of the thigh rotating away, or the palm facing forward. The hip and shoulder are the primary rotational joints. Rotation is the most undertrained and most commonly lost movement pattern — particularly hip external rotation, which is restricted in most desk workers and is a primary driver of hip impingement, IT band syndrome, and lumbar pain. Hip external rotation is produced by the deep external rotators (piriformis, obturators, gemelli), the gluteus maximus, and the posterior gluteus medius." },
+            { label: "Activates", content: ["Hip: 90/90 stretch, pigeon pose, clamshell (external rotation), hip internal rotation stretch", "Shoulder: cable ER, side-lying ER (external rotation)"] },
+            { label: "Injury Risk", content: "Limited hip external rotation forces the femur into internal rotation during walking, squatting, and running — driving the knee inward (valgus) and stressing the medial knee and lower back. At the shoulder, poor rotator cuff control during internal rotation is a primary driver of impingement and labral tears." },
+          ],
+        },
+        {
+          id: "planes-of-motion",
+          term: "Planes of Motion",
+          brief: "Three imaginary planes that describe the direction of every movement — sagittal (forward/back), frontal (side/side), and transverse (rotational).",
+          mnemonic: "SAGittal = SAGging forward and back. FRONTal = side to side (the FRONT of your body faces you). TRANSverse = TRANSlation, twisting across. Most gym exercises live in the sagittal plane — real life happens in all three.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "Every movement occurs within or across these three planes. The sagittal plane divides the body into left and right halves — squats, lunges, bicep curls, and running all primarily occur here. The frontal plane divides front from back — lateral raises, side lunges, and clamshells live here. The transverse plane divides upper from lower body — rotational movements like throwing, twisting, and chopping occur here. Most traditional gym machines operate in a single plane (usually sagittal), leaving the frontal and transverse planes undertrained. Real-world activities — sports, manual labor, daily life — combine all three planes simultaneously. This mismatch between training and life is a primary reason injuries occur during \"ordinary\" activities." },
+            { label: "Activates", content: ["Sagittal: squat, deadlift", "Frontal: lateral lunge, side raise", "Transverse: wood chop, rotational throw", "Multi-planar: Turkish get-up, agility drills"] },
+            { label: "Injury Risk", content: "Training only in the sagittal plane leaves the body unprepared for frontal and transverse loading — a primary reason people injure themselves during seemingly simple rotational or lateral movements. This is particularly common in weekend warriors who do sagittal-plane gym work all week and then play sport on weekends." },
+          ],
+        },
+        {
+          id: "eccentric-concentric",
+          term: "Eccentric vs. Concentric Contraction",
+          brief: "The difference between a muscle shortening under load (concentric) and lengthening under load (eccentric) — the eccentric phase is where most injuries occur and most strength gains are made.",
+          mnemonic: "CONcentric = CONtracting and shortening (the curl up). ECcentric = ECiting the lengthened position (the curl down, under control). The eccentric is the harder, more important phase — and the one most people skip.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "Concentric contraction occurs when a muscle generates force while shortening — the bicep during the lifting phase of a curl. Eccentric contraction occurs when a muscle generates force while lengthening — the bicep during the lowering phase of a curl, or the quadriceps during a step-down. Eccentric loading is the primary mechanism of both muscle damage (which drives hypertrophy and strengthening) and injury (when the load exceeds the tissue's capacity). Research consistently shows that eccentric exercise produces greater strength gains, greater tendon stiffness improvements, and better injury prevention outcomes than concentric-only training. The Nordic hamstring curl, which emphasizes eccentric hamstring loading, reduces hamstring strain incidence by approximately 51% in athletes." },
+            { label: "Activates", content: ["Slow lowering in any exercise", "Nordic curl", "Spanish squat", "step-down", "eccentric heel drop (for Achilles)"] },
+            { label: "Injury Risk", content: "Most acute muscle injuries (hamstring tears, calf strains, quadriceps tears) occur during the eccentric phase — when the muscle is actively lengthening under sudden load. Neglecting eccentric training leaves muscles unprepared for the high forces of sprinting, jumping, and rapid deceleration." },
+          ],
+        },
+        {
+          id: "proprioception",
+          term: "Proprioception",
+          brief: "The body's hidden sixth sense — the ability to know where your joints are in space, crucial for injury prevention and efficient movement.",
+          mnemonic: "PROPRIO = one's own (Latin). Proprioception = perceiving your own body position. Close your eyes and touch your nose — that's proprioception at work. Athletes who train it are injured less.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "Details", content: "Proprioception is the sensory system that informs the brain of joint position, movement, and load without the need for visual feedback. Mechanoreceptors in muscles (muscle spindles), tendons (Golgi tendon organs), joint capsules, and ligaments continuously send positional information to the central nervous system. This allows for anticipatory muscle activation (feedforward control) and real-time adjustments to maintain balance and joint stability. After ligament injuries (particularly ankle sprains and ACL tears), proprioceptive function is significantly impaired — because the ligament sensors are damaged. This impairment, if not specifically retrained, is the primary reason for re-injury. Yoga, balance training, and reactive exercise all train proprioceptive function." },
+            { label: "Activates", content: ["Single-leg balance", "wobble board", "reactive stepping drills", "yoga balance poses", "barefoot training"] },
+            { label: "Injury Risk", content: "Impaired proprioception after ankle sprains is the primary reason for recurrent ankle sprains — the joint doesn't \"know\" it's in a vulnerable position until it's already sprained. Similarly, ACL reconstruction without proprioceptive retraining carries a high re-injury risk, particularly in the early return-to-sport phase." },
+          ],
+        },
+      ],
+    },
+    {
+      id: "pelvic-tilt",
+      label: "The Pelvic Tilt Problem",
+      subtitle: "Why your pelvis position is the most consequential postural choice your body makes",
+      icon: "↗",
+      accent: "#C4875A",
+      level: 2,
+      cards: [
+        {
+          id: "pelvis-spine-connection",
+          term: "The Pelvis-Spine Connection",
+          brief: "The position of the pelvis directly determines the shape of the lumbar spine — they are not independent structures but two parts of the same system.",
+          mnemonic: "The pelvis and lumbar spine are like two gears in a clock. Turn one and the other turns with it — automatically and immediately. You cannot change your lumbar position without changing your pelvic position.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "The lumbar spine sits directly on top of the sacrum, which is the posterior anchor of the pelvis. Their relationship is immediate and reciprocal: anterior pelvic tilt (the front of the pelvis dropping forward) increases lumbar lordosis. Posterior pelvic tilt (the front rising, the back dropping) reduces or reverses the lumbar curve. This is why the simple act of tucking the pelvis (posterior tilt) in cat-cow instantly changes the shape of the lower back — and why someone's pelvic position while sitting is inseparable from their lumbar pain pattern. Research from PMC's spine sagittal balance literature confirms that cervical lordosis, thoracic kyphosis, lumbar lordosis, and pelvic anatomy must all maintain a harmonious relationship for minimum energy expenditure and spinal health." },
+            { label: "Why It Matters", content: "When the pelvis is chronically tilted forward (anterior tilt), the posterior lumbar disc and facet joints are chronically compressed. When chronically tilted backward (posterior tilt), the anterior disc is chronically loaded. Neither is inherently pathological — the problem arises when a fixed position removes adaptability and loads the same structures repeatedly without variation." },
+            { label: "What To Do", content: ["Cat-cow (conscious exploration of the full range)", "pelvic tilts supine", "standing pelvic awareness exercises", "posterior pelvic tilt exercises for back pain"] },
+          ],
+        },
+        {
+          id: "lower-crossed-syndrome",
+          term: "Lower Crossed Syndrome",
+          brief: "The most common postural dysfunction in the modern world — a predictable pattern of tight hip flexors and weak glutes creating anterior pelvic tilt and low back pain.",
+          mnemonic: "Draw an X across the front of the pelvis. Tight hip flexors (front) cross with weak glutes (back). Weak abdominals (front) cross with tight erector spinae (back). The X tells you who to stretch and who to strengthen.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Vladimir Janda identified Lower Crossed Syndrome (LCS) as a characteristic pattern of alternating muscle tightness and weakness centered on the pelvis. The tight muscles: hip flexors (iliopsoas, rectus femoris) and lumbar extensors (erector spinae). The weak muscles: deep abdominals (TVA, obliques) and gluteals (maximus and medius). This imbalance creates anterior pelvic tilt, increased lumbar lordosis, and compensatory thoracolumbar junction stiffness. Physiopedia's clinical review notes that LCS is associated with anterior pelvic tilt, increased lumbar lordosis, and compensatory adjustments throughout the kinetic chain. LCS is not a disease — it is the predictable result of how most modern humans live: sitting for prolonged periods, which shortens hip flexors, while the glutes are unloaded and inhibited." },
+            { label: "Why It Matters", content: "LCS is implicated in anterior pelvic tilt-driven lower back pain, hip flexor strains, hamstring tightness (compensating for weak glutes), sacroiliac joint dysfunction, and patellofemoral knee pain. Hamstring tightness in LCS is often not a flexibility problem — it's a compensation pattern. Stretching only the hamstrings without addressing the root cause (weak glutes, tight hip flexors) provides temporary relief at best." },
+            { label: "What To Do", content: ["Hip flexor stretching (couch stretch, warrior I)", "glute activation (bridges, clamshells, hip thrusts)", "core stability work (dead bug, bird dog)", "cat-cow for pelvic mobility"] },
+          ],
+        },
+        {
+          id: "cat-cow-diagnostic",
+          term: "Cat-Cow as a Diagnostic Tool",
+          brief: "The yoga cat-cow sequence is far more than a warm-up stretch — it is a window into pelvic mobility, spinal segmental movement, and core coordination.",
+          mnemonic: "Cat = posterior pelvic tilt (tucking under, rounding the spine). Cow = anterior pelvic tilt (arching, letting the belly drop). Moving between them consciously reveals where your spine is stiff and where it compensates by moving too much.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Cat-cow (Marjaryasana-Bitilasana in Sanskrit) cycles the spine between full flexion and full extension. In the cow position, the pelvis anteriorly tilts, the lumbar spine extends (arches), and the chest opens. In the cat position, the pelvis posteriorly tilts, the lumbar spine flexes (rounds), and the thoracic spine rounds. When done slowly and with attention, the sequence reveals several key patterns: stiff thoracic segments that don't flex or extend (compensation moves to lumbar), anterior or posterior pelvic tilt biases, restricted hip flexor or hamstring range, and poor coordination between pelvic movement and spinal movement. For practitioners and clinicians, cat-cow is one of the most informative movement screens available. For learners, it is the first concrete experience of conscious pelvic control." },
+            { label: "Why It Matters", content: "Cat-cow is rarely harmful and is widely recommended for disc-related lower back pain. The risks are minimal — moving too aggressively into end-range spinal flexion with loaded discs is the main caution." },
+            { label: "What To Do", content: ["The full sequence activates erector spinae, multifidus, rectus abdominis, TVA, hip flexors, and glutes in an integrated, coordinated pattern"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "back-line",
+      label: "The Superficial Back Line",
+      subtitle: "The continuous tension line from your heel to your skull",
+      icon: "∥",
+      accent: "#4AADA8",
+      level: 2,
+      cards: [
+        {
+          id: "superficial-back-line",
+          term: "The Superficial Back Line",
+          brief: "A continuous myofascial line running from the sole of the foot to the top of the skull — the body's longest and most clinically significant fascial chain.",
+          mnemonic: "Think of the Superficial Back Line as a single long guitar string running up the back of your body. Tighten one end (the plantar fascia) and the whole string vibrates — including the far end (the suboccipital muscles at the base of your skull).",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Mapped by Thomas Myers in Anatomy Trains (4th ed., Elsevier, 2020) and supported by dissection research (Wilke et al., 2016), the Superficial Back Line (SBL) runs: plantar fascia → Achilles tendon → gastrocnemius/soleus → hamstrings → sacrotuberous ligament → thoracolumbar fascia → erector spinae → nuchal ligament → scalp fascia. This is not a metaphor — each transition point has been verified anatomically as a continuous fascial connection. The practical implication is profound: \"hamstring tightness\" is often a manifestation of tension anywhere along this line — tight calves, a stiff thoracolumbar fascia, or even a restricted suboccipital region. Treatment that addresses only the hamstrings while ignoring the rest of the line will provide only temporary relief." },
+            { label: "Why It Matters", content: "Plantar fasciitis — inflammation at the very base of the SBL — is often accompanied by calf tightness, hamstring restriction, and lower back pain. These are not separate problems — they are one problem expressed at multiple locations along the same line." },
+            { label: "What To Do", content: ["Forward fold with progression from ankle to neck", "full-body foam rolling along the posterior chain", "yoga sequences emphasizing the posterior body"] },
+          ],
+        },
+        {
+          id: "why-stretching-doesnt-work",
+          term: "Why Stretching Doesn't Always Work",
+          brief: "Stretching a single muscle provides only temporary relief when the restriction is part of a continuous fascial chain — you have to address the whole line.",
+          mnemonic: "Imagine a sweater that's been snagged. Pulling on the snagged area makes it worse. You have to find where it caught and release it there — not just at the point of tightness.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "When the body experiences tension in a myofascial line, it distributes that tension across the entire chain. Stretching an isolated muscle (like the hamstring) temporarily increases its length locally, but if the restriction originates elsewhere in the chain (calves, thoracolumbar fascia), the tension returns quickly as the chain re-establishes its global tension. This is why many people stretch their hamstrings for years with minimal lasting change. Effective treatment addresses the full line — mobilizing the plantar fascia, releasing the calves, working the thoracolumbar region, and then reassessing hamstring length. This principle applies to all myofascial lines, not just the SBL." },
+            { label: "Why It Matters", content: "Aggressive, repeated isolated stretching of a symptomatic site can actually increase irritation. If a muscle is \"tight\" because it's bearing load from a restricted chain, repeatedly stretching it while the chain remains restricted creates persistent microtrauma at the symptomatic site." },
+            { label: "What To Do", content: ["Sequential chain mobilization: plantar fascia rolling → calf stretching → hamstring lengthening → lumbar mobility → neck mobility"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "crossed-syndromes",
+      label: "Crossed Syndromes",
+      subtitle: "The predictable patterns of tightness and weakness that create postural dysfunction",
+      icon: "✕",
+      accent: "#8A6AAA",
+      level: 2,
+      cards: [
+        {
+          id: "upper-crossed-syndrome",
+          term: "Upper Crossed Syndrome",
+          brief: "The posture of modern life — tight chest and upper traps cross with weak deep neck flexors and lower traps, creating forward head posture and shoulder impingement.",
+          mnemonic: "Draw an X across the upper body. Tight pecs (front, below) cross with tight upper traps (back, above). Weak deep neck flexors (front, above) cross with weak lower traps and rhomboids (back, below). This X creates the hunched, forward-head posture visible in almost every person using a screen.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Upper Crossed Syndrome (UCS), described by Vladimir Janda, involves a characteristic pattern of overactivity in the pectoralis major/minor and upper trapezius, paired with underactivity in the deep cervical flexors and lower/middle trapezius and serratus anterior. The result is a predictable postural change: forward head posture, increased cervical lordosis, thoracic kyphosis, elevated and protracted (forward) shoulders, and reduced glenohumeral joint space. UCS is nearly universal in people who spend significant time at screens and is the primary driver of neck pain, tension headaches, and shoulder impingement in the general population. Physiopedia's clinical review notes that this pattern creates observable postural changes that are now endemic in modern populations." },
+            { label: "Why It Matters", content: "The forward head position of UCS increases the effective weight of the head on the cervical spine — for every inch of forward head posture, the perceived load on the neck increases by approximately 10 pounds. This chronic loading contributes to cervical disc compression, tension headaches, and shoulder impingement through reduced subacromial space." },
+            { label: "What To Do", content: ["Pec stretching", "chin tucks (deep cervical flexor activation)", "lower trap exercises (prone Y-raise, face pull)", "thoracic extension over foam roller", "shoulder external rotation work"] },
+          ],
+        },
+        {
+          id: "compensation-pattern",
+          term: "The Compensation Pattern",
+          brief: "When one part of the kinetic chain fails, an adjacent joint takes over its role — doing a job it was not designed for, eventually breaking down itself.",
+          mnemonic: "When the weakest link in a chain breaks, the load doesn't disappear — it transfers to the next link. The body does the same thing. The site of pain is often not the site of the problem.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Compensation patterns are the body's adaptive response to movement dysfunction. When a joint or muscle fails to perform its designed role, the kinetic chain reorganizes to maintain function — but at the cost of loading adjacent structures inappropriately. Classic examples: limited ankle dorsiflexion → excessive knee valgus during squatting; glute max weakness → lumbar hyperextension during hip extension; upper trap dominance → shoulder impingement during overhead movement. In each case, the site of eventual pain is not where the dysfunction originated. This is why treating only the symptomatic site — without identifying and addressing the root cause — typically leads to temporary relief followed by recurrence. The most important clinical skill in movement assessment is tracing the chain from symptom back to source." },
+            { label: "Why It Matters", content: "Compensation patterns, if allowed to persist, eventually load passive structures (ligaments, joint capsules, discs) beyond their design tolerances. Unlike muscles, these structures have limited healing capacity — making early identification and correction of compensation patterns essential for long-term joint health." },
+            { label: "What To Do", content: ["Movement screening to identify compensation (overhead squat, single-leg squat, hip extension pattern)", "addressing root cause before treating symptoms"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "core-stability",
+      label: "Core Stability vs. Strength",
+      subtitle: "Why planks matter more than crunches — and why they're not the same thing",
+      icon: "▣",
+      accent: "#6B8FBF",
+      level: 2,
+      cards: [
+        {
+          id: "stability-vs-strength",
+          term: "Stability vs. Strength",
+          brief: "Core strength measures how much force the trunk muscles can produce. Core stability measures how well they coordinate to protect the spine — and it's stability, not strength, that prevents injury.",
+          mnemonic: "A skyscraper doesn't stand because its steel is the strongest available — it stands because the forces within it are coordinated and distributed efficiently. A strong core without stability is a skyscraper with misaligned beams.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Core strength refers to the maximal force production capacity of the trunk muscles — how much a person can curl, flex, and resist. Core stability refers to the ability of the deep stabilization system (TVA, multifidus, diaphragm, pelvic floor) to co-activate with precise timing and appropriate magnitude to maintain spinal stiffness under varying loads. Stuart McGill's research established that most spinal injuries are not caused by muscle weakness but by poor motor control — the wrong muscles activating at the wrong time, or the right muscles failing to activate at all. A person with a strong rectus abdominis but poor deep core coordination is at greater injury risk than someone with modest strength and excellent coordination. This explains why conventional \"core work\" (crunches, sit-ups) fails to prevent back pain — it trains the wrong qualities." },
+            { label: "Why It Matters", content: "Spinal loading studies (McGill, University of Waterloo) show that sit-ups and crunches impose compressive loads on the lumbar spine exceeding safe tolerances for people with disc pathology. The repeated flexion under load — exactly the movement pattern associated with disc herniation — makes these exercises contraindicated for individuals with back pain or disc dysfunction." },
+            { label: "What To Do", content: ["McGill's Big Three (bird dog, curl-up, side plank) — designed to build endurance in stabilizers without spinal flexion", "Dead bug", "Pallof press", "plank variations"] },
+          ],
+        },
+        {
+          id: "anticipatory-core-activation",
+          term: "Anticipatory Core Activation",
+          brief: "A healthy deep core fires before the limbs move — a pre-emptive stability response that is disrupted by pain, injury, and inactivity.",
+          mnemonic: "A healthy core is like a seatbelt that tightens before a crash — not after. Pain, injury, and sedentary habits turn it into a seatbelt that only responds after impact.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Research by Paul Hodges and Carolyn Richardson (1996, 1998) used electromyography to demonstrate that in healthy individuals, the transverse abdominis activates 30–110 milliseconds before any limb movement — whether lifting an arm, stepping, or throwing. This feedforward activation is automatic and unconscious: the brain anticipates the destabilizing effect of limb movement and pre-stiffens the spine before the movement occurs. In individuals with chronic low back pain, this timing is consistently delayed or absent — the core responds to movement rather than anticipating it. Importantly, this timing impairment persists even after pain resolves, which is why back pain tends to recur without specific rehabilitation. Retraining anticipatory activation — not just strengthening the muscles — is the clinical target." },
+            { label: "Why It Matters", content: "The absence of anticipatory core activation means that each movement begins with an unprotected spine. For low-load activities this is manageable; under high loads or unexpected perturbations (tripping, catching a falling object), the unprotected spine is vulnerable to acute injury." },
+            { label: "What To Do", content: ["Dead bug (emphasizing TVA pre-activation before limb movement)", "bird dog", "diaphragmatic breathing to restore coordination", "slow deliberate loaded movements with attention to bracing"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "kinetic-chain",
+      label: "The Kinetic Chain & Injury",
+      subtitle: "Why the injury site is often not the problem site",
+      icon: "⟶",
+      accent: "#5A8FAA",
+      level: 2,
+      cards: [
+        {
+          id: "the-kinetic-chain",
+          term: "The Kinetic Chain",
+          brief: "A framework for understanding the body as a linked system — where movement (and dysfunction) at one joint affects every joint connected to it.",
+          mnemonic: "A bicycle chain. If one link is bent or broken, the whole chain runs poorly. Fix only the bent link without fixing why it bent — and it bends again.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "The kinetic chain concept, adapted from engineering by Dr. Arthur Steindler (1955) and widely applied in sports medicine and rehabilitation, describes the body as a series of interconnected segments — joints and muscles — where movement in one segment inevitably influences adjacent segments. A peer-reviewed PMC study (2023) defines the kinetic chain as \"the body's intricate coordination of various segments to perform a specific activity involving precise positioning, timing, and speed.\" The body core (lumbopelvic-hip complex) is the central hub through which forces are transferred between the upper and lower extremities. Disruption at any link — limited ankle mobility, weak hip abductors, restricted thoracic rotation — creates compensatory loading elsewhere. Over time, compensated joints develop pathology from loads they were not designed to sustain." },
+            { label: "Why It Matters", content: "Any blockage or defect in the kinetic chain creates compensatory patterns and overuse injuries in adjacent structures (PMC, 2023). The clinical implication: treatment of the symptomatic site without assessment of the chain above and below it will reliably fail." },
+            { label: "What To Do", content: ["Kinetic chain assessment (overhead squat, single-leg deadlift, walking gait)", "movement pattern correction starting from the base of the chain"] },
+          ],
+        },
+        {
+          id: "proximal-distal-force",
+          term: "Proximal-to-Distal Force Transfer",
+          brief: "Power and stability generated at the center of the body (pelvis, core) are transmitted outward to the extremities — the source of most athletic power and most athletic injury.",
+          mnemonic: "A bullwhip generates force at the handle (proximal) and delivers it at the tip (distal). A weak handle creates a limp whip. A strong, stable core creates powerful extremities — and a weak core forces the extremities to generate their own stability.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Proximal-to-distal sequencing describes the biomechanical principle that efficient movement begins with stabilization and force generation at the proximal segments (core, hip, shoulder girdle) before the force is transferred to the distal segments (forearm, hand, foot). This principle applies to throwing, kicking, punching, and all explosive sports movements. PMC research confirms that \"the contribution of more body segments in the total force output leads to higher potential velocity at the distal part.\" When the proximal segments (core and hip) are insufficient, the distal segments (elbow, knee, ankle) are forced to compensate — generating forces they cannot safely sustain, leading to overuse injury." },
+            { label: "Why It Matters", content: "\"Tennis elbow\" in recreational players is often a wrist and forearm problem driven by insufficient core and shoulder rotation. Pitcher's elbow is driven by inadequate hip rotation and core stability forcing the elbow to compensate. In both cases, treating only the elbow while ignoring the chain is why these injuries recur." },
+            { label: "What To Do", content: ["Rotational medicine ball throws", "cable chops", "hip-to-shoulder integrated movements", "any exercise that loads the core before the extremities"] },
+          ],
+        },
+      ],
+    },
+    {
+      id: "mobility-stability",
+      label: "Mobility vs. Stability",
+      subtitle: "Why some joints need to move freely, and others need to brace — and what happens when they get confused",
+      icon: "⇌",
+      accent: "#7BA688",
+      level: 2,
+      cards: [
+        {
+          id: "joint-by-joint",
+          term: "The Joint-by-Joint Approach",
+          brief: "Joints alternate between needing mobility (freedom to move) and needing stability (resistance to unwanted movement) — and when a mobility joint loses range, the stability joint above or below it is forced to compensate.",
+          mnemonic: "Mobility-Stability-Mobility-Stability up the chain, from ankle to skull. When mobility is lost at one joint, the stability joint takes up the slack — doing a job it wasn't designed for, and eventually breaking down.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "Developed by physical therapist Gray Cook and strength coach Mike Boyle, the Joint-by-Joint approach maps the mobility and stability demands of each joint in the kinetic chain: ankle (mobility), knee (stability), hip (mobility), lumbar spine (stability), thoracic spine (mobility), scapula (stability), glenohumeral joint (mobility), elbow (stability), wrist (mobility). When a mobility joint loses range — tight hips, stiff thoracic spine, limited ankles — the adjacent stability joint compensates by moving into ranges it was not designed for. This is the fundamental mechanism behind most chronic musculoskeletal pain patterns: the lumbar spine moving when it should be stable (because the hip or thoracic spine won't), or the knee rotating when it should be stable (because the hip won't externally rotate adequately)." },
+            { label: "Why It Matters", content: "The most common manifestation: the hip loses mobility → the lumbar spine compensates by rotating and extending → lumbar disc and facet joint pathology follows. Or: the ankle loses dorsiflexion → the knee compensates by collapsing inward → patellofemoral pain and ACL stress follow. Restoring mobility at the correct joint is the intervention — not treating the pain at the stability joint." },
+            { label: "What To Do", content: ["Hip mobility: 90/90, pigeon, hip CARs", "Thoracic mobility: thoracic extension over foam roller, rotation drills", "Ankle mobility: dorsiflexion drills, calf stretching", "Knee stability: terminal knee extension, single-leg squat"] },
+          ],
+        },
+        {
+          id: "thoracic-spine",
+          term: "The Thoracic Spine — the Most Neglected Region",
+          brief: "The mid-back (T1-T12) should be the most mobile rotational region of the spine — but it is chronically stiff in most people, forcing the lumbar spine and neck to compensate.",
+          mnemonic: "The thoracic spine is the trunk of the body's rotational tree. When the trunk is stiff, the branches (neck, lower back) bend more than they should — and eventually break.",
+          bodyMap: undefined,
+          tabs: [
+            { label: "The Concept", content: "The thoracic spine consists of 12 vertebrae and is the primary region for spinal rotation — each level contributes a few degrees of rotation, totaling approximately 35–50 degrees of rotation for the full thoracic spine. The thoracic spine's attachment to the rib cage provides inherent stiffness, but this should be mobility-limited, not locked. Chronic thoracic kyphosis (the \"tech neck\" posture) removes the thoracic spine's rotational capacity — a function it needs for every overhead movement, every rotational sport, and every deep breath. When thoracic rotation is lost, the lumbar spine (which should be stable) is forced to rotate compensatorily — compressing lumbar discs asymmetrically. Simultaneously, the shoulder complex loses its base of support, increasing impingement risk." },
+            { label: "Why It Matters", content: "Thoracic stiffness is one of the most undertreated contributors to both lower back pain and shoulder impingement. When the thoracic spine does not rotate adequately for overhead movements, the shoulder compensates with excessive glenohumeral movement — compressing the rotator cuff against the acromion." },
+            { label: "What To Do", content: ["Thoracic rotation stretch", "thoracic extension over foam roller", "cat-cow with focus on thoracic segments", "thread-the-needle stretch", "rotation in yoga poses"] },
           ],
         },
       ],
     },
   ],
 };
-
-export default bodyInMotion;

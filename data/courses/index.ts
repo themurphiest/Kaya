@@ -1,5 +1,5 @@
 import type { Course } from "@/data/types";
-import bodyInMotion from "./body-in-motion";
+import { bodyInMotion } from "./body-in-motion";
 import breathwork from "./breathwork";
 import mindfulness from "./mindfulness";
 import yogaSanskrit from "./yoga-sanskrit";
