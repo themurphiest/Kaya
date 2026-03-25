@@ -72,7 +72,7 @@ export default function CourseTile({
       </p>
 
       <div
-        className="flex items-center gap-4 text-[11px]"
+        className="flex items-center flex-wrap gap-x-3 gap-y-1 text-[11px]"
         style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
       >
         {isAvailable ? (

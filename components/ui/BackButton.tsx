@@ -16,7 +16,7 @@ export default function BackButton({
   return (
     <button
       onClick={() => (href ? router.push(href) : router.back())}
-      className="bg-none border-none text-[13px] cursor-pointer tracking-[0.05em] p-0 transition-colors"
+      className="bg-none border-none text-[13px] cursor-pointer tracking-[0.05em] p-0 transition-colors max-w-full overflow-hidden text-ellipsis whitespace-nowrap block"
       style={{
         fontFamily: "var(--font-mono)",
         color: "var(--text-muted)",

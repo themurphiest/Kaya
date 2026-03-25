@@ -22,7 +22,7 @@ export default function CardTabs({
             e.stopPropagation();
             onTabChange(i);
           }}
-          className="text-[11px] tracking-[0.04em] px-3.5 py-1 rounded-full cursor-pointer transition-all duration-150"
+          className="text-[11px] tracking-[0.04em] px-2.5 sm:px-3.5 py-1 rounded-full cursor-pointer transition-all duration-150"
           style={{
             fontFamily: "var(--font-mono)",
             background: activeIndex === i ? accent : "transparent",

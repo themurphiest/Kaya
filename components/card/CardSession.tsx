@@ -52,9 +52,11 @@ export default function CardSession({
   return (
     <div className="max-w-[520px] mx-auto px-5 pb-10">
       {/* Header */}
-      <div className="flex justify-between items-center pt-10 mb-5">
-        <BackButton href={backHref} label={`← ${courseTitle}`} />
-        <div className="text-right">
+      <div className="flex justify-between items-center gap-4 pt-10 mb-5">
+        <div className="min-w-0 shrink">
+          <BackButton href={backHref} label={`← ${courseTitle}`} />
+        </div>
+        <div className="text-right shrink-0">
           <div className="type-heading text-sm">
             {group.label}
           </div>

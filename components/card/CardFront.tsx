@@ -30,7 +30,7 @@ export default function CardFront({
       </div>
 
       {/* Term */}
-      <h2 className="type-display text-4xl leading-tight mb-4">
+      <h2 className="type-display text-[28px] sm:text-4xl leading-tight mb-4 break-words">
         {card.term}
       </h2>
 

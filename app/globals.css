@@ -171,6 +171,22 @@ body::after {
   animation: arrowPulse 1.8s ease-in-out infinite;
 }
 
+/* ─── Mobile Polish (≤ 480px) ──────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  .card-face {
+    padding: 32px 20px 24px;
+  }
+
+  .card-face-back {
+    padding: 24px 16px 20px;
+  }
+
+  :root {
+    --card-radius: 20px;
+  }
+}
+
 /* ─── Utility ───────────────────────────────────────────────────────────────── */
 
 .z-content {
