@@ -1,14 +1,12 @@
 import type { Course } from "@/data/types";
 import { bodyInMotion } from "./body-in-motion";
-import breathwork from "./breathwork";
-import mindfulness from "./mindfulness";
-import yogaSanskrit from "./yoga-sanskrit";
+import { movementConcepts } from "./movement-concepts";
+import { thePractice } from "./the-practice";
 
 export const COURSES: Course[] = [
   bodyInMotion,
-  breathwork,
-  mindfulness,
-  yogaSanskrit,
+  movementConcepts,
+  thePractice,
 ];
 
 export function getCourseBySlug(slug: string): Course | undefined {

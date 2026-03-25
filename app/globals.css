@@ -26,18 +26,28 @@
   --card-shadow: 0 8px 40px rgba(0, 0, 0, 0.40),
                  0 2px 8px rgba(0, 0, 0, 0.25);
 
-  /* Course accent colors — cool: teal, slate, sage, indigo */
+  /* Course accents */
   --accent-body:        #4AADA8;
   --accent-breathwork:  #6B8FBF;
   --accent-mindfulness: #7BA688;
   --accent-yoga:        #7B8FBF;
 
-  /* Group accent colors within Body in Motion */
-  --accent-movement: #4AADA8;
-  --accent-upper:    #6B8FBF;
-  --accent-core:     #7BA688;
-  --accent-lower:    #5A8FAA;
-  --accent-joints:   #8FA888;
+  /* Level 1 cluster accents — Body in Motion */
+  --accent-breath-core:     #4AADA8;
+  --accent-pelvic-engine:   #7BA688;
+  --accent-spine:           #6B8FBF;
+  --accent-posterior-chain: #5A8FAA;
+  --accent-shoulder:        #7B8FBF;
+  --accent-hip-knee:        #8FA888;
+  --accent-movement-vocab:  #A67C8A;
+
+  /* Level 2 concept accents — slightly warmer/deeper */
+  --accent-concept-1: #C4875A;
+  --accent-concept-2: #4AADA8;
+  --accent-concept-3: #8A6AAA;
+  --accent-concept-4: #6B8FBF;
+  --accent-concept-5: #5A8FAA;
+  --accent-concept-6: #7BA688;
 }
 
 /* ─── Base ──────────────────────────────────────────────────────────────────── */
@@ -147,6 +157,18 @@ body::after {
 
 .card-face-back {
   transform: rotateY(180deg);
+}
+
+/* ─── Body Map Motion Arrows ────────────────────────────────────────────────── */
+
+@keyframes arrowPulse {
+  0%   { opacity: 0; transform: translate(var(--arrow-dx-start, 0), var(--arrow-dy-start, 0)); }
+  50%  { opacity: 1; }
+  100% { opacity: 0; transform: translate(var(--arrow-dx-end, 0), var(--arrow-dy-end, 0)); }
+}
+
+.motion-arrow {
+  animation: arrowPulse 1.8s ease-in-out infinite;
 }
 
 /* ─── Utility ───────────────────────────────────────────────────────────────── */
