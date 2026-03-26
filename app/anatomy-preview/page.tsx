@@ -42,29 +42,105 @@ const posteriorData: MuscleData[] = [
   { muscle: "right-soleus", svgPoints: ["69.787234 195.744681 71.9148936 195.744681 73.6170213 198.297872 71.9148936 213.191489 70.212766 219.574468 67.2340426 202.12766"] },
 ];
 
+/* ── Cluster definitions ── */
+
+interface MuscleEntry {
+  label: string;
+  polygonIds: string[]; // muscle names that match polygon data
+  gap?: boolean;        // true = no polygon coverage
+}
+
+interface Cluster {
+  name: string;
+  accent: string;
+  muscles: MuscleEntry[];
+}
+
+const CLUSTERS: Cluster[] = [
+  {
+    name: "Shoulder Complex",
+    accent: "#7B8FBF",
+    muscles: [
+      { label: "Trapezius", polygonIds: ["trapezius"] },
+      { label: "Deltoids", polygonIds: ["front-deltoids", "back-deltoids"] },
+      { label: "Rotator Cuff", polygonIds: [], gap: true },
+    ],
+  },
+  {
+    name: "Pelvic Engine",
+    accent: "#7BA688",
+    muscles: [
+      { label: "Glutes", polygonIds: ["gluteal"] },
+      { label: "Gluteus Medius", polygonIds: ["abductor", "abductors"] },
+      { label: "Hip Flexors", polygonIds: [], gap: true },
+    ],
+  },
+  {
+    name: "Posterior Chain",
+    accent: "#4AADA8",
+    muscles: [
+      { label: "Hamstrings", polygonIds: ["hamstring"] },
+      { label: "Calves", polygonIds: ["calves", "left-soleus", "right-soleus"] },
+      { label: "Erector Spinae", polygonIds: ["lower-back"] },
+    ],
+  },
+  {
+    name: "Upper Body",
+    accent: "#6B8FBF",
+    muscles: [
+      { label: "Pectorals", polygonIds: ["chest"] },
+      { label: "Lats", polygonIds: ["upper-back"] },
+      { label: "Biceps", polygonIds: ["biceps"] },
+      { label: "Triceps", polygonIds: ["triceps"] },
+    ],
+  },
+  {
+    name: "Core & Spine",
+    accent: "#C4875A",
+    muscles: [
+      { label: "Rectus Abdominis", polygonIds: ["abs"] },
+      { label: "Obliques", polygonIds: ["obliques"] },
+    ],
+  },
+];
+
 /* ── Styles ── */
 
 const BG = "#1A2420";
 const BODY_FILL = "#1E2E28";
 const STROKE = "rgba(255,255,255,0.12)";
-const ACCENT = "#4AADA8";
 
-type Highlight = "hamstring" | "gluteal" | null;
+type ActiveSelection = { clusterIdx: number; muscleIdx: number } | null;
+
+function getHighlightSet(active: ActiveSelection): {
+  ids: Set<string>;
+  color: string;
+} {
+  if (!active) return { ids: new Set(), color: "" };
+  const cluster = CLUSTERS[active.clusterIdx];
+  const muscle = cluster.muscles[active.muscleIdx];
+  return { ids: new Set(muscle.polygonIds), color: cluster.accent };
+}
 
 function BodySvg({
   data,
-  highlight,
+  highlightIds,
+  highlightColor,
   label,
 }: {
   data: MuscleData[];
-  highlight: Highlight;
+  highlightIds: Set<string>;
+  highlightColor: string;
   label: string;
 }) {
   return (
     <div className="flex flex-col items-center gap-3">
       <span
         className="text-[11px] tracking-[0.08em] uppercase"
-        style={{ color: "rgba(255,255,255,0.4)", fontFamily: "var(--font-mono)" }}
+        style={{
+          color: "rgba(255,255,255,0.4)",
+          fontFamily: "var(--font-mono)",
+        }}
       >
         {label}
       </span>
@@ -76,18 +152,15 @@ function BodySvg({
       >
         {data.map((group) =>
           group.svgPoints.map((points, i) => {
-            const isHighlighted =
-              (highlight === "hamstring" && group.muscle === "hamstring") ||
-              (highlight === "gluteal" && group.muscle === "gluteal");
-
+            const lit = highlightIds.has(group.muscle);
             return (
               <polygon
                 key={`${group.muscle}-${i}`}
                 points={points}
                 style={{
-                  fill: isHighlighted ? ACCENT : BODY_FILL,
-                  stroke: isHighlighted ? ACCENT : STROKE,
-                  strokeWidth: isHighlighted ? 1.2 : 0.8,
+                  fill: lit ? highlightColor : BODY_FILL,
+                  stroke: lit ? highlightColor : STROKE,
+                  strokeWidth: lit ? 1.2 : 0.8,
                   transition: "fill 0.3s ease, stroke 0.3s ease",
                 }}
               />
@@ -100,49 +173,135 @@ function BodySvg({
 }
 
 export default function AnatomyPreview() {
-  const [highlight, setHighlight] = useState<Highlight>(null);
+  const [active, setActive] = useState<ActiveSelection>(null);
+  const { ids, color } = getHighlightSet(active);
+
+  const activeLabel = active
+    ? CLUSTERS[active.clusterIdx].muscles[active.muscleIdx].label
+    : null;
+
+  const activeClusterName = active
+    ? CLUSTERS[active.clusterIdx].name
+    : null;
 
   return (
     <div
-      className="min-h-screen flex flex-col items-center justify-center px-4 py-12 gap-10"
+      className="min-h-screen flex flex-col items-center px-4 py-12 gap-10"
       style={{ background: BG }}
     >
       <h1
         className="text-[15px] tracking-[0.12em] uppercase"
-        style={{ color: "rgba(255,255,255,0.5)", fontFamily: "var(--font-mono)" }}
+        style={{
+          color: "rgba(255,255,255,0.5)",
+          fontFamily: "var(--font-mono)",
+        }}
       >
         Anatomy Preview
       </h1>
 
+      {/* Body figures */}
       <div className="flex gap-8 sm:gap-14 items-start">
-        <BodySvg data={anteriorData} highlight={highlight} label="Anterior" />
-        <BodySvg data={posteriorData} highlight={highlight} label="Posterior" />
+        <BodySvg
+          data={anteriorData}
+          highlightIds={ids}
+          highlightColor={color}
+          label="Anterior"
+        />
+        <BodySvg
+          data={posteriorData}
+          highlightIds={ids}
+          highlightColor={color}
+          label="Posterior"
+        />
       </div>
 
-      <div className="flex gap-3">
-        {(["hamstring", "gluteal"] as const).map((muscle) => (
-          <button
-            key={muscle}
-            onClick={() => setHighlight((h) => (h === muscle ? null : muscle))}
-            className="text-[12px] tracking-[0.05em] px-5 py-2 rounded-full cursor-pointer transition-all duration-150"
-            style={{
-              fontFamily: "var(--font-mono)",
-              background: highlight === muscle ? ACCENT : "transparent",
-              color: highlight === muscle ? "#fff" : "rgba(255,255,255,0.5)",
-              border: `1.5px solid ${highlight === muscle ? ACCENT : "rgba(255,255,255,0.18)"}`,
-            }}
-          >
-            Highlight {muscle === "hamstring" ? "hamstrings" : "glutes"}
-          </button>
+      {/* Active muscle label */}
+      <div
+        className="h-6 text-[13px] tracking-[0.06em] transition-opacity duration-200"
+        style={{
+          fontFamily: "var(--font-mono)",
+          color: active ? color : "transparent",
+          opacity: active ? 1 : 0,
+        }}
+      >
+        {activeLabel && (
+          <>
+            <span style={{ opacity: 0.5 }}>{activeClusterName} &rarr;</span>{" "}
+            {activeLabel}
+          </>
+        )}
+      </div>
+
+      {/* Cluster button groups */}
+      <div className="flex flex-col gap-6 w-full max-w-xl">
+        {CLUSTERS.map((cluster, ci) => (
+          <div key={cluster.name} className="flex flex-col gap-2">
+            <span
+              className="text-[10px] tracking-[0.1em] uppercase"
+              style={{
+                fontFamily: "var(--font-mono)",
+                color: cluster.accent,
+                opacity: 0.7,
+              }}
+            >
+              {cluster.name}
+            </span>
+            <div className="flex flex-wrap gap-2">
+              {cluster.muscles.map((muscle, mi) => {
+                const isActive =
+                  active?.clusterIdx === ci && active?.muscleIdx === mi;
+                const isGap = muscle.gap;
+
+                return (
+                  <button
+                    key={muscle.label}
+                    onClick={() =>
+                      setActive((prev) =>
+                        prev?.clusterIdx === ci && prev?.muscleIdx === mi
+                          ? null
+                          : { clusterIdx: ci, muscleIdx: mi }
+                      )
+                    }
+                    disabled={isGap}
+                    className="text-[11px] tracking-[0.04em] px-3.5 py-1.5 rounded-full transition-all duration-150"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      cursor: isGap ? "default" : "pointer",
+                      opacity: isGap ? 0.3 : 1,
+                      background: isActive ? cluster.accent : "transparent",
+                      color: isActive ? "#fff" : "rgba(255,255,255,0.5)",
+                      border: `1.5px solid ${
+                        isActive
+                          ? cluster.accent
+                          : isGap
+                          ? "rgba(255,255,255,0.08)"
+                          : "rgba(255,255,255,0.18)"
+                      }`,
+                    }}
+                    title={isGap ? "No polygon data (deep muscle)" : undefined}
+                  >
+                    {muscle.label}
+                    {isGap && " *"}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
         ))}
       </div>
 
+      {/* Coverage note */}
       <p
-        className="text-[11px] max-w-md text-center leading-relaxed"
-        style={{ color: "rgba(255,255,255,0.25)", fontFamily: "var(--font-mono)" }}
+        className="text-[10px] max-w-md text-center leading-relaxed"
+        style={{
+          color: "rgba(255,255,255,0.22)",
+          fontFamily: "var(--font-mono)",
+        }}
       >
-        Polygon data from react-body-highlighter (MIT). Anterior + posterior views,
-        100 &times; 200 viewBox, all muscles selectable.
+        * No polygon coverage (deep muscles). Polygon data from
+        react-body-highlighter (MIT).
+        <br />
+        Lats mapped to upper-back region, erector spinae mapped to lower-back.
       </p>
     </div>
   );
