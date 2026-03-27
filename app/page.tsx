@@ -1,5 +1,6 @@
 import { COURSES } from "@/data/courses";
 import CourseGrid from "@/components/library/CourseGrid";
+import SourcesSheet from "@/components/library/SourcesSheet";
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       </div>
 
       <CourseGrid courses={COURSES} />
+      <SourcesSheet />
     </main>
   );
 }

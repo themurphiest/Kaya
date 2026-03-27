@@ -1,4 +1,25 @@
-import type { Course } from "../types";
+import type { Course, MuscleHighlight, ChainLine } from "../types";
+
+const chainMuscles: MuscleHighlight[] = [
+  { muscle: "trapezius", opacity: 0.6 },
+  { muscle: "upper-back", opacity: 0.6 },
+  { muscle: "lower-back", opacity: 0.7 },
+  { muscle: "gluteal", opacity: 0.7 },
+  { muscle: "hamstring", opacity: 0.8 },
+  { muscle: "calves", opacity: 0.8 },
+  { muscle: "left-soleus", opacity: 0.8 },
+  { muscle: "right-soleus", opacity: 0.8 },
+];
+
+const chainLine: ChainLine = {
+  points: [
+    { x: 50, y: 99 }, { x: 49, y: 90 }, { x: 49, y: 80 },
+    { x: 50, y: 70 }, { x: 50, y: 61 }, { x: 50, y: 52 },
+    { x: 50, y: 43 }, { x: 50, y: 34 }, { x: 50, y: 20 },
+    { x: 50, y: 10 }, { x: 50, y: 4 },
+  ],
+  animated: true,
+};
 
 export const bodyInMotion: Course = {
   id: "body-in-motion",
@@ -82,7 +103,7 @@ export const bodyInMotion: Course = {
           term: "Rectus Abdominis",
           brief: "The paired vertical muscle running down the front of the abdomen — the visible \"six-pack\" and the most superficial of the abdominal muscles.",
           mnemonic: "RECTUS = straight (Latin) — it runs straight down the front, like a ruler. It's the most visible ab muscle, but not the most important one for stability.",
-          bodyMap: undefined,
+          bodyMap: { view: "anterior", muscles: [{ muscle: "abs" }] },
           tabs: [
             { label: "Details", content: "The rectus abdominis runs from the pubic crest to the sternum and ribs, divided into segments by tendinous intersections that create the visible \"six-pack\" appearance. Its primary action is spinal flexion (curling the trunk forward) and compression of the abdominal cavity. Despite its cultural status as the symbol of core fitness, the rectus abdominis plays a minor role in spinal stability compared to the deep core canister. It is a global mover, not a local stabilizer. A large, strong rectus combined with a dysfunctional deep core is a common and problematic pattern — appearing fit on the surface while being unstable underneath." },
             { label: "Activates", content: ["Crunch", "hanging leg raise", "ab wheel rollout", "boat pose", "dragon flag"] },
@@ -116,7 +137,7 @@ export const bodyInMotion: Course = {
           term: "Anterior Pelvic Tilt",
           brief: "A forward rotation of the pelvis that increases the lumbar curve — associated with tight hip flexors, weak glutes, and lower back pain.",
           mnemonic: "ANTErior = front. The front of the pelvis tips DOWN (like pouring water from the front of a bowl). The lower back arches up as a result.",
-          bodyMap: undefined,
+          bodyMap: { view: "anterior", muscles: [], motion: { type: "anterior-tilt", label: "pelvis tips forward" } },
           tabs: [
             { label: "Details", content: "Anterior pelvic tilt (APT) occurs when the front of the pelvis (ASIS) drops lower than the back (PSIS), increasing lumbar lordosis. Clinically, it is associated with a pattern described by Vladimir Janda as \"Lower Crossed Syndrome\": tight hip flexors (iliopsoas) and lumbar extensors pull the pelvis forward, while weak glutes and abdominals fail to resist. The result is a constantly arched lower back, compressed posterior lumbar discs and facet joints, and chronically shortened hip flexors. Importantly, mild APT is normal — the clinical significance is not the position itself but whether the surrounding muscles can control movement through that position. Modern research notes that people with significant APT often have no pain, while those with minimal tilt can have severe pain — it's the dynamic control that matters, not static posture alone." },
             { label: "Activates", content: ["Hip flexor stretching", "glute bridges", "hip thrusts", "dead bugs", "posterior pelvic tilt exercises"] },
@@ -128,7 +149,7 @@ export const bodyInMotion: Course = {
           term: "Posterior Pelvic Tilt",
           brief: "A backward rotation of the pelvis that flattens the lumbar curve — often driven by tight hamstrings and associated with disc pressure and chronic sitting.",
           mnemonic: "POSTerior = back. The back of the pelvis tips DOWN. The lumbar curve flattens or even reverses — the \"tucked under\" posture.",
-          bodyMap: undefined,
+          bodyMap: { view: "anterior", muscles: [], motion: { type: "posterior-tilt", label: "pelvis tips backward" } },
           tabs: [
             { label: "Details", content: "Posterior pelvic tilt (PPT) occurs when the PSIS drops lower than the ASIS, reducing or reversing the normal lumbar lordosis. It is the characteristic posture of prolonged sitting and is strongly associated with tight hamstrings (which pull the ischial tuberosities backward) and weak hip flexors. The flattened lumbar spine increases anterior disc pressure and places the posterior ligaments under sustained tension. Research by Braman (2016) demonstrated that hamstring tightness directly influences pelvic tilt during functional movement, affecting the entire lumbopelvic kinematic chain. PPT also places the glutes in a lengthened (and therefore weaker) position, reducing their capacity to extend the hip effectively." },
             { label: "Activates", content: ["Hip flexor strengthening", "lumbar extension work", "cat-cow (focusing on the anterior tilt direction)", "standing hip flexor stretches"] },
@@ -152,7 +173,7 @@ export const bodyInMotion: Course = {
           term: "Gluteus Maximus",
           brief: "The largest muscle in the body — the primary driver of hip extension and a critical counterbalance to the hip flexors.",
           mnemonic: "MAX = the maximum, the biggest. The glute MAX is the main event of the posterior chain. If it goes quiet, something else has to do its job — and that something else eventually gets hurt.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: [{ muscle: "gluteal" }] },
           tabs: [
             { label: "Details", content: "The gluteus maximus originates from the ilium, sacrum, and coccyx and inserts into the femur and iliotibial band. Its primary function is hip extension — driving the thigh backward — which is fundamental to walking, running, jumping, and rising from a seated position. It also externally rotates the hip and contributes to pelvic stability. Despite being the body's largest muscle, the glute max is frequently inhibited in people who sit for long periods — a phenomenon Janda called \"gluteal amnesia.\" When the glute max underperforms, the hamstrings and lower back compensate, taking on loads they are not designed to sustain." },
             { label: "Activates", content: ["Hip thrust", "glute bridge", "deadlift", "step-up", "single-leg hip thrust", "Bulgarian split squat"] },
@@ -164,7 +185,7 @@ export const bodyInMotion: Course = {
           term: "Gluteus Medius",
           brief: "The hip stabilizer — a fan-shaped muscle on the outer hip that controls pelvic level with every step you take.",
           mnemonic: "MEDius = the middle glute. Think of it as the HIP STABILIZER. Weak glute med = the hip sinks when you walk. Strong glute med = the pelvis stays level.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: [{ muscle: "abductor" }] },
           tabs: [
             { label: "Details", content: "The gluteus medius fans out on the outer surface of the ilium, attaching to the greater trochanter of the femur. Its most critical function is preventing the pelvis from dropping on the opposite side during single-leg stance — the action that occurs with every single step during walking and running. This frontal-plane pelvic control is tested by the Trendelenburg sign: if the hip drops during single-leg stance, glute med is insufficient. The glute med also abducts the hip and contributes to internal and external rotation depending on which fiber group is engaged." },
             { label: "Activates", content: ["Clamshell", "side-lying leg raise", "lateral band walk", "single-leg deadlift", "single-leg squat"] },
@@ -234,7 +255,7 @@ export const bodyInMotion: Course = {
           term: "Erector Spinae",
           brief: "Three vertical muscles running along either side of the spine that keep you upright against gravity and resist forward bending under load.",
           mnemonic: "ERECTOR = they erect you upright. Like the columns of a building, these muscles hold the spine tall. They work all day, every day — they are endurance muscles, not power muscles.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: [{ muscle: "lower-back" }, { muscle: "upper-back" }] },
           tabs: [
             { label: "Details", content: "The erector spinae group consists of three columns: the iliocostalis (outermost, controls lateral flexion), longissimus (middle, longest — runs from the sacrum to the cervical spine), and spinalis (innermost, closest to the spinous processes). Together they extend the spine, resist forward flexion under load, and contribute to lateral bending and rotation. They are classified as global stabilizers and global mobilizers — meaning they produce and resist movement, but work over multiple spinal segments rather than providing the segment-by-segment stabilization of the multifidus. The erectors work continuously during sitting and standing to maintain posture against gravity — they are designed for sustained low-level endurance, not peak power." },
             { label: "Activates", content: ["Deadlift (isometric hold)", "good morning", "back extension", "bird dog", "Superman hold"] },
@@ -268,7 +289,7 @@ export const bodyInMotion: Course = {
           term: "The Posterior Chain",
           brief: "A continuous line of interconnected muscles and fascia running from the plantar fascia of the foot to the suboccipital muscles at the base of the skull.",
           mnemonic: "Think of the posterior chain as a single long cable running up the back of your body. Tighten one end and the whole cable pulls taut — including the far end.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: chainMuscles, chain: chainLine },
           tabs: [
             { label: "Details", content: "The posterior chain is the collective term for the muscles along the back of the body that work together to extend, support, and drive the body. In functional anatomy, it refers specifically to: plantar fascia → Achilles tendon → gastrocnemius and soleus → hamstrings → sacrotuberous ligament → thoracolumbar fascia → erector spinae → suboccipital muscles. Thomas Myers mapped this entire line in Anatomy Trains (4th ed., Elsevier, 2020) as the Superficial Back Line — a continuous myofascial connection from the bottom of the foot to the top of the skull, verified by dissection and research (Wilke et al., 2016, Archives of Physical Medicine and Rehabilitation). Tension in one part — tight calves, for example — transmits along the entire chain and can manifest as tightness in the hamstrings, lower back, or even neck." },
             { label: "Activates", content: ["Deadlift", "Romanian deadlift", "Nordic curl", "glute-ham raise", "back extension", "any hip hinge pattern"] },
@@ -280,7 +301,7 @@ export const bodyInMotion: Course = {
           term: "Hamstrings",
           brief: "Three muscles on the back of the thigh that flex the knee and extend the hip — critical for running, decelerating, and protecting the pelvis.",
           mnemonic: "HAM-strings = taut strings running along the back of the thigh. HAM = where a pig's hind leg is cut — the same region as yours. They string from the sit bone to the shin.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: [{ muscle: "hamstring" }] },
           tabs: [
             { label: "Details", content: "The hamstrings consist of three muscles: biceps femoris (long and short head), semimembranosus, and semitendinosus. They originate from the ischial tuberosity (the sit bone) and insert into the tibia and fibula. Because they cross both the hip and the knee, they simultaneously extend the hip and flex the knee. The hamstrings work eccentrically (lengthening under load) during the late swing phase of running to decelerate the leg — this eccentric loading phase is where most hamstring strains occur. The hamstrings also exert a posterior tilting force on the pelvis — when tight, they flatten the lumbar curve and limit hip flexion. Hamstring flexibility is described in peer-reviewed literature as \"the most important muscle influencing pelvic position\" in the sagittal plane (PMC, 2023)." },
             { label: "Activates", content: ["Romanian deadlift (eccentric focus)", "Nordic hamstring curl (injury prevention gold standard)", "leg curl", "glute-ham raise", "yoga forward fold"] },
@@ -292,7 +313,7 @@ export const bodyInMotion: Course = {
           term: "Gastrocnemius & Soleus",
           brief: "The two calf muscles — one for power and speed, one for endurance and posture — sharing the Achilles tendon and the base of the posterior chain.",
           mnemonic: "GAS = fast and powerful (it has a visible belly). SOL = steady and enduring (think: SOLe of the foot — it does the slow, sustained work). They share one tendon but have different jobs.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: [{ muscle: "calves" }, { muscle: "left-soleus" }, { muscle: "right-soleus" }] },
           tabs: [
             { label: "Details", content: "The gastrocnemius is the larger, more superficial calf muscle with two heads merging into the Achilles tendon. It crosses both the knee and the ankle — functioning as both a knee flexor and a plantarflexor. It is best trained with the knee straight. The soleus is deeper, shorter, and crosses only the ankle. It is dominant during walking and prolonged standing — functioning as a powerful venous pump returning blood from the lower leg to the heart. Both muscles plantarflex the ankle (pointing the foot). Together they form the muscular base of the posterior chain, and their fascial connection to the hamstrings via the popliteal fascia means their tension directly influences the chain above." },
             { label: "Activates", content: ["Standing calf raise (gastrocnemius)", "seated calf raise with bent knee (soleus)", "single-leg calf raise", "jump rope", "downward dog"] },
@@ -338,7 +359,7 @@ export const bodyInMotion: Course = {
           term: "Rotator Cuff (SITS)",
           brief: "Four muscles wrapping the shoulder joint that act as a dynamic seatbelt — holding the ball in the socket during every arm movement.",
           mnemonic: "SITS: Supraspinatus, Infraspinatus, Teres minor, Subscapularis. The shoulder SITS on four muscles. They don't create big movements — they control the small, precise positioning that allows big movements to happen safely.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: [{ muscle: "upper-back" }, { muscle: "back-deltoids" }] },
           tabs: [
             { label: "Details", content: "The four rotator cuff muscles — supraspinatus (superior), infraspinatus (posterior-superior), teres minor (posterior-inferior), and subscapularis (anterior) — originate from the scapula and insert into the humeral head. Their collective function is dynamic joint compression: keeping the humeral head centered in the glenoid during arm movement. Without rotator cuff activation, the larger, more powerful muscles (deltoid, pec, lat) would simply lever the ball out of the socket. The rotator cuff fires before the prime movers to pre-stabilize the shoulder. This anticipatory function is impaired by pain, fatigue, and disuse. The supraspinatus is particularly vulnerable due to its passage through the subacromial space — it can be compressed by overhead movements when the cuff is weak or the scapula is poorly controlled." },
             { label: "Activates", content: ["External rotation with band", "face pull", "prone Y-T-W", "side-lying ER", "empty can raise"] },
@@ -350,7 +371,7 @@ export const bodyInMotion: Course = {
           term: "Trapezius",
           brief: "A kite-shaped muscle spanning the upper back and neck with three distinct regions that each do different — and often opposing — jobs.",
           mnemonic: "TRAPezius = it TRAPs the shoulder blade, stabilizing it from three directions. But the upper trap is chronically overworked in stressed, desk-bound people. More lower trap, less upper trap — that's almost always the prescription.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: [{ muscle: "trapezius" }] },
           tabs: [
             { label: "Details", content: "The trapezius has three functionally distinct regions. The upper trapezius (descending) elevates the scapula and extends the neck — it is chronically overactive in people experiencing stress, prolonged sitting, and screen time. The middle trapezius (transverse fibers) retracts the scapula — pulling the shoulder blades together. The lower trapezius (ascending) depresses the scapula — pulling the shoulder blade downward, which is essential for creating space in the subacromial region during overhead movement. Most conventional training (shrugs, overhead pressing) heavily loads the upper trap while neglecting the lower trap. The resulting upper trap dominance is a primary driver of neck pain, headaches, and shoulder impingement." },
             { label: "Activates", content: ["Shrugs (upper)", "face pull/row (middle)", "Y-raise (lower)", "prone cobra", "overhead press (all regions)"] },
@@ -374,7 +395,7 @@ export const bodyInMotion: Course = {
           term: "Latissimus Dorsi",
           brief: "The broadest muscle in the back — the primary puller of the arm toward the body and a bridge between the arm and the pelvis.",
           mnemonic: "LATissimus = LATeral width. It makes you wide. \"LAT me pull you down\" — it literally pulls the arm toward the hip. And because it attaches to the pelvis, it connects the arm chain to the pelvic chain.",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: [{ muscle: "upper-back" }] },
           tabs: [
             { label: "Details", content: "The latissimus dorsi spans from the lower thoracic and lumbar spine, iliac crest, and lower ribs to the humerus — making it a true bridge between the arm and the pelvis. It is the primary muscle used in climbing, rowing, and swimming. Its actions include shoulder extension, adduction, and internal rotation. Tight lats limit shoulder flexion (reaching overhead), forcing the lumbar spine to hyperextend to compensate — a common compensation pattern in overhead athletes. The lat also attaches to the thoracolumbar fascia, making it a functional contributor to lumbar stability during pulling movements." },
             { label: "Activates", content: ["Pull-up", "lat pulldown", "bent-over row", "single-arm dumbbell row", "straight-arm pulldown"] },
@@ -408,7 +429,7 @@ export const bodyInMotion: Course = {
           term: "Quadriceps",
           brief: "Four muscles on the front of the thigh that extend the knee and absorb the impact of landing — the primary decelerators of the lower body.",
           mnemonic: "QUAD = four. Four muscles, all pulling on one tendon, driving one motion: knee extension. The VMO (the teardrop-shaped inner quad) is the key to proper knee tracking.",
-          bodyMap: undefined,
+          bodyMap: { view: "anterior", muscles: [{ muscle: "quadriceps" }] },
           tabs: [
             { label: "Details", content: "The quadriceps — rectus femoris, vastus lateralis, vastus medialis oblique (VMO), and vastus intermedius — converge on the patellar tendon, which attaches below the kneecap at the tibial tuberosity. The rectus femoris is unique in that it also crosses the hip, making it a hip flexor as well as a knee extensor. The VMO (the lowest, most medial portion) is critical for pulling the patella into proper tracking alignment — when weak, the patella tracks laterally, creating friction and pain. Quad weakness leads to the knee collapsing inward (valgus) during landing and squatting — a primary risk factor for ACL tears." },
             { label: "Activates", content: ["Squat", "leg press", "lunge", "step-down (eccentric)", "terminal knee extension (VMO focus)", "leg extension"] },
@@ -420,7 +441,7 @@ export const bodyInMotion: Course = {
           term: "The Knee Joint",
           brief: "The body's largest joint — a modified hinge between the femur and tibia that is stabilized by four ligaments, two menisci, and the muscular control of the hip and ankle above and below.",
           mnemonic: "Think of the knee as a door hinge that can also slightly rotate. The four ligaments are its hinges — remove one and the door wobbles. The menisci are its shock-absorbing door stop. The hip controls the door.",
-          bodyMap: undefined,
+          bodyMap: { view: "both", muscles: [{ muscle: "knees" }] },
           tabs: [
             { label: "Details", content: "The knee primarily flexes and extends but permits slight internal and external rotation in flexed positions. It is stabilized by the ACL (anterior cruciate ligament, prevents forward tibial translation), PCL (posterior, prevents backward tibial translation), MCL (medial, resists valgus), and LCL (lateral, resists varus). The medial and lateral menisci are crescent-shaped fibrocartilaginous structures that deepen the tibial plateau, distribute load, and absorb shock. The patella increases the mechanical advantage of the quadriceps by acting as a pulley. Because the knee sits between two long levers (femur and tibia), its health depends heavily on the control provided by the hip above and the ankle and foot below — it is primarily a victim of problems elsewhere." },
             { label: "Activates", content: ["Terminal knee extension", "step-down", "single-leg squat", "wall sit", "Bulgarian split squat"] },
@@ -432,7 +453,7 @@ export const bodyInMotion: Course = {
           term: "IT Band & TFL",
           brief: "The iliotibial band is a thick strip of fascia running from the hip to the shin — the lateral stabilizer of the knee, and one of the most commonly irritated structures in runners.",
           mnemonic: "IT band = the body's lateral guy-wire. Like the cable on a sailboat mast, it keeps the knee from collapsing inward. But unlike a cable, it can't be stretched — it can only be loaded and unloaded differently.",
-          bodyMap: undefined,
+          bodyMap: { view: "anterior", muscles: [{ muscle: "abductors" }] },
           tabs: [
             { label: "Details", content: "The iliotibial band (IT band) is a thick strip of connective tissue (fascia, not muscle) running from the iliac crest down the lateral thigh to the tibia. It is tensioned by two muscles: the tensor fasciae latae (TFL) at the top and the gluteus maximus (which inserts into the IT band posteriorly). The IT band's primary function is lateral knee stabilization and shock absorption during running. Because it is fascia, not muscle, it cannot be \"stretched\" in the conventional sense — foam rolling and stretching targets the TFL and hip muscles that tension it, not the band itself. IT band friction syndrome occurs when the band repeatedly slides over the lateral femoral condyle — the result is lateral knee pain that typically worsens during running." },
             { label: "Activates", content: ["Hip abduction exercises (to address TFL tightness)", "single-leg squat (neuromuscular control)", "foam rolling TFL", "glute strengthening"] },
@@ -466,7 +487,7 @@ export const bodyInMotion: Course = {
           term: "Flexion & Extension",
           brief: "The most fundamental pair of movements — bending to close a joint (flexion) and straightening to open it (extension).",
           mnemonic: "Flex = fold (you're folding the joint closed). Extend = expand (you're opening and lengthening). Every joint in the body does these two things — just in different directions.",
-          bodyMap: undefined,
+          bodyMap: { view: "anterior", muscles: [], motion: { type: "flexion", label: "joint closes" } },
           tabs: [
             { label: "Details", content: "Flexion decreases the angle between two body segments — elbow curl, knee bend, spinal rounding. Extension increases that angle — straightening the elbow, extending the knee, arching the back. In the hip, flexion brings the thigh toward the chest; extension drives the thigh backward. In the spine, flexion rounds forward; extension arches back. Most human daily activities (sitting, typing, driving) are dominated by flexion patterns — which is why intentional extension work is essential for musculoskeletal health. The body needs balance between these opposing movements to maintain joint health and posture." },
             { label: "Activates", content: ["Flexion: bicep curl, leg curl, forward fold", "Extension: deadlift, back extension, cobra pose, hip thrust"] },
@@ -478,7 +499,7 @@ export const bodyInMotion: Course = {
           term: "Adduction & Abduction",
           brief: "Moving a limb toward the body's midline (adduction) or away from it (abduction) — the side-to-side language of the frontal plane.",
           mnemonic: "ADDuction = ADD the limb back to your body (toward center). ABduction = ABsent from the body (moving away). Think of opening and closing a door — abduction opens, adduction closes.",
-          bodyMap: undefined,
+          bodyMap: { view: "anterior", muscles: [], motion: { type: "adduction", label: "toward midline" } },
           tabs: [
             { label: "Details", content: "Adduction moves a limb toward the midline — arms lowering to the sides, thighs squeezing together. The primary hip adductors are the inner thigh muscles; shoulder adduction is primarily driven by the lats and pec major. Abduction moves a limb away from the midline — raising the arm to the side, stepping the leg laterally. Hip abduction is driven primarily by the glute med; shoulder abduction by the deltoid and supraspinatus. Both movements occur in the frontal plane. They are the most undertrained movement pattern in conventional fitness — most programs are dominated by sagittal plane (flexion/extension) movements, leaving the frontal plane underloaded and vulnerable." },
             { label: "Activates", content: ["Adduction: cable fly, Copenhagen plank, inner thigh squeeze", "Abduction: lateral raise, clamshell, lateral band walk, side-lying leg raise"] },

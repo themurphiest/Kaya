@@ -53,14 +53,8 @@ export default function CourseDetailPage() {
         {course.description}
       </p>
 
-      {/* Divider */}
-      <div
-        className="mb-3"
-        style={{ borderTop: "1px solid var(--text-faint)" }}
-      />
-
-      {/* Group rows */}
-      <div className="flex flex-col gap-0">
+      {/* Group tiles */}
+      <div className="flex flex-col gap-3 mt-2">
         {course.groups.map((group) => {
           const completed =
             progress !== null &&
@@ -70,27 +64,42 @@ export default function CourseDetailPage() {
             <Link
               key={group.id}
               href={`/course/${course.slug}/learn/${group.id}`}
-              className="no-underline"
+              className="no-underline group"
               style={{ color: "inherit" }}
             >
               <div
-                className="flex items-center py-4"
+                className="flex items-center gap-4 rounded-2xl p-4 transition-all duration-200 group-hover:-translate-y-px"
                 style={{
-                  borderBottom: "1px solid var(--text-faint)",
+                  background: "var(--card-bg)",
+                  backdropFilter: "blur(14px)",
+                  border: "1.5px solid var(--card-border)",
+                  boxShadow: "var(--card-shadow)",
                 }}
               >
-                <span className="text-xl mr-4 w-8 text-center">
+                {/* Icon square */}
+                <div
+                  className="w-14 h-14 rounded-xl flex items-center justify-center text-[22px] shrink-0"
+                  style={{
+                    background: `${group.accent}18`,
+                    border: `1px solid ${group.accent}25`,
+                  }}
+                >
                   {group.icon}
-                </span>
+                </div>
+
+                {/* Label + subtitle */}
                 <div className="flex-1 min-w-0">
                   <div
-                    className="text-sm font-medium"
-                    style={{ fontFamily: "var(--font-mono)" }}
+                    className="text-[17px] leading-snug"
+                    style={{
+                      fontFamily: "var(--font-mono)",
+                      fontStyle: "italic",
+                    }}
                   >
                     {group.label}
                   </div>
                   <div
-                    className="text-xs"
+                    className="text-xs mt-0.5"
                     style={{
                       fontFamily: "var(--font-mono)",
                       color: "var(--text-muted)",
@@ -99,13 +108,15 @@ export default function CourseDetailPage() {
                     {group.cards.length} cards
                   </div>
                 </div>
+
+                {/* Status indicator */}
                 <span
-                  className="text-base ml-3"
+                  className="text-lg shrink-0"
                   style={{
                     fontFamily: "var(--font-mono)",
                     color: completed
                       ? group.accent
-                      : "var(--text-muted)",
+                      : "var(--text-faint)",
                   }}
                 >
                   {completed ? "❋" : "→"}

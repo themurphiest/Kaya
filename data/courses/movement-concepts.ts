@@ -1,4 +1,25 @@
-import type { Course } from "../types";
+import type { Course, MuscleHighlight, ChainLine } from "../types";
+
+const sblMuscles: MuscleHighlight[] = [
+  { muscle: "trapezius", opacity: 0.6 },
+  { muscle: "upper-back", opacity: 0.6 },
+  { muscle: "lower-back", opacity: 0.7 },
+  { muscle: "gluteal", opacity: 0.7 },
+  { muscle: "hamstring", opacity: 0.8 },
+  { muscle: "calves", opacity: 0.8 },
+  { muscle: "left-soleus", opacity: 0.8 },
+  { muscle: "right-soleus", opacity: 0.8 },
+];
+
+const sblChain: ChainLine = {
+  points: [
+    { x: 50, y: 99 }, { x: 49, y: 90 }, { x: 49, y: 80 },
+    { x: 50, y: 70 }, { x: 50, y: 61 }, { x: 50, y: 52 },
+    { x: 50, y: 43 }, { x: 50, y: 34 }, { x: 50, y: 20 },
+    { x: 50, y: 10 }, { x: 50, y: 4 },
+  ],
+  animated: true,
+};
 
 export const movementConcepts: Course = {
   id: "movement-concepts",
@@ -34,7 +55,7 @@ export const movementConcepts: Course = {
           term: "Lower Crossed Syndrome",
           brief: "The most common postural dysfunction in the modern world — a predictable pattern of tight hip flexors and weak glutes creating anterior pelvic tilt and low back pain.",
           mnemonic: "Draw an X across the front of the pelvis. Tight hip flexors (front) cross with weak glutes (back). Weak abdominals (front) cross with tight erector spinae (back). The X tells you who to stretch and who to strengthen.",
-          bodyMap: undefined,
+          bodyMap: { view: "both", muscles: [{ muscle: "gluteal" }, { muscle: "lower-back" }, { muscle: "abs" }, { muscle: "quadriceps" }] },
           tabs: [
             { label: "The Concept", content: "Vladimir Janda identified Lower Crossed Syndrome (LCS) as a characteristic pattern of alternating muscle tightness and weakness centered on the pelvis. The tight muscles: hip flexors (iliopsoas, rectus femoris) and lumbar extensors (erector spinae). The weak muscles: deep abdominals (TVA, obliques) and gluteals (maximus and medius). This imbalance creates anterior pelvic tilt, increased lumbar lordosis, and compensatory thoracolumbar junction stiffness. Physiopedia's clinical review notes that LCS is associated with anterior pelvic tilt, increased lumbar lordosis, and compensatory adjustments throughout the kinetic chain. LCS is not a disease — it is the predictable result of how most modern humans live: sitting for prolonged periods, which shortens hip flexors, while the glutes are unloaded and inhibited." },
             { label: "Why It Matters", content: "LCS is implicated in anterior pelvic tilt-driven lower back pain, hip flexor strains, hamstring tightness (compensating for weak glutes), sacroiliac joint dysfunction, and patellofemoral knee pain. Hamstring tightness in LCS is often not a flexibility problem — it's a compensation pattern. Stretching only the hamstrings without addressing the root cause (weak glutes, tight hip flexors) provides temporary relief at best." },
@@ -68,7 +89,7 @@ export const movementConcepts: Course = {
           term: "The Superficial Back Line",
           brief: "A continuous myofascial line running from the sole of the foot to the top of the skull — the body's longest and most clinically significant fascial chain.",
           mnemonic: "Think of the Superficial Back Line as a single long guitar string running up the back of your body. Tighten one end (the plantar fascia) and the whole string vibrates — including the far end (the suboccipital muscles at the base of your skull).",
-          bodyMap: undefined,
+          bodyMap: { view: "posterior", muscles: sblMuscles.map(m => ({ ...m, color: "#4AADA8" })), chain: sblChain },
           tabs: [
             { label: "The Concept", content: "Mapped by Thomas Myers in Anatomy Trains (4th ed., Elsevier, 2020) and supported by dissection research (Wilke et al., 2016), the Superficial Back Line (SBL) runs: plantar fascia → Achilles tendon → gastrocnemius/soleus → hamstrings → sacrotuberous ligament → thoracolumbar fascia → erector spinae → nuchal ligament → scalp fascia. This is not a metaphor — each transition point has been verified anatomically as a continuous fascial connection. The practical implication is profound: \"hamstring tightness\" is often a manifestation of tension anywhere along this line — tight calves, a stiff thoracolumbar fascia, or even a restricted suboccipital region. Treatment that addresses only the hamstrings while ignoring the rest of the line will provide only temporary relief." },
             { label: "Why It Matters", content: "Plantar fasciitis — inflammation at the very base of the SBL — is often accompanied by calf tightness, hamstring restriction, and lower back pain. These are not separate problems — they are one problem expressed at multiple locations along the same line." },

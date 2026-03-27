@@ -1,7 +1,11 @@
 "use client";
 
-import type { Card } from "@/data/types";
+import { useMemo } from "react";
+import type { Card, CardTab } from "@/data/types";
 import CardTabs from "./CardTabs";
+import BodyMapView from "./BodyMap";
+
+const BODYMAP_SENTINEL = "__bodymap__";
 
 interface CardBackProps {
   card: Card;
@@ -16,7 +20,15 @@ export default function CardBack({
   activeTab,
   onTabChange,
 }: CardBackProps) {
-  const currentTab = card.tabs[activeTab];
+  const displayTabs: CardTab[] = useMemo(() => {
+    if (!card.bodyMap) return card.tabs;
+    return [
+      ...card.tabs,
+      { label: "On the body", content: BODYMAP_SENTINEL },
+    ];
+  }, [card.tabs, card.bodyMap]);
+
+  const currentTab = displayTabs[activeTab];
 
   return (
     <div
@@ -40,7 +52,7 @@ export default function CardBack({
 
       {/* Tabs */}
       <CardTabs
-        tabs={card.tabs}
+        tabs={displayTabs}
         activeIndex={activeTab}
         onTabChange={onTabChange}
         accent={accent}
@@ -48,7 +60,9 @@ export default function CardBack({
 
       {/* Tab content */}
       <div className="flex-1">
-        {currentTab && (
+        {currentTab && currentTab.content === BODYMAP_SENTINEL && card.bodyMap ? (
+          <BodyMapView bodyMap={card.bodyMap} accent={accent} />
+        ) : currentTab && (
           <>
             {typeof currentTab.content === "string" ? (
               currentTab.label === "Injury Risk" ? (

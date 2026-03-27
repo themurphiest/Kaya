@@ -17,9 +17,21 @@ export interface MotionArrow {
   label: string;
 }
 
+export interface MuscleHighlight {
+  muscle: string;
+  color?: string;    // defaults to group accent
+  opacity?: number;  // defaults to 0.8
+}
+
+export interface ChainLine {
+  points: { x: number; y: number }[];
+  animated?: boolean;
+}
+
 export interface BodyMap {
   view: BodyView;
-  muscleIds: string[];
+  muscles: MuscleHighlight[];
+  chain?: ChainLine;
   motion?: MotionArrow;
 }
 
