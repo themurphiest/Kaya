@@ -26,7 +26,7 @@ export const whatYourBodyNeeds: Course = {
             "The body loses muscle, bone density, and range of motion with age — but research shows that most of this decline is driven by inactivity, not aging itself, and is substantially reversible with movement.",
           mnemonic:
             "Aging is not the thief. Inactivity is. Age sets the rate of decline — but movement determines whether that decline happens at all.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -54,7 +54,7 @@ export const whatYourBodyNeeds: Course = {
             "Mobility and flexibility are not about performance or touching your toes — they are about the physical freedom to live without unnecessary limitation.",
           mnemonic:
             "No one wants to be the person who can't kneel to garden, can't lift their arms overhead, can't get up from the floor without help. Mobility isn't about what you can do in a yoga class — it's about what you can do the rest of the time.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -95,7 +95,7 @@ export const whatYourBodyNeeds: Course = {
             "A framework for understanding the body as a linked system — where movement (and dysfunction) at one joint affects every joint connected to it.",
           mnemonic:
             "A bicycle chain. If one link is bent or broken, the whole chain runs poorly. Fix only the bent link without fixing why it bent — and it bends again.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -123,7 +123,7 @@ export const whatYourBodyNeeds: Course = {
             "Power and stability generated at the center of the body (pelvis, core) are transmitted outward to the extremities — the source of most athletic power and most athletic injury.",
           mnemonic:
             "A bullwhip generates force at the handle (proximal) and delivers it at the tip (distal). A weak handle creates a limp whip. A strong, stable core creates powerful extremities — and a weak core forces the extremities to generate their own stability.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -164,7 +164,7 @@ export const whatYourBodyNeeds: Course = {
             "Joints alternate between needing mobility (freedom to move) and needing stability (resistance to unwanted movement) — and when a mobility joint loses range, the stability joint above or below it is forced to compensate.",
           mnemonic:
             "Mobility-Stability-Mobility-Stability up the chain, from ankle to skull. When mobility is lost at one joint, the stability joint takes up the slack — doing a job it wasn't designed for, and eventually breaking down.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -194,7 +194,7 @@ export const whatYourBodyNeeds: Course = {
             "The mid-back should be the body's primary rotational region — but it is chronically stiff in most people, forcing the lumbar spine and neck to compensate for every twist and reach.",
           mnemonic:
             "The thoracic spine is the trunk of the body's rotational tree. When the trunk is stiff, the branches (neck, lower back) bend more than they should — and eventually break.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",

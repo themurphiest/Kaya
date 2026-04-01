@@ -28,7 +28,7 @@ export const howYourBodyWorks: Course = {
             "The body's true core — a pressurized chamber with the diaphragm as the lid, pelvic floor as the base, and transverse abdominis as the walls.",
           mnemonic:
             "Think of a sealed soda can. The pressure inside is what keeps it rigid. Your core works the same way — internal pressure, not surface muscles, creates spinal stability.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -60,7 +60,7 @@ export const howYourBodyWorks: Course = {
             "The primary breathing muscle — a dome-shaped sheet that forms the roof of the core canister and regulates spinal stability.",
           mnemonic:
             "DIA = across, PHRAGM = partition. It's the partition across your trunk. When the dome drops, air rushes in — and your spine gets stiffer.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -92,7 +92,7 @@ export const howYourBodyWorks: Course = {
             "The deepest abdominal muscle — a horizontal corset that wraps around the trunk and is the body's first line of spinal defense.",
           mnemonic:
             "TRANSverse = it runs TRANSversely (horizontally). Think of it as your internal weight belt — not the one you wear, the one you were born with.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -124,7 +124,7 @@ export const howYourBodyWorks: Course = {
             "A hammock of muscles at the base of the pelvis — the floor of the core canister and an often-ignored foundation of whole-body stability.",
           mnemonic:
             "The pelvic floor is the base of the can. Without a solid base, the can collapses — no matter how strong the sides are.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -156,7 +156,7 @@ export const howYourBodyWorks: Course = {
             "The deepest back muscle — running along the spine's posterior wall and providing segment-by-segment stabilization of each vertebra.",
           mnemonic:
             "MULTI = many, FIDUS = faithful (Latin). Many faithful supporters of the spine — one for each vertebra, holding each level steady.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -188,7 +188,7 @@ export const howYourBodyWorks: Course = {
             'The paired vertical muscle running down the front of the abdomen — the visible "six-pack" and the most superficial of the abdominal muscles.',
           mnemonic:
             "RECTUS = straight (Latin) — it runs straight down the front, like a ruler. It's the most visible ab muscle, but not the most important one for stability.",
-          bodyMap: { view: "anterior", muscles: [{ muscle: "abs" }] },
+
           tabs: [
             {
               label: "Details",
@@ -230,7 +230,7 @@ export const howYourBodyWorks: Course = {
             "The basin-shaped ring of bones at the center of the body — the structural keystone connecting the spine to the legs.",
           mnemonic:
             "The pelvis is the keystone of an arch. Remove or misalign the keystone and the whole structure shifts. Everything above and below depends on where it sits.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -260,7 +260,7 @@ export const howYourBodyWorks: Course = {
             "The most powerful hip flexor — a composite of two muscles (iliacus and psoas major) that connects the lumbar spine directly to the femur.",
           mnemonic:
             'ILIOpsoas = ILIO (ilium/pelvis) + PSOAS (Greek for "loin"). It literally bridges your spine to your leg — the only muscle that does this. Pull it short and your lumbar spine comes with it.',
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -292,10 +292,7 @@ export const howYourBodyWorks: Course = {
             "The largest muscle in the body — the primary driver of hip extension and a critical counterbalance to the hip flexors.",
           mnemonic:
             'MAX = the maximum, the biggest. The glute MAX is the main event of the posterior chain. If it goes quiet, something else has to do its job — and that something else eventually gets hurt.',
-          bodyMap: {
-            view: "posterior",
-            muscles: [{ muscle: "gluteal" }],
-          },
+
           tabs: [
             {
               label: "Details",
@@ -328,10 +325,7 @@ export const howYourBodyWorks: Course = {
             "The hip stabilizer — a fan-shaped muscle on the outer hip that controls pelvic level with every step you take.",
           mnemonic:
             "MEDius = the middle glute. Think of it as the HIP STABILIZER. Weak glute med = the hip sinks when you walk. Strong glute med = the pelvis stays level.",
-          bodyMap: {
-            view: "posterior",
-            muscles: [{ muscle: "abductor" }],
-          },
+
           tabs: [
             {
               label: "Details",
@@ -363,7 +357,7 @@ export const howYourBodyWorks: Course = {
             "Five muscles of the inner thigh that bring the legs together and play a critical role in pelvic stability during movement.",
           mnemonic:
             "ADDuctor = ADD legs together. The inner thighs are the peacemakers — they bring everything back to center. Think of a horse rider squeezing the saddle.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -405,7 +399,7 @@ export const howYourBodyWorks: Course = {
             "Four natural curves of the spine — cervical lordosis, thoracic kyphosis, lumbar lordosis, and sacral kyphosis — that function as a shock-absorbing spring system.",
           mnemonic:
             "The spine is shaped like a spring-loaded S. The curves don't exist despite each other — they depend on each other. Change one and they all adjust.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -435,7 +429,7 @@ export const howYourBodyWorks: Course = {
             "The fibrocartilaginous shock absorbers between each vertebra — the spine's cushioning system and one of its most commonly injured structures.",
           mnemonic:
             'Think of the disc as a jelly doughnut: tough outer ring (annulus fibrosus), soft inner core (nucleus pulposus). Repetitive bending under load squeezes the jelly toward the back of the doughnut — where the nerves are.',
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -467,7 +461,7 @@ export const howYourBodyWorks: Course = {
             "The mid-back (T1-T12) — the body's primary rotational region and the most chronically stiff segment in modern humans.",
           mnemonic:
             "The thoracic spine is the trunk of the body's rotational tree. When the trunk is stiff, the branches (neck, lower back) bend more than they should — and eventually break.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -499,7 +493,7 @@ export const howYourBodyWorks: Course = {
             "The lower back (L1-L5) — the spine's load-bearing workhorse, designed for flexion and extension but highly vulnerable to rotation and shear.",
           mnemonic:
             "The lumbar spine is the base of a skyscraper — it carries the most weight and must be the most stable. Give it rotational movement it wasn't built for and it fails — predictably, painfully, and over time.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -530,7 +524,7 @@ export const howYourBodyWorks: Course = {
             "The triangular base of the spine — where the spine meets the pelvis, and where force transfers between the upper and lower body.",
           mnemonic:
             'SACRUM = Latin for "sacred bone" — ancient cultures knew it was the structural center of the body. The SI joint is the hinge where the spine and pelvis meet. Jam that hinge and pain radiates everywhere.',
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -572,7 +566,7 @@ export const howYourBodyWorks: Course = {
             "The most mobile joint complex in the body — five articulations working together to give the arm its extraordinary range of movement.",
           mnemonic:
             "The shoulder is not one joint — it's five. Think of it like a multi-link crane: each link adds range, but every link must work for the crane to be both mobile and stable. Remove any link and the crane becomes a liability.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -602,7 +596,7 @@ export const howYourBodyWorks: Course = {
             "Four deep muscles wrapping the shoulder joint — the dynamic stabilizers that hold the ball in the socket while the arm moves.",
           mnemonic:
             "SITS — Supraspinatus, Infraspinatus, Teres minor, Subscapularis. Four muscles, one job: keep the ball centered in the socket while the arm goes everywhere. They don't move the arm — they stabilize it while other muscles do the moving.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -634,10 +628,7 @@ export const howYourBodyWorks: Course = {
             "The large diamond-shaped muscle of the upper back — its three parts must work in balance, but modern life overloads the upper fibers and underworks the lower ones.",
           mnemonic:
             'The trap is three muscles in one: upper, middle, and lower. Think of them as three siblings — in most people, the upper sibling is doing all the work while the lower siblings sit on the couch. The result is the signature "neck-shoulders-up-to-the-ears" tension of modern life.',
-          bodyMap: {
-            view: "posterior",
-            muscles: [{ muscle: "trapezius" }, { muscle: "upper-back" }],
-          },
+
           tabs: [
             {
               label: "Details",
@@ -667,7 +658,7 @@ export const howYourBodyWorks: Course = {
             'The narrow passage between the collarbone, first rib, and neck muscles — where nerves and blood vessels exit the neck and enter the arm, and where compression creates the pain pattern often mistaken for "just a pinched nerve."',
           mnemonic:
             "Think of the thoracic outlet as a tunnel. When the tunnel narrows — from tight scalenes, a drooping shoulder, or a forward head — the cables running through it (nerves, arteries, veins) get compressed. The symptoms appear in the hand and arm, but the problem is in the neck and shoulder.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -709,7 +700,7 @@ export const howYourBodyWorks: Course = {
             "A deep ball-and-socket joint — the most mobile and inherently stable joint in the lower body, capable of movement in all three planes.",
           mnemonic:
             'ACET-abulum = little cup (Latin: acetum = vinegar cup). The femoral ball sits in the hip\'s "cup." The deeper the cup, the more stable the joint. The hip\'s cup is deep — unlike the shoulder, the hip doesn\'t rely on muscles alone for stability.',
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -741,10 +732,7 @@ export const howYourBodyWorks: Course = {
             "Four muscles on the front of the thigh that extend the knee and absorb the impact of landing — the primary decelerators of the lower body.",
           mnemonic:
             "QUAD = four. Four muscles, all pulling on one tendon, driving one motion: knee extension. The VMO (the teardrop-shaped inner quad) is the key to proper knee tracking.",
-          bodyMap: {
-            view: "anterior",
-            muscles: [{ muscle: "quadriceps" }],
-          },
+
           tabs: [
             {
               label: "Details",
@@ -777,7 +765,7 @@ export const howYourBodyWorks: Course = {
             "The body's largest joint — a modified hinge between the femur and tibia that is stabilized by four ligaments, two menisci, and the muscular control of the hip and ankle above and below.",
           mnemonic:
             "Think of the knee as a door hinge that can also slightly rotate. The four ligaments are its hinges — remove one and the door wobbles. The menisci are its shock-absorbing door stop. The hip controls the door.",
-          bodyMap: { view: "both", muscles: [{ muscle: "knees" }] },
+
           tabs: [
             {
               label: "Details",
@@ -809,10 +797,7 @@ export const howYourBodyWorks: Course = {
             "The iliotibial band is a thick strip of fascia running from the hip to the shin — the lateral stabilizer of the knee, and one of the most commonly irritated structures in runners.",
           mnemonic:
             "IT band = the body's lateral guy-wire. Like the cable on a sailboat mast, it keeps the knee from collapsing inward. But unlike a cable, it can't be stretched — it can only be loaded and unloaded differently.",
-          bodyMap: {
-            view: "anterior",
-            muscles: [{ muscle: "abductors" }],
-          },
+
           tabs: [
             {
               label: "Details",
@@ -843,7 +828,7 @@ export const howYourBodyWorks: Course = {
             "The body's foundation — and a joint where limited mobility silently drives compensations all the way up to the knee, hip, and spine.",
           mnemonic:
             "The ankle is the foundation of the lower body's tower. A compromised foundation forces every floor above it to compensate. Limited ankle range of motion is one of the most underappreciated drivers of knee and back pain.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -887,11 +872,7 @@ export const howYourBodyWorks: Course = {
             "The most fundamental pair of movements — bending to close a joint (flexion) and straightening to open it (extension).",
           mnemonic:
             "Flex = fold (you're folding the joint closed). Extend = expand (you're opening and lengthening). Every joint in the body does these two things — just in different directions.",
-          bodyMap: {
-            view: "anterior",
-            muscles: [],
-            motion: { type: "flexion", label: "joint closes" },
-          },
+
           tabs: [
             {
               label: "Details",
@@ -920,11 +901,7 @@ export const howYourBodyWorks: Course = {
             "Moving a limb toward the body's midline (adduction) or away from it (abduction) — the side-to-side language of the frontal plane.",
           mnemonic:
             "ADDuction = ADD the limb back to your body (toward center). ABduction = ABsent from the body (moving away). Think of opening and closing a door — abduction opens, adduction closes.",
-          bodyMap: {
-            view: "anterior",
-            muscles: [],
-            motion: { type: "adduction", label: "toward midline" },
-          },
+
           tabs: [
             {
               label: "Details",
@@ -953,7 +930,7 @@ export const howYourBodyWorks: Course = {
             "Turning a limb inward toward the body's midline (internal rotation) or outward away from it (external rotation) — the rotational language of movement.",
           mnemonic:
             "Think of a door hinge. The joint is the hinge; the limb is the door. Internal rotation turns the front of the limb toward the body; external rotation turns it away. Most people are stuck in internal rotation from how they live.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -982,7 +959,7 @@ export const howYourBodyWorks: Course = {
             "Three imaginary planes that describe the direction of every movement — sagittal (forward/back), frontal (side/side), and transverse (rotational).",
           mnemonic:
             "SAGittal = SAGging forward and back. FRONTal = side to side (the FRONT of your body faces you). TRANSverse = TRANSlation, twisting across. Most gym exercises live in the sagittal plane — real life happens in all three.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -1013,7 +990,7 @@ export const howYourBodyWorks: Course = {
             "The difference between a muscle shortening under load (concentric) and lengthening under load (eccentric) — the eccentric phase is where most injuries occur and most strength gains are made.",
           mnemonic:
             "CONcentric = CONtracting and shortening (the curl up). ECcentric = ECiting the lengthened position (the curl down, under control). The eccentric is the harder, more important phase — and the one most people skip.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -1045,7 +1022,7 @@ export const howYourBodyWorks: Course = {
             "The body's hidden sixth sense — the ability to know where your joints are in space, crucial for injury prevention and efficient movement.",
           mnemonic:
             "PROPRIO = one's own (Latin). Proprioception = perceiving your own body position. Close your eyes and touch your nose — that's proprioception at work. Athletes who train it are injured less.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "Details",
@@ -1087,14 +1064,7 @@ export const howYourBodyWorks: Course = {
             "A forward rotation of the pelvis that increases the lumbar curve — associated with tight hip flexors, weak glutes, and lower back pain.",
           mnemonic:
             "ANTErior = front. The front of the pelvis tips DOWN (like pouring water from the front of a bowl). The lower back arches up as a result.",
-          bodyMap: {
-            view: "anterior",
-            muscles: [],
-            motion: {
-              type: "anterior-tilt",
-              label: "pelvis tips forward",
-            },
-          },
+
           tabs: [
             {
               label: "Details",
@@ -1126,14 +1096,7 @@ export const howYourBodyWorks: Course = {
             "A backward rotation of the pelvis that flattens the lumbar curve — often driven by tight hamstrings and associated with disc pressure and chronic sitting.",
           mnemonic:
             'POSTerior = back. The back of the pelvis tips DOWN. The lumbar curve flattens or even reverses — the "tucked under" posture.',
-          bodyMap: {
-            view: "anterior",
-            muscles: [],
-            motion: {
-              type: "posterior-tilt",
-              label: "pelvis tips backward",
-            },
-          },
+
           tabs: [
             {
               label: "Details",

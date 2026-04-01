@@ -26,7 +26,7 @@ export const thePractice: Course = {
             "The most direct practice of pelvic tilt awareness — cycling the spine between full flexion and full extension with the breath.",
           mnemonic:
             "MARjaryasana = MARking the cat (arching, hissing). BiTILAsana = TILT forward (like a cow's back dipping down). Cat tucks, Cow extends.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -53,7 +53,7 @@ export const thePractice: Course = {
             "A posterior chain strengthener and hip flexor opener in one — directly addresses the Lower Crossed Syndrome pattern.",
           mnemonic:
             "SETU = bridge. You are literally building a bridge with your body. The arch of your spine is the bridge's span, your feet and shoulders are the supports.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -80,7 +80,7 @@ export const thePractice: Course = {
             "The primary hip flexor stretch in yoga — directly releases the iliopsoas tightness that drives anterior pelvic tilt.",
           mnemonic:
             "Anjaneya = the son of Anjana. Think of Hanuman's heroic lunge forward — the back knee down, the front knee bent, the chest lifted. A warrior's reach through the hip.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -107,7 +107,7 @@ export const thePractice: Course = {
             "A restorative inversion that decompresses the lumbar spine, relieves lower back pain, and resets the nervous system.",
           mnemonic:
             "VIPARITA = reversed/opposite. Everything is reversed: legs up, hips released, nervous system switching from stress (sympathetic) to rest (parasympathetic). The antidote to a day of sitting.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -144,7 +144,7 @@ export const thePractice: Course = {
             "The full-length stretch of the Superficial Back Line — from the soles of the feet to the base of the skull in one continuous fold.",
           mnemonic:
             "PASCHIMA = the west — in yogic tradition, the back of the body faces west. This pose stretches the entire west side of the body: the whole posterior chain from heel to head.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -171,7 +171,7 @@ export const thePractice: Course = {
             "The standing version of the posterior chain stretch — gravity assists the fold and the head hangs freely, releasing suboccipital tension at the top of the Superficial Back Line.",
           mnemonic:
             "UT-TANA = UTTerly stretched. The entire back body is under tension. When you hang forward, the weight of the head creates traction at the very top of the Superficial Back Line.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -198,7 +198,7 @@ export const thePractice: Course = {
             "The foundational full-body integration pose — simultaneously lengthens the posterior chain and strengthens the anterior chain.",
           mnemonic:
             "ADHO MUKHA = face downward. SVANA = dog. Watch a dog stretch when it wakes up — it naturally finds this shape. The body knows this pose.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -225,7 +225,7 @@ export const thePractice: Course = {
             "The foundational resting pose — simultaneously decompresses the lumbar spine, opens the thoracic back, and activates the parasympathetic nervous system.",
           mnemonic:
             "BALA = child. Children instinctively fold into this shape when they need rest. The body returns to a position of no threat — spine long, hips folded, forehead on the earth.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -262,7 +262,7 @@ export const thePractice: Course = {
             "Backbends are not about how far you bend — they are about where the bend comes from. The thoracic spine is the target. The lumbar spine is the trap.",
           mnemonic:
             'A backbend distributed evenly across all 24 movable vertebrae is healthy. A backbend dumped into 5 lumbar vertebrae is how people get hurt. The question is never "how deep?" — it\'s "where from?"',
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -294,7 +294,7 @@ export const thePractice: Course = {
             "Spinal twists and backbends are not separate practices — they are partners. The rotation that twists demand from the thoracic spine is the same mobility that makes backbends safe and effective.",
           mnemonic:
             "Think of the thoracic spine as a rusty door hinge. A twist loosens the hinge. Once loose, the door opens both ways — rotation and extension. Twist first. Then bend back.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -323,7 +323,7 @@ export const thePractice: Course = {
             "The foundational seated spinal twist — specifically training thoracic rotation while learning to protect the lumbar spine from twisting.",
           mnemonic:
             "ARDHA = half. MATSYENDRA = the lord of fish (a great yogi who, according to legend, learned yoga from Shiva while living as a fish in the ocean). Half of his full twist — but still profound.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -350,7 +350,7 @@ export const thePractice: Course = {
             "The foundational backbends — gentle spinal extension with clear anatomical logic, targeting the thoracic spine while protecting the lumbar.",
           mnemonic:
             "SALAMBA = supported. BHUJANGA = cobra/serpent. The supported serpent (sphinx) comes first — learning to lift the chest with back strength before progressing to the unsupported version. The serpent rises from the earth slowly.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -387,7 +387,7 @@ export const thePractice: Course = {
             "The seated core challenge — demands isometric TVA and hip flexor engagement while maintaining a neutral, elongated spine.",
           mnemonic:
             "NAVA = boat. Your body is the hull of the boat — the legs are the bow, the torso is the stern, and the core keeps it from sinking in the middle.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -424,7 +424,7 @@ export const thePractice: Course = {
             "The deepest hip external rotation stretch in yoga — directly restores the hip mobility that the kinetic chain requires to protect the knee and lower back.",
           mnemonic:
             "EKA PADA = ONE FOOT. RAJA KAPOTA = KING PIGEON. One leg extended like a pigeon's tail, chest open like a king. The king of hip openers — not because it's glamorous, but because it goes deepest.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -451,7 +451,7 @@ export const thePractice: Course = {
             "A standing twist that combines thoracic rotation, hip hinge, and hamstring lengthening — restoring mobility across multiple kinetic chain joints simultaneously.",
           mnemonic:
             "PARI-VRTTA = PARTly reVOLVED. You revolve the triangle — taking the most stable standing pose and adding the most missing movement: rotation.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -478,7 +478,7 @@ export const thePractice: Course = {
             "The deepest ankle dorsiflexion pose in yoga — restoring the foundational mobility at the base of the kinetic chain.",
           mnemonic:
             "MALA = a garland or necklace of beads strung together. In this squat, the body is strung together in a chain from ankle to hip to spine. If one bead is stuck (the ankle), the whole garland bunches.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -516,7 +516,7 @@ export const thePractice: Course = {
             "A standing lateral stretch that opens the thoracic lateral line and trains frontal plane stability — the most undertrained plane of movement.",
           mnemonic:
             "TRI-KONA = three angles. Your body makes three distinct angles: the angle of the legs (wide stance), the angle of the torso (lateral bend), and the angle of the arms (one up, one down). Find all three.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -543,7 +543,7 @@ export const thePractice: Course = {
             "The foundational standing strength pose — simultaneously demands hip abductor stability, thoracic rotation awareness, and frontal plane endurance.",
           mnemonic:
             "VIRA = hero/warrior. BHADRA = auspicious/good. This is the auspicious warrior — not aggressive, but strong and settled. The gaze is steady, the stance is wide, the arms are extended like horizon lines.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Pose",
@@ -580,7 +580,7 @@ export const thePractice: Course = {
             "The building blocks of Sanskrit pose names — learn these and you can decode any asana.",
           mnemonic:
             "Sanskrit names are compounds. Break them apart and they tell you exactly what the pose is. ADHO = down. MUKHA = face. SVANA = dog. Put them together: face-down dog.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Words",

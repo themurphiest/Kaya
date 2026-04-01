@@ -1,32 +1,4 @@
-import type { Course, MuscleHighlight, ChainLine } from "../types";
-
-const sblMuscles: MuscleHighlight[] = [
-  { muscle: "trapezius", opacity: 0.6 },
-  { muscle: "upper-back", opacity: 0.6 },
-  { muscle: "lower-back", opacity: 0.7 },
-  { muscle: "gluteal", opacity: 0.7 },
-  { muscle: "hamstring", opacity: 0.8 },
-  { muscle: "calves", opacity: 0.8 },
-  { muscle: "left-soleus", opacity: 0.8 },
-  { muscle: "right-soleus", opacity: 0.8 },
-];
-
-const sblChain: ChainLine = {
-  points: [
-    { x: 50, y: 99 },
-    { x: 49, y: 90 },
-    { x: 49, y: 80 },
-    { x: 50, y: 70 },
-    { x: 50, y: 61 },
-    { x: 50, y: 52 },
-    { x: 50, y: 43 },
-    { x: 50, y: 34 },
-    { x: 50, y: 20 },
-    { x: 50, y: 10 },
-    { x: 50, y: 4 },
-  ],
-  animated: true,
-};
+import type { Course } from "../types";
 
 export const whatModernLifeDoes: Course = {
   id: "what-modern-life-does",
@@ -50,11 +22,12 @@ export const whatModernLifeDoes: Course = {
         {
           id: "pelvis-spine-connection",
           term: "The Pelvis-Spine Connection",
+          image: "pelvis-spine-connection.png",
           brief:
             "The position of the pelvis directly determines the shape of the lumbar spine — they are not independent structures but two parts of the same system.",
           mnemonic:
             "The pelvis and lumbar spine are like two gears in a clock. Turn one and the other turns with it — automatically and immediately. You cannot change your lumbar position without changing your pelvic position.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -80,19 +53,12 @@ export const whatModernLifeDoes: Course = {
         {
           id: "lower-crossed-syndrome",
           term: "Lower Crossed Syndrome",
+          image: "lower-crossed-syndrome.png",
           brief:
             "The most common postural dysfunction in the modern world — a predictable pattern of tight hip flexors and weak glutes creating anterior pelvic tilt and low back pain.",
           mnemonic:
             "Draw an X across the front of the pelvis. Tight hip flexors (front) cross with weak glutes (back). Weak abdominals (front) cross with tight erector spinae (back). The X tells you who to stretch and who to strengthen.",
-          bodyMap: {
-            view: "both",
-            muscles: [
-              { muscle: "gluteal" },
-              { muscle: "lower-back" },
-              { muscle: "abs" },
-              { muscle: "quadriceps" },
-            ],
-          },
+
           tabs: [
             {
               label: "The Concept",
@@ -122,7 +88,7 @@ export const whatModernLifeDoes: Course = {
             "The yoga cat-cow sequence is far more than a warm-up stretch — it is a window into pelvic mobility, spinal segmental movement, and core coordination.",
           mnemonic:
             "Cat = posterior pelvic tilt (tucking under, rounding the spine). Cow = anterior pelvic tilt (arching, letting the belly drop). Moving between them consciously reveals where your spine is stiff and where it compensates by moving too much.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -156,11 +122,12 @@ export const whatModernLifeDoes: Course = {
         {
           id: "upper-crossed-syndrome",
           term: "Upper Crossed Syndrome",
+          image: "upper-crossed-syndrome.png",
           brief:
             "The posture of modern life — tight chest and upper traps cross with weak deep neck flexors and lower traps, creating forward head posture and shoulder impingement.",
           mnemonic:
             "Draw an X across the upper body. Tight pecs (front, below) cross with tight upper traps (back, above). Weak deep neck flexors (front, above) cross with weak lower traps and rhomboids (back, below). This X creates the hunched, forward-head posture visible in almost every person using a screen.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -187,11 +154,12 @@ export const whatModernLifeDoes: Course = {
         {
           id: "compensation-pattern",
           term: "The Compensation Pattern",
+          image: "compensation-pattern.png",
           brief:
             "When one part of the kinetic chain fails, an adjacent joint takes over its role — doing a job it was not designed for, eventually breaking down itself.",
           mnemonic:
             "When the weakest link in a chain breaks, the load doesn't disappear — it transfers to the next link. The body does the same thing. The site of pain is often not the site of the problem.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -225,15 +193,12 @@ export const whatModernLifeDoes: Course = {
         {
           id: "superficial-back-line",
           term: "The Superficial Back Line",
+          image: "superficial-back-line.png",
           brief:
             "A continuous myofascial line running from the sole of the foot to the top of the skull — the body's longest and most clinically significant fascial chain.",
           mnemonic:
             "Think of the Superficial Back Line as a single long guitar string running up the back of your body. Tighten one end (the plantar fascia) and the whole string vibrates — including the far end (the suboccipital muscles at the base of your skull).",
-          bodyMap: {
-            view: "posterior",
-            muscles: sblMuscles.map((m) => ({ ...m, color: "#4AADA8" })),
-            chain: sblChain,
-          },
+
           tabs: [
             {
               label: "The Concept",
@@ -258,11 +223,12 @@ export const whatModernLifeDoes: Course = {
         {
           id: "why-stretching-doesnt-work",
           term: "Why Stretching Doesn't Always Work",
+          image: "why-stretching-doesnt-work.png",
           brief:
             "Stretching a single muscle provides only temporary relief when the restriction is part of a continuous fascial chain — you have to address the whole line.",
           mnemonic:
             "Imagine a sweater that's been snagged. Pulling on the snagged area makes it worse. You have to find where it caught and release it there — not just at the point of tightness.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -296,11 +262,12 @@ export const whatModernLifeDoes: Course = {
         {
           id: "stability-vs-strength",
           term: "Stability vs. Strength",
+          image: "stability-vs-strength.png",
           brief:
             "Core strength measures how much force the trunk muscles can produce. Core stability measures how well they coordinate to protect the spine — and it's stability, not strength, that prevents injury.",
           mnemonic:
             "A skyscraper doesn't stand because its steel is the strongest available — it stands because the forces within it are coordinated and distributed efficiently. A strong core without stability is a skyscraper with misaligned beams.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
@@ -326,11 +293,12 @@ export const whatModernLifeDoes: Course = {
         {
           id: "anticipatory-core-activation",
           term: "Anticipatory Core Activation",
+          image: "anticipatory-core-activation.png",
           brief:
             "A healthy deep core fires before the limbs move — a pre-emptive stability response that is disrupted by pain, injury, and inactivity.",
           mnemonic:
             "A healthy core is like a seatbelt that tightens before a crash — not after. Pain, injury, and sedentary habits turn it into a seatbelt that only responds after impact.",
-          bodyMap: undefined,
+
           tabs: [
             {
               label: "The Concept",
