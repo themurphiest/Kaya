@@ -882,6 +882,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "flexion-extension",
           term: "Flexion & Extension",
+          image: "flexion-extension.png",
           brief:
             "The most fundamental pair of movements — bending to close a joint (flexion) and straightening to open it (extension).",
           mnemonic:
@@ -914,6 +915,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "adduction-abduction",
           term: "Adduction & Abduction",
+          image: "adduction-abduction.png",
           brief:
             "Moving a limb toward the body's midline (adduction) or away from it (abduction) — the side-to-side language of the frontal plane.",
           mnemonic:
@@ -946,6 +948,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "internal-external-rotation",
           term: "Internal & External Rotation",
+          image: "rotation.png",
           brief:
             "Turning a limb inward toward the body's midline (internal rotation) or outward away from it (external rotation) — the rotational language of movement.",
           mnemonic:
@@ -974,6 +977,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "planes-of-motion",
           term: "Planes of Motion",
+          image: "planes-of-motion.png",
           brief:
             "Three imaginary planes that describe the direction of every movement — sagittal (forward/back), frontal (side/side), and transverse (rotational).",
           mnemonic:
@@ -1004,6 +1008,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "eccentric-concentric",
           term: "Eccentric vs. Concentric Contraction",
+          image: "eccentric-concentric.png",
           brief:
             "The difference between a muscle shortening under load (concentric) and lengthening under load (eccentric) — the eccentric phase is where most injuries occur and most strength gains are made.",
           mnemonic:
@@ -1035,6 +1040,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "proprioception",
           term: "Proprioception",
+          image: "proprioception.png",
           brief:
             "The body's hidden sixth sense — the ability to know where your joints are in space, crucial for injury prevention and efficient movement.",
           mnemonic:
