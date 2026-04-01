@@ -800,6 +800,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "it-band-tfl",
           term: "IT Band & TFL",
+          image: "it-band-tfl.png",
           brief:
             "The iliotibial band is a thick strip of fascia running from the hip to the shin — the lateral stabilizer of the knee, and one of the most commonly irritated structures in runners.",
           mnemonic:
