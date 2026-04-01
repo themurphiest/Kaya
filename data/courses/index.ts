@@ -1,11 +1,13 @@
 import type { Course } from "@/data/types";
-import { bodyInMotion } from "./body-in-motion";
-import { movementConcepts } from "./movement-concepts";
+import { howYourBodyWorks } from "./how-your-body-works";
+import { whatModernLifeDoes } from "./what-modern-life-does";
+import { whatYourBodyNeeds } from "./what-your-body-needs";
 import { thePractice } from "./the-practice";
 
 export const COURSES: Course[] = [
-  bodyInMotion,
-  movementConcepts,
+  howYourBodyWorks,
+  whatModernLifeDoes,
+  whatYourBodyNeeds,
   thePractice,
 ];
 

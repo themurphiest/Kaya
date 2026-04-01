@@ -85,7 +85,7 @@ export const thePractice: Course = {
             {
               label: "The Pose",
               content:
-                "Anjaneyasana places the iliopsoas of the back leg in a lengthened position — the hip is extended, which stretches the hip flexors. To deepen the stretch, the pelvis must be in a neutral or slightly posteriorly tilted position — if the lower back arches excessively (anterior tilt), the stretch is lost and lumbar compression increases. This is why teachers cue \"tuck the tailbone slightly\" in low lunge — it's not arbitrary; it's the action that actually brings the hip flexor under tension. A 30-second hold in each position after vigorous activity is sufficient for acute flexibility gains; longer holds (2-5 minutes) in a yin or restorative context stimulate deeper fascial change.",
+                'Anjaneyasana places the iliopsoas of the back leg in a lengthened position — the hip is extended, which stretches the hip flexors. To deepen the stretch, the pelvis must be in a neutral or slightly posteriorly tilted position — if the lower back arches excessively (anterior tilt), the stretch is lost and lumbar compression increases. This is why teachers cue "tuck the tailbone slightly" in low lunge — it\'s not arbitrary; it\'s the action that actually brings the hip flexor under tension. A 30-second hold in each position after vigorous activity is sufficient for acute flexibility gains; longer holds (2-5 minutes) in a yin or restorative context stimulate deeper fascial change.',
             },
             {
               label: "How to Enter",
@@ -149,7 +149,7 @@ export const thePractice: Course = {
             {
               label: "The Pose",
               content:
-                "Paschimottanasana is the purest expression of the Superficial Back Line (Thomas Myers, Anatomy Trains). The fold places the entire posterior chain under simultaneous tension — plantar fascia, calves, hamstrings, sacrotuberous ligament, thoracolumbar fascia, erector spinae, and suboccipital muscles. This is why many people feel this pose \"not just in the hamstrings\" but throughout the entire back body. The pose also reveals where the line is most restricted — if the hamstrings prevent forward fold, the lower back rounds excessively (compensating). The goal is not to touch the feet but to hinge from the hip crease with a long spine, allowing the tension to be distributed along the entire line rather than concentrated in one location.",
+                'Paschimottanasana is the purest expression of the Superficial Back Line (Thomas Myers, Anatomy Trains). The fold places the entire posterior chain under simultaneous tension — plantar fascia, calves, hamstrings, sacrotuberous ligament, thoracolumbar fascia, erector spinae, and suboccipital muscles. This is why many people feel this pose "not just in the hamstrings" but throughout the entire back body. The pose also reveals where the line is most restricted — if the hamstrings prevent forward fold, the lower back rounds excessively (compensating). The goal is not to touch the feet but to hinge from the hip crease with a long spine, allowing the tension to be distributed along the entire line rather than concentrated in one location.',
             },
             {
               label: "How to Enter",
@@ -176,7 +176,7 @@ export const thePractice: Course = {
             {
               label: "The Pose",
               content:
-                "In Uttanasana, gravity assists the stretch — unlike Paschimottanasana where the body's weight must be managed. Hanging forward with bent knees and releasing the neck creates traction through the entire posterior chain, including the suboccipital muscles and cervical spine. Many people never release tension at the top of the chain (neck and head) — Uttanasana with a completely relaxed neck is one of the most effective ways to address this. The pose also has a strong parasympathetic effect (the head-below-heart position activates the baroreceptors) — making it calming as well as stretching.",
+                'In Uttanasana, gravity assists the stretch — unlike Paschimottanasana where the body\'s weight must be managed. Hanging forward with bent knees and releasing the neck creates traction through the entire posterior chain, including the suboccipital muscles and cervical spine. Many people never release tension at the top of the chain (neck and head) — Uttanasana with a completely relaxed neck is one of the most effective ways to address this. The pose also has a strong parasympathetic effect (the head-below-heart position activates the baroreceptors) — making it calming as well as stretching.',
             },
             {
               label: "How to Enter",
@@ -203,7 +203,7 @@ export const thePractice: Course = {
             {
               label: "The Pose",
               content:
-                "Downward dog is an active stretch of the Superficial Back Line — calves, hamstrings, thoracolumbar fascia, and the back of the shoulders — while simultaneously engaging the anterior chain (core, serratus anterior, shoulders). The position requires active dorsiflexion of the ankles, which loads the base of the posterior chain and often reveals calf/Achilles restriction immediately. The chest moves toward the thighs as the hip flexors release, and the head hangs between the arms to release the cervical spine. It is both strengthening and lengthening — a rare combination — which is why it functions as a \"rest pose\" in vinyasa practice once the body is warm.",
+                'Downward dog is an active stretch of the Superficial Back Line — calves, hamstrings, thoracolumbar fascia, and the back of the shoulders — while simultaneously engaging the anterior chain (core, serratus anterior, shoulders). The position requires active dorsiflexion of the ankles, which loads the base of the posterior chain and often reveals calf/Achilles restriction immediately. The chest moves toward the thighs as the hip flexors release, and the head hangs between the arms to release the cervical spine. It is both strengthening and lengthening — a rare combination — which is why it functions as a "rest pose" in vinyasa practice once the body is warm.',
             },
             {
               label: "How to Enter",
@@ -217,161 +217,168 @@ export const thePractice: Course = {
             },
           ],
         },
+        {
+          id: "childs-pose",
+          term: "Child's Pose",
+          sanskrit: "Balasana",
+          brief:
+            "The foundational resting pose — simultaneously decompresses the lumbar spine, opens the thoracic back, and activates the parasympathetic nervous system.",
+          mnemonic:
+            "BALA = child. Children instinctively fold into this shape when they need rest. The body returns to a position of no threat — spine long, hips folded, forehead on the earth.",
+          bodyMap: undefined,
+          tabs: [
+            {
+              label: "The Pose",
+              content:
+                "Balasana places the spine in a supported flexion position — decompressing the posterior lumbar elements (facet joints, ligaments) that are compressed by prolonged standing or back-loading activities. The arms extended forward create traction through the thoracic spine and lats. When practiced with knees wide (full child's pose), the inner groins and hip rotators receive a passive stretch. The forehead-on-the-floor position activates the vagus nerve through facial contact, contributing to the parasympathetic (rest-and-digest) response. This is not a passive \"do nothing\" pose — it is active spinal decompression, thoracic opening, and nervous system regulation.",
+            },
+            {
+              label: "How to Enter",
+              content:
+                "From tabletop, bring the big toes together and widen the knees to the edges of the mat. Lower the hips toward the heels. Walk the hands forward, extending the arms fully. Rest the forehead on the mat or a block. Breathe into the back of the ribcage — feel the thoracic spine expand with each inhale. Hold 5-15 breaths, or as long as needed.",
+            },
+            {
+              label: "Modifications",
+              content:
+                "Place a folded blanket between the thighs and calves if the hips don't reach the heels. Support the forehead on a block to reduce neck strain. Narrow the knees (touching) for a more intense lumbar stretch. Arms alongside the body (reverse child's pose) for shoulder relief.",
+            },
+          ],
+        },
       ],
     },
     {
-      id: "crossed-syndromes-practice",
-      label: "Undoing Desk Posture",
-      subtitle: "Poses that counter Upper and Lower Crossed Syndromes",
-      icon: "□",
+      id: "spinal-mobility-practice",
+      label: "Spinal Mobility — Twists & Backbends",
+      subtitle:
+        "Poses that restore thoracic mobility and teach safe spinal extension",
+      icon: "◇",
       accent: "#7B8FBF",
       level: 3,
       cards: [
         {
-          id: "cobra-pose",
-          term: "Cobra Pose",
-          sanskrit: "Bhujangasana",
+          id: "backbend-principle",
+          term: "The Backbend Principle",
           brief:
-            "A spinal extension pose that counters thoracic kyphosis, opens the chest, and strengthens the posterior chain — the antidote to desk posture.",
+            "Backbends are not about how far you bend — they are about where the bend comes from. The thoracic spine is the target. The lumbar spine is the trap.",
           mnemonic:
-            "BHUJAN-GA = the COILING serpent rising. A cobra rises from the ground by using the muscles of its back — not by pushing with the arms. Feel the difference.",
+            'A backbend distributed evenly across all 24 movable vertebrae is healthy. A backbend dumped into 5 lumbar vertebrae is how people get hurt. The question is never "how deep?" — it\'s "where from?"',
           bodyMap: undefined,
           tabs: [
             {
-              label: "The Pose",
+              label: "The Concept",
               content:
-                "Bhujangasana directly addresses Upper Crossed Syndrome: it opens the pectorals and anterior shoulders (tight in UCS), strengthens the erector spinae and thoracic extensors (weak in UCS), and creates space in the anterior chest. The key distinction between a therapeutic and non-therapeutic cobra is whether the extension comes from the back muscles or from pushing through the arms. Using the arms to push the chest up bypasses the spinal extensors entirely — which defeats the purpose. \"Legs of the cobra\" — using the thoracic extensors to lift — is the clinical action that counteracts the rounded-back pattern.",
+                "Backbending requires spinal extension — but not all spinal regions are equally suited for it. The thoracic spine, which naturally curves forward (kyphosis), is designed to be the primary site of extension work. Its facet joints, oriented at approximately 60 degrees to the transverse plane, are built for both rotation and extension. The lumbar spine, with facet joints oriented almost vertically in the sagittal plane, is built for flexion and extension — but in a healthy backbend, the lumbar contribution should be modest. The problem: the thoracic spine stiffens dramatically with age and inactivity. Research from the Journal of Orthopaedic & Sports Physical Therapy found that mean thoracic extension range in young, healthy adults from a standing position is only 8.7 degrees — a remarkably small number that reflects how much the thoracic spine loses to gravity and habitual posture (Edmondston et al., 2011). When the thoracic spine cannot extend, the lumbar spine compensates — hyperextending to produce the overall shape of a backbend while the mid-back stays largely rigid. The solution is not more flexibility — it is learning to stabilize the lumbar spine while mobilizing the thoracic spine. This requires active core engagement (TVA, especially) to control lumbar extension, combined with intentional thoracic opening.",
             },
             {
-              label: "How to Enter",
+              label: "Why It Matters",
               content:
-                "Lie face down, forehead on the mat, legs hip-width. Place hands under the shoulders. Inhale: without pushing through the hands, use the back muscles to lift the chest. The hands may barely leave the mat (low cobra) or provide gentle support (medium cobra). Keep the elbows close to the body. Lengthen the neck — don't compress the back of the skull into the neck. Hold 3-5 breaths. Lower on the exhale.",
+                "Backbends practiced with thoracic awareness — even small ones like sphinx or cobra — are profoundly therapeutic. They directly counteract the chronic flexion posture of sitting and screens. They open the anterior chest, stretch the hip flexors, strengthen the posterior chain, and restore spinal extension capacity that most people are gradually losing. The goal of a backbend is not to look impressive — it is to restore what modern life has taken away.",
             },
             {
-              label: "Modifications",
-              content:
-                "Baby cobra (very low lift, hands barely touching the mat) is most therapeutic for back pain. For those with healthy spines, progress to a fuller backbend by straightening the arms more. Avoid in acute lower back pain or disc herniation.",
+              label: "What To Do",
+              content: [
+                "Sphinx pose (foundational — begin here)",
+                "cobra pose (progress here)",
+                "camel pose (thoracic-led)",
+                "locust pose (posterior chain activation)",
+                "bridge pose (hip-linked extension)",
+                "Key cue in all poses: before going deeper, lengthen — imagine the spine growing long before it arches",
+              ],
             },
           ],
         },
         {
-          id: "sphinx-pose",
-          term: "Sphinx Pose",
-          sanskrit: "Salamba Bhujangasana",
+          id: "twists-unlock-backbends",
+          term: "Twists Unlock Backbends",
           brief:
-            "A supported backbend on the forearms — gentler than full cobra, sustained longer, ideal for reversing chronic thoracic kyphosis.",
+            "Spinal twists and backbends are not separate practices — they are partners. The rotation that twists demand from the thoracic spine is the same mobility that makes backbends safe and effective.",
           mnemonic:
-            "SA-LAMBA = with support. The sphinx is supported by its elbows — ancient, patient, enduring. This pose asks for the same quality: sustained, passive, supported opening.",
+            "Think of the thoracic spine as a rusty door hinge. A twist loosens the hinge. Once loose, the door opens both ways — rotation and extension. Twist first. Then bend back.",
           bodyMap: undefined,
           tabs: [
             {
-              label: "The Pose",
+              label: "The Concept",
               content:
-                "Sphinx is the \"baby\" of backbends — accessible to almost everyone, including people with acute lower back issues. The forearm support reduces lumbar compression while still creating thoracic extension. Held for longer periods (2-5 minutes in a yin context), sphinx creates sustained longitudinal traction through the anterior spine — the anterior longitudinal ligament and hip flexors lengthen passively. It is a direct antidote to the \"tech neck\" and thoracic kyphosis of Upper Crossed Syndrome, held passively so the muscles learn to relax rather than actively extend.",
+                "The thoracic spine's facet joints are oriented in a way that permits both rotation and extension — and these capacities are linked. The mechanism: thoracic facets are oriented somewhat horizontally, which gives the thoracic spine its rotational capacity. When you twist, each vertebra unlocks slightly from its neighbors. That same unlocking makes extension — backbending — more accessible in the same spinal segments. This is why experienced yoga teachers consistently sequence spinal twists before backbends. It is not convention — it is anatomy. When the thoracic spine has been rotated, individual vertebrae become more available to participate in extension. The result is a backbend that distributes more evenly along the thoracic spine, reducing the compensatory load on the lumbar spine and cervical spine that stiff thoracic segments would otherwise produce. This principle also explains why people who never practice twists tend to \"collapse\" into the lower back in backbends — the thoracic spine is locked, and the lumbar spine takes all the load.",
             },
             {
-              label: "How to Enter",
+              label: "Why It Matters",
               content:
-                "Lie face down. Bring the elbows under the shoulders, forearms parallel. Lift the chest, allowing the lumbar spine to gently extend. Relax the buttocks and legs — this is a passive pose. Let gravity do the work. The head is in a neutral position. Hold 2-5 minutes in yin practice, or 5-8 breaths in a more active practice.",
+                "For the large number of people who have limited thoracic mobility from years of desk work and screen use, jumping directly into backbends without preparatory twisting often reinforces the very compensation pattern the backbend is supposed to correct. Sequencing twists first — even a simple seated twist or thread-the-needle — measurably increases thoracic participation in the subsequent backbend.",
             },
             {
-              label: "Modifications",
-              content:
-                "Place a folded blanket under the forearms for comfort. Move the elbows further forward (reducing the angle) to decrease intensity. For a deeper version, straighten the arms (Bhujangasana/Cobra).",
+              label: "What To Do",
+              content: [
+                "Pre-backbend twist sequence: thread-the-needle (on hands and knees) → seated spinal twist (half lord of the fishes) → revolved lunge → then move into backbend work (sphinx, cobra, bridge)",
+                "Notice how the backbend feels different after the twisting preparation",
+              ],
             },
           ],
         },
         {
-          id: "eagle-arms",
-          term: "Eagle Arms",
-          sanskrit: "Garudasana",
+          id: "half-lord-of-the-fishes",
+          term: "Half Lord of the Fishes",
+          sanskrit: "Ardha Matsyendrasana",
           brief:
-            "A deep stretch for the upper back and rhomboids combined with a shoulder external rotation challenge — directly addresses the tight upper trap pattern of Upper Crossed Syndrome.",
+            "The foundational seated spinal twist — specifically training thoracic rotation while learning to protect the lumbar spine from twisting.",
           mnemonic:
-            "GARUDA = the eagle. The arms wrap like wings folding inward — then you spread them to fly. The wrapping stretches what is tight (upper back), the spreading strengthens what is weak (lower trap, rhomboids).",
+            "ARDHA = half. MATSYENDRA = the lord of fish (a great yogi who, according to legend, learned yoga from Shiva while living as a fish in the ocean). Half of his full twist — but still profound.",
           bodyMap: undefined,
           tabs: [
             {
               label: "The Pose",
               content:
-                "In the eagle arm position (one elbow hooked under the other, forearms intertwined, palms pressing), the rhomboids and middle trapezius are placed under a deep stretch — exactly the muscles that are shortened and overloaded in the forward-rounded Upper Crossed pattern. Lifting the elbows to shoulder height while keeping the shoulders down works the lower trapezius. The pose creates space between the shoulder blades — a sensation rarely experienced in people with chronic upper back tension.",
+                'Ardha Matsyendrasana is the primary thoracic rotation pose in yoga. The clinical key — and what makes it therapeutic rather than harmful — is where the rotation comes from. The lumbar spine has minimal rotation capacity (approximately 1-3 degrees per level, limited by its sagittal-plane facet joint orientation). The thoracic spine has significant rotation capacity (5-7 degrees per level × 12 levels). A twist that comes from the thoracic spine is therapeutically valuable. A twist that comes from the lumbar spine (which most people default to because their thoracic spine is stiff) creates rotational shear on the lumbar discs. Cue: "Grow tall before you twist — rotation comes after length."',
             },
             {
               label: "How to Enter",
               content:
-                "From standing or seated, extend both arms forward. Cross the right elbow over the left. Bend both elbows and hook them together. If possible, bring the palms to touch. Lift the elbows to shoulder height. Draw the shoulders down away from the ears — feel the space open between the shoulder blades. Hold 5-8 breaths. Switch arms.",
+                "Sit with both legs extended. Bend the right knee and cross the right foot over the left leg, placing it on the floor outside the left knee. Keep the left leg extended (or bend it to tuck the left foot near the right hip). Inhale: lengthen the spine upward. Exhale: rotate to the right, placing the left elbow outside the right knee. Right hand on the floor behind you. With each inhale, lengthen. With each exhale, deepen the rotation — from the thoracic spine, not the lower back. Hold 5-8 breaths. Switch sides.",
             },
             {
               label: "Modifications",
               content:
-                "If the palms cannot touch, hold a strap between the hands. For a deeper rhomboid stretch, round the upper back slightly (like Cat pose) while maintaining the arm position.",
+                "Sit on a folded blanket to tilt the pelvis forward and ease the twist. Keep both legs extended if hip tightness prevents the setup. Use the hand on the floor rather than the elbow-to-knee lever to reduce twist intensity.",
+            },
+          ],
+        },
+        {
+          id: "sphinx-cobra",
+          term: "Sphinx & Cobra",
+          sanskrit: "Salamba Bhujangasana — Bhujangasana",
+          brief:
+            "The foundational backbends — gentle spinal extension with clear anatomical logic, targeting the thoracic spine while protecting the lumbar.",
+          mnemonic:
+            "SALAMBA = supported. BHUJANGA = cobra/serpent. The supported serpent (sphinx) comes first — learning to lift the chest with back strength before progressing to the unsupported version. The serpent rises from the earth slowly.",
+          bodyMap: undefined,
+          tabs: [
+            {
+              label: "The Pose",
+              content:
+                "Sphinx and cobra are the entry points for all backbend work. In sphinx, the forearms are on the ground and the pelvis stays grounded — creating a gentle, supported thoracic extension that is appropriate even for people with lower back sensitivity. In cobra, the hands press the floor and the chest lifts higher — but crucially, the elbows remain soft and the lift comes primarily from back muscle strength, not arm pushing. The distinction between therapeutic cobra and harmful cobra is this: if the pubic bone rises from the floor, the lumbar spine is taking excessive load. In a well-executed cobra, the pelvis stays grounded, the extension travels up through the thoracic spine, and the arms are nearly straight but not locked — used only for guidance, not propulsion. Both poses directly counteract the chronic thoracic flexion of sitting and screens.",
+            },
+            {
+              label: "How to Enter",
+              content:
+                "Sphinx: Lie prone (face down). Place forearms on the floor, elbows under shoulders. Press gently into the forearms and allow the chest to rise. Keep the pubic bone in contact with the floor. Breathe into the front of the chest. Hold 5-10 breaths. Cobra: from sphinx, walk the hands back under the shoulders. On an inhale, use the back muscles to begin to lift the chest — then press gently through the hands to extend further. Keep the pelvis grounded. Draw the shoulder blades down and toward each other. Hold 3-5 breaths.",
+            },
+            {
+              label: "Modifications",
+              content:
+                "For acute lower back sensitivity: sphinx only, with a folded blanket under the pelvis to reduce lumbar extension. Baby cobra (very low lift, elbows deeply bent) is appropriate when introducing the pose. Progress to higher cobra only when the lumbar spine remains comfortable and the pubic bone stays grounded.",
             },
           ],
         },
       ],
     },
     {
-      id: "core-stability-practice",
-      label: "Core Stability in Practice",
+      id: "core-strength-practice",
+      label: "Core Strength in Practice",
       subtitle: "Poses that demand deep core coordination",
       icon: "▽",
       accent: "#6B8FBF",
       level: 3,
       cards: [
-        {
-          id: "plank-pose",
-          term: "Plank Pose",
-          sanskrit: "Phalakasana",
-          brief:
-            "The foundational core stabilization pose — the entire body as one rigid unit, maintained by coordinated deep core activation, not muscular bracing.",
-          mnemonic:
-            "PHALAKA = a flat plank of wood. The body should be as rigid and flat as a plank — not sagging in the middle, not lifting at the hips. A plank is rigid because of its internal structure, not its surface.",
-          bodyMap: undefined,
-          tabs: [
-            {
-              label: "The Pose",
-              content:
-                "Plank is the most practical core stabilization exercise in yoga. It requires the TVA, multifidus, diaphragm, and pelvic floor to co-activate to maintain a neutral spine against gravity — exactly the clinical definition of core stability. The common errors — hips too high (avoiding the work), hips sagging (core failing), breath held (destroying the core canister) — all reveal instability rather than weakness. Plank should be practiced with continuous, diaphragmatic breathing: if you cannot breathe normally in plank, the load is too high. Stuart McGill's research recommends this type of isometric stabilization over spinal-flexion exercises (crunches) as the primary core training modality.",
-            },
-            {
-              label: "How to Enter",
-              content:
-                "From downward dog or tabletop, shift forward to stack shoulders over wrists. Body forms a straight line from crown to heels. Engage the TVA (draw the navel gently toward the spine without holding the breath). Press the floor away with straight arms. Keep the neck long — don't drop the head or look forward. Breathe normally. Hold for time (start with 20-30 seconds) rather than to failure.",
-            },
-            {
-              label: "Modifications",
-              content:
-                "Knees-down plank reduces the load significantly and is appropriate for beginners or those with lower back issues. Forearm plank (Phalakasana on the forearms) removes wrist load. To progress: lift one foot slightly while maintaining level hips.",
-            },
-          ],
-        },
-        {
-          id: "side-plank",
-          term: "Side Plank",
-          sanskrit: "Vasisthasana",
-          brief:
-            "The lateral core stabilization pose — loads the obliques and quadratus lumborum in the frontal plane, which is almost always undertrained.",
-          mnemonic:
-            "VASISTHA = the most excellent sage. The pose demands the most excellent alignment — the whole body in one line, supported by one arm and one foot. It requires lateral stability that most people have never trained.",
-          bodyMap: undefined,
-          tabs: [
-            {
-              label: "The Pose",
-              content:
-                "Side plank is the primary lateral core stabilization exercise in yoga. It loads the obliques, quadratus lumborum, and hip abductors in the frontal plane — the plane most neglected in conventional training. It also loads the rotator cuff of the supporting shoulder in a closed-chain position — one of the few yoga poses that directly strengthens the shoulder stabilizers. The key: the hips should not sag (QL and obliques failing) or pike upward (cheating the lateral chain). The body makes one long diagonal line.",
-            },
-            {
-              label: "How to Enter",
-              content:
-                "From plank, shift onto the outer edge of the right foot and right hand. Stack the feet or stagger them. Lift the hips to form a straight line from crown to heels. Reach the left arm to the ceiling. Gaze can be forward or up at the hand. Keep the supporting shoulder active — press away from the floor, don't collapse into it. Hold 3-5 breaths. Switch sides.",
-            },
-            {
-              label: "Modifications",
-              content:
-                "Lower the bottom knee to the mat for a reduced-load version. Place the bottom foot against a wall for balance assistance. For a greater challenge: lift the top leg or add a rotation (threading the arm under).",
-            },
-          ],
-        },
         {
           id: "boat-pose",
           term: "Boat Pose",
@@ -385,7 +392,7 @@ export const thePractice: Course = {
             {
               label: "The Pose",
               content:
-                "Navasana is commonly taught as a \"core strengthener\" but is more accurately a core stability and hip flexor endurance pose. The challenge is maintaining a long, neutral spine (not a rounded back) while balancing on the sit bones — this requires TVA activation to prevent spinal collapse. When the spine rounds (the common compensation), the deep core disengages and the superficial flexors take over. A shorter, flatter version with a long spine is more therapeutically valuable than a deep V-shape with a rounded back. The pose also directly loads the iliopsoas isometrically — relevant for its role as a lumbar stabilizer.",
+                'Navasana is commonly taught as a "core strengthener" but is more accurately a core stability and hip flexor endurance pose. The challenge is maintaining a long, neutral spine (not a rounded back) while balancing on the sit bones — this requires TVA activation to prevent spinal collapse. When the spine rounds (the common compensation), the deep core disengages and the superficial flexors take over. A shorter, flatter version with a long spine is more therapeutically valuable than a deep V-shape with a rounded back. The pose also directly loads the iliopsoas isometrically — relevant for its role as a lumbar stabilizer.',
             },
             {
               label: "How to Enter",
@@ -502,33 +509,6 @@ export const thePractice: Course = {
       level: 3,
       cards: [
         {
-          id: "half-lord-of-the-fishes",
-          term: "Half Lord of the Fishes",
-          sanskrit: "Ardha Matsyendrasana",
-          brief:
-            "The foundational seated spinal twist — specifically training thoracic rotation while learning to protect the lumbar spine from twisting.",
-          mnemonic:
-            "ARDHA = half. MATSYENDRA = the lord of fish (a great yogi who, according to legend, learned yoga from Shiva while living as a fish in the ocean). Half of his full twist — but still profound.",
-          bodyMap: undefined,
-          tabs: [
-            {
-              label: "The Pose",
-              content:
-                "Ardha Matsyendrasana is the primary thoracic rotation pose in yoga. The clinical key — and what makes it therapeutic rather than harmful — is where the rotation comes from. The lumbar spine has minimal rotation capacity (approximately 5 degrees per level). The thoracic spine has significant rotation capacity (5-7 degrees per level × 12 levels = significant total). A twist that comes from the thoracic spine is therapeutically valuable. A twist that comes from the lumbar spine (which most people default to because their thoracic spine is stiff) creates rotational shear on the lumbar discs. Cue: \"Grow tall before you twist — rotation comes after length.\"",
-            },
-            {
-              label: "How to Enter",
-              content:
-                "Sit with both legs extended. Bend the right knee and cross the right foot over the left leg, placing it on the floor outside the left knee. Keep the left leg extended (or bend it to tuck the left foot near the right hip). Inhale: lengthen the spine upward. Exhale: rotate to the right, placing the left elbow outside the right knee. Right hand on the floor behind you. With each inhale, lengthen. With each exhale, deepen the rotation — from the thoracic spine, not the lower back. Hold 5-8 breaths. Switch sides.",
-            },
-            {
-              label: "Modifications",
-              content:
-                "Sit on a folded blanket to tilt the pelvis forward and ease the twist. Keep both legs extended if hip tightness prevents the setup. Use the hand on the floor rather than the elbow-to-knee lever to reduce twist intensity.",
-            },
-          ],
-        },
-        {
           id: "triangle-pose",
           term: "Triangle Pose",
           sanskrit: "Trikonasana",
@@ -541,7 +521,7 @@ export const thePractice: Course = {
             {
               label: "The Pose",
               content:
-                "Triangle pose works in the frontal plane — the plane most neglected in conventional fitness. It lengthens the lateral line of the body (intercostals, obliques, QL, IT band, and lateral calves — Myers' Lateral Line) while demanding frontal plane stability from the hip abductors of the standing leg. The common error is \"collapsing into the pose\" — the torso rotating toward the floor rather than opening to the side wall — which converts the frontal plane demand into a sagittal plane one and loses the therapeutic value. The hip of the back leg must remain stacked over the heel, not drifting forward.",
+                'Triangle pose works in the frontal plane — the plane most neglected in conventional fitness. It lengthens the lateral line of the body (intercostals, obliques, QL, IT band, and lateral calves — Myers\' Lateral Line) while demanding frontal plane stability from the hip abductors of the standing leg. The common error is "collapsing into the pose" — the torso rotating toward the floor rather than opening to the side wall — which converts the frontal plane demand into a sagittal plane one and loses the therapeutic value. The hip of the back leg must remain stacked over the heel, not drifting forward.',
             },
             {
               label: "How to Enter",
@@ -582,6 +562,16 @@ export const thePractice: Course = {
             },
           ],
         },
+      ],
+    },
+    {
+      id: "sanskrit-tradition",
+      label: "Sanskrit & Tradition",
+      subtitle: "The language that connects practice to lineage",
+      icon: "𑗃",
+      accent: "#A67C8A",
+      level: 3,
+      cards: [
         {
           id: "sanskrit-word-bank",
           term: "Sanskrit Word Bank",
