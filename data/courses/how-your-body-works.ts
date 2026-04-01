@@ -400,6 +400,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "spinal-curves",
           term: "The Spinal Curves",
+          image: "spinal-curves.png",
           brief:
             "Four natural curves of the spine — cervical lordosis, thoracic kyphosis, lumbar lordosis, and sacral kyphosis — that function as a shock-absorbing spring system.",
           mnemonic:
