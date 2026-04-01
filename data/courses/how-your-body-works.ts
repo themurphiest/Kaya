@@ -225,6 +225,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "the-pelvis",
           term: "The Pelvis",
+          image: "pelvis.png",
           brief:
             "The basin-shaped ring of bones at the center of the body — the structural keystone connecting the spine to the legs.",
           mnemonic:
