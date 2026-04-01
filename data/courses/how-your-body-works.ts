@@ -23,6 +23,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "core-canister",
           term: "The Core Canister",
+          image: "core-canister.png",
           brief:
             "The body's true core — a pressurized chamber with the diaphragm as the lid, pelvic floor as the base, and transverse abdominis as the walls.",
           mnemonic:
@@ -426,6 +427,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "intervertebral-discs",
           term: "Intervertebral Discs",
+          image: "intervertebral-discs.png",
           brief:
             "The fibrocartilaginous shock absorbers between each vertebra — the spine's cushioning system and one of its most commonly injured structures.",
           mnemonic:
@@ -489,6 +491,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "lumbar-spine",
           term: "The Lumbar Spine",
+          image: "lumbar-spine.png",
           brief:
             "The lower back (L1-L5) — the spine's load-bearing workhorse, designed for flexion and extension but highly vulnerable to rotation and shear.",
           mnemonic:
@@ -519,6 +522,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "sacrum-si-joint",
           term: "Sacrum & SI Joint",
+          image: "sacrum-si-joint.png",
           brief:
             "The triangular base of the spine — where the spine meets the pelvis, and where force transfers between the upper and lower body.",
           mnemonic:
@@ -560,6 +564,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "shoulder-girdle",
           term: "The Shoulder Girdle",
+          image: "shoulder-girdle.png",
           brief:
             "The most mobile joint complex in the body — five articulations working together to give the arm its extraordinary range of movement.",
           mnemonic:
@@ -589,6 +594,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "rotator-cuff",
           term: "Rotator Cuff (SITS)",
+          image: "rotator-cuff.png",
           brief:
             "Four deep muscles wrapping the shoulder joint — the dynamic stabilizers that hold the ball in the socket while the arm moves.",
           mnemonic:
@@ -620,6 +626,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "trapezius",
           term: "Trapezius",
+          image: "trapezius.png",
           brief:
             "The large diamond-shaped muscle of the upper back — its three parts must work in balance, but modern life overloads the upper fibers and underworks the lower ones.",
           mnemonic:
@@ -693,6 +700,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "hip-joint",
           term: "The Hip Joint",
+          image: "hip-joint.png",
           brief:
             "A deep ball-and-socket joint — the most mobile and inherently stable joint in the lower body, capable of movement in all three planes.",
           mnemonic:
@@ -724,6 +732,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "quadriceps",
           term: "Quadriceps",
+          image: "quadriceps.png",
           brief:
             "Four muscles on the front of the thigh that extend the knee and absorb the impact of landing — the primary decelerators of the lower body.",
           mnemonic:
@@ -759,6 +768,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "knee-joint",
           term: "The Knee Joint",
+          image: "knee-joint.png",
           brief:
             "The body's largest joint — a modified hinge between the femur and tibia that is stabilized by four ligaments, two menisci, and the muscular control of the hip and ankle above and below.",
           mnemonic:
@@ -823,6 +833,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "ankle-foot",
           term: "Ankle & Foot",
+          image: "ankle-foot.png",
           brief:
             "The body's foundation — and a joint where limited mobility silently drives compensations all the way up to the knee, hip, and spine.",
           mnemonic:
@@ -1060,6 +1071,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "anterior-pelvic-tilt",
           term: "Anterior Pelvic Tilt",
+          image: "anterior-pelvic-tilt.png",
           brief:
             "A forward rotation of the pelvis that increases the lumbar curve — associated with tight hip flexors, weak glutes, and lower back pain.",
           mnemonic:
@@ -1098,6 +1110,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "posterior-pelvic-tilt",
           term: "Posterior Pelvic Tilt",
+          image: "posterior-pelvic-tilt.png",
           brief:
             "A backward rotation of the pelvis that flattens the lumbar curve — often driven by tight hamstrings and associated with disc pressure and chronic sitting.",
           mnemonic:
