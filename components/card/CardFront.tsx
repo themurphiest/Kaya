@@ -1,6 +1,7 @@
 "use client";
 
 import type { Card } from "@/data/types";
+import Image from "next/image";
 import FlipCue from "./FlipCue";
 
 interface CardFrontProps {
@@ -49,6 +50,27 @@ export default function CardFront({
         >
           {card.sanskrit}
         </p>
+      )}
+
+      {/* Anatomy image */}
+      {card.image && (
+        <div
+          className="relative w-full mb-5 overflow-hidden rounded-[12px]"
+          style={{
+            maxHeight: 220,
+            border: `1px solid ${accent}15`,
+            background: "rgba(255,255,255,0.03)",
+          }}
+        >
+          <Image
+            src={`/images/anatomy/${card.image}`}
+            alt={card.term}
+            width={600}
+            height={220}
+            className="w-full object-cover"
+            style={{ maxHeight: 220 }}
+          />
+        </div>
       )}
 
       {/* Brief */}

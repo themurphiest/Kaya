@@ -47,6 +47,7 @@ export interface Card {
   brief: string;
   mnemonic: string;
   tabs: CardTab[];
+  image?: string;
   bodyMap?: BodyMap;
   diagram?: string;
 }

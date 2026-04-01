@@ -54,6 +54,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "diaphragm",
           term: "Diaphragm",
+          image: "diaphragm.png",
           brief:
             "The primary breathing muscle — a dome-shaped sheet that forms the roof of the core canister and regulates spinal stability.",
           mnemonic:
@@ -85,6 +86,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "transverse-abdominis",
           term: "Transverse Abdominis (TVA)",
+          image: "transverse-abdominis.png",
           brief:
             "The deepest abdominal muscle — a horizontal corset that wraps around the trunk and is the body's first line of spinal defense.",
           mnemonic:
@@ -116,6 +118,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "pelvic-floor",
           term: "Pelvic Floor",
+          image: "pelvic-floor.png",
           brief:
             "A hammock of muscles at the base of the pelvis — the floor of the core canister and an often-ignored foundation of whole-body stability.",
           mnemonic:
@@ -147,6 +150,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "multifidus",
           term: "Multifidus",
+          image: "multifidus.png",
           brief:
             "The deepest back muscle — running along the spine's posterior wall and providing segment-by-segment stabilization of each vertebra.",
           mnemonic:
@@ -178,6 +182,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "rectus-abdominis",
           term: "Rectus Abdominis",
+          image: "rectus-abdominis.png",
           brief:
             'The paired vertical muscle running down the front of the abdomen — the visible "six-pack" and the most superficial of the abdominal muscles.',
           mnemonic:
@@ -248,6 +253,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "iliopsoas",
           term: "Iliopsoas (Hip Flexors)",
+          image: "iliopsoas.png",
           brief:
             "The most powerful hip flexor — a composite of two muscles (iliacus and psoas major) that connects the lumbar spine directly to the femur.",
           mnemonic:
@@ -279,6 +285,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "gluteus-maximus",
           term: "Gluteus Maximus",
+          image: "gluteus-maximus.png",
           brief:
             "The largest muscle in the body — the primary driver of hip extension and a critical counterbalance to the hip flexors.",
           mnemonic:
@@ -314,6 +321,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "gluteus-medius",
           term: "Gluteus Medius",
+          image: "gluteus-medius.png",
           brief:
             "The hip stabilizer — a fan-shaped muscle on the outer hip that controls pelvic level with every step you take.",
           mnemonic:
@@ -449,6 +457,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "thoracic-spine",
           term: "The Thoracic Spine",
+          image: "thoracic-spine.png",
           brief:
             "The mid-back (T1-T12) — the body's primary rotational region and the most chronically stiff segment in modern humans.",
           mnemonic:
