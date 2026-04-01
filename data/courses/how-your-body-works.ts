@@ -662,6 +662,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "thoracic-outlet",
           term: "Thoracic Outlet",
+          image: "thoracic-outlet.png",
           brief:
             'The narrow passage between the collarbone, first rib, and neck muscles — where nerves and blood vessels exit the neck and enter the arm, and where compression creates the pain pattern often mistaken for "just a pinched nerve."',
           mnemonic:
