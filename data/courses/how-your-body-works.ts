@@ -358,6 +358,7 @@ export const howYourBodyWorks: Course = {
         {
           id: "adductors",
           term: "Adductors (Inner Thigh)",
+          image: "adductors.png",
           brief:
             "Five muscles of the inner thigh that bring the legs together and play a critical role in pelvic stability during movement.",
           mnemonic:
