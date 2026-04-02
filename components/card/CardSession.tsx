@@ -3,7 +3,6 @@
 import { useState, useMemo } from "react";
 import type { Group } from "@/data/types";
 import FlashCard from "./FlashCard";
-import ProgressBar from "@/components/ui/ProgressBar";
 import BackButton from "@/components/ui/BackButton";
 import { shuffle } from "@/lib/utils";
 
@@ -28,7 +27,6 @@ export default function CardSession({
   const [exiting, setExiting] = useState(false);
 
   const current = cards[index];
-  const progress = index / cards.length;
   const isLast = index === cards.length - 1;
 
   const goNext = () => {
@@ -67,11 +65,6 @@ export default function CardSession({
             {index + 1} of {cards.length}
           </div>
         </div>
-      </div>
-
-      {/* Progress bar — fixed, does not grow */}
-      <div className="flex-shrink-0 mb-3">
-        <ProgressBar progress={progress} accent={group.accent} />
       </div>
 
       {/* Card — fills all remaining space */}
