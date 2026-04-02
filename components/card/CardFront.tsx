@@ -55,8 +55,9 @@ export default function CardFront({
       {/* Anatomy image */}
       {card.image && (
         <div
-          className="relative w-full mb-5 overflow-hidden rounded-[12px] flex-1 min-h-0"
+          className="relative w-full mb-5 overflow-hidden rounded-[12px] flex-shrink-0"
           style={{
+            height: 300,
             background: "rgba(255, 248, 240, 0.06)",
             border: `1px solid ${accent}15`,
           }}
@@ -71,7 +72,7 @@ export default function CardFront({
       )}
 
       {/* Brief */}
-      <p className="type-body text-base flex-shrink-0 mt-auto">
+      <p className="type-body text-base flex-1 overflow-y-auto">
         {card.brief}
       </p>
 
