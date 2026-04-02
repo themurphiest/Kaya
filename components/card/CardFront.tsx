@@ -17,7 +17,7 @@ export default function CardFront({
 }: CardFrontProps) {
   return (
     <div
-      className="card-face relative flex flex-col rounded-[var(--card-radius)] p-[44px_36px_32px] absolute inset-0 overflow-hidden"
+      className="card-face relative flex flex-col rounded-[var(--card-radius)] p-[28px_28px_24px] absolute inset-0 overflow-hidden"
       style={{
         background: "var(--card-bg)",
         backdropFilter: "blur(14px)",
@@ -26,12 +26,12 @@ export default function CardFront({
       }}
     >
       {/* Module tag */}
-      <div className="type-label mb-5" style={{ color: accent }}>
+      <div className="type-label mb-2" style={{ color: accent }}>
         {groupLabel}
       </div>
 
       {/* Term */}
-      <h2 className="type-display text-[28px] sm:text-4xl leading-tight mb-4 break-words">
+      <h2 className="type-display text-[22px] sm:text-[26px] leading-tight mb-3 break-words">
         {card.term}
       </h2>
 
@@ -55,7 +55,7 @@ export default function CardFront({
       {/* Anatomy image */}
       {card.image && (
         <div
-          className="relative w-full mb-5 overflow-hidden rounded-[12px] flex-shrink-0"
+          className="relative w-full mb-3 overflow-hidden rounded-[12px] flex-shrink-0"
           style={{
             height: 300,
             background: "rgba(255, 248, 240, 0.06)",
@@ -72,7 +72,7 @@ export default function CardFront({
       )}
 
       {/* Brief */}
-      <p className="type-body text-base flex-1 overflow-y-auto">
+      <p className="type-body text-sm flex-1 overflow-y-auto">
         {card.brief}
       </p>
 
