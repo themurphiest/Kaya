@@ -40,6 +40,26 @@ export default function CardBack({
         </div>
       </div>
 
+      {/* Mnemonic */}
+      {card.mnemonic && (
+        <div
+          className="mb-4 pl-3 border-l-2"
+          style={{ borderColor: `${accent}60` }}
+        >
+          <p
+            className="text-sm leading-[1.6] m-0"
+            style={{
+              fontFamily: "var(--font-sans)",
+              fontStyle: "italic",
+              fontWeight: 300,
+              color: "var(--text-secondary)",
+            }}
+          >
+            {card.mnemonic}
+          </p>
+        </div>
+      )}
+
       {/* Tabs */}
       <CardTabs
         tabs={displayTabs}

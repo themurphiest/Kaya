@@ -17,7 +17,7 @@ export default function CardFront({
 }: CardFrontProps) {
   return (
     <div
-      className="card-face relative flex flex-col rounded-[var(--card-radius)] p-[44px_36px_32px]"
+      className="card-face relative flex flex-col rounded-[var(--card-radius)] p-[44px_36px_32px] absolute inset-0 overflow-hidden"
       style={{
         background: "var(--card-bg)",
         backdropFilter: "blur(14px)",
@@ -55,52 +55,26 @@ export default function CardFront({
       {/* Anatomy image */}
       {card.image && (
         <div
-          className="relative w-full mb-5 overflow-hidden rounded-[12px]"
+          className="relative w-full mb-5 overflow-hidden rounded-[12px] flex-shrink-0"
           style={{
-            maxHeight: 220,
+            height: 200,
+            background: "rgba(255, 248, 240, 0.06)",
             border: `1px solid ${accent}15`,
-            background: "rgba(255,255,255,0.03)",
           }}
         >
           <Image
             src={`/images/anatomy/${card.image}`}
             alt={card.term}
-            width={600}
-            height={220}
-            className="w-full object-cover"
-            style={{ maxHeight: 220 }}
+            fill
+            className="object-contain p-2"
           />
         </div>
       )}
 
       {/* Brief */}
-      <p className="type-body text-base mb-6 flex-1">
+      <p className="type-body text-base flex-1 overflow-y-auto">
         {card.brief}
       </p>
-
-      {/* Mnemonic */}
-      <div
-        className="rounded-[14px] p-[16px_20px]"
-        style={{
-          background: `${accent}0C`,
-          border: `1px solid ${accent}1A`,
-        }}
-      >
-        <div className="type-label mb-2" style={{ color: accent }}>
-          Memory Hook
-        </div>
-        <p
-          className="text-sm leading-[1.6] m-0"
-          style={{
-            fontFamily: "var(--font-sans)",
-            fontStyle: "italic",
-            fontWeight: 300,
-            color: "var(--text-secondary)",
-          }}
-        >
-          {card.mnemonic}
-        </p>
-      </div>
 
       <FlipCue accent={accent} />
     </div>

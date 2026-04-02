@@ -27,12 +27,12 @@ export default function FlashCard({
 
   return (
     <div
-      className="card-flip-container cursor-pointer mb-4 overflow-visible"
+      className="card-flip-container cursor-pointer h-full overflow-visible"
       onClick={onFlip}
     >
       <div
         className={cn(
-          "card-flip-inner relative w-full",
+          "card-flip-inner relative w-full h-full",
           flipped && "flipped",
           exiting && "exiting"
         )}

@@ -50,9 +50,9 @@ export default function CardSession({
   };
 
   return (
-    <div className="max-w-[520px] mx-auto px-5 pb-10">
-      {/* Header */}
-      <div className="flex justify-between items-center gap-4 pt-10 mb-5">
+    <div className="flex flex-col h-dvh max-w-[520px] mx-auto px-5">
+      {/* Header — fixed, does not grow */}
+      <div className="flex justify-between items-center gap-4 pt-10 mb-5 flex-shrink-0">
         <div className="min-w-0 shrink">
           <BackButton href={backHref} label={`← ${courseTitle}`} />
         </div>
@@ -69,37 +69,44 @@ export default function CardSession({
         </div>
       </div>
 
-      <ProgressBar progress={progress} accent={group.accent} />
+      {/* Progress bar — fixed, does not grow */}
+      <div className="flex-shrink-0 mb-4">
+        <ProgressBar progress={progress} accent={group.accent} />
+      </div>
 
-      <FlashCard
-        key={index}
-        card={current}
-        groupLabel={group.label}
-        accent={group.accent}
-        exiting={exiting}
-        flipped={flipped}
-        onFlip={handleFlip}
-      />
+      {/* Card — fills all remaining space */}
+      <div className="flex-1 min-h-0 mb-4">
+        <FlashCard
+          key={index}
+          card={current}
+          groupLabel={group.label}
+          accent={group.accent}
+          exiting={exiting}
+          flipped={flipped}
+          onFlip={handleFlip}
+        />
+      </div>
 
-      {/* Next button */}
-      <button
-        onClick={goNext}
-        className="w-full py-[15px] border-none rounded-full text-[15px] text-white cursor-pointer tracking-[0.04em] transition-all duration-200 hover:-translate-y-px"
-        style={{
-          fontFamily: "var(--font-mono)",
-          background: `color-mix(in srgb, ${group.accent} 85%, transparent)`,
-          boxShadow: `0 4px 18px ${group.accent}35`,
-        }}
-      >
-        {isLast ? "Complete ❋" : "Next →"}
-      </button>
-
-      <p
-        className="text-center text-xs mt-3.5"
-        style={{ fontFamily: "var(--font-mono)", color: "var(--text-faint)" }}
-      >
-        Tap card to flip · {cards.length - index - 1} cards remaining
-      </p>
+      {/* Next button — pinned at bottom, never moves */}
+      <div className="flex-shrink-0 pb-8">
+        <button
+          onClick={goNext}
+          className="w-full py-[15px] border-none rounded-full text-[15px] text-white cursor-pointer tracking-[0.04em] transition-all duration-200 hover:-translate-y-px"
+          style={{
+            fontFamily: "var(--font-mono)",
+            background: `color-mix(in srgb, ${group.accent} 85%, transparent)`,
+            boxShadow: `0 4px 18px ${group.accent}35`,
+          }}
+        >
+          {isLast ? "Complete ❋" : "Next →"}
+        </button>
+        <p
+          className="text-center text-xs mt-3.5"
+          style={{ fontFamily: "var(--font-mono)", color: "var(--text-faint)" }}
+        >
+          Tap card to flip · {cards.length - index - 1} cards remaining
+        </p>
+      </div>
     </div>
   );
 }
