@@ -57,8 +57,8 @@ export default function CardFront({
         <div
           className="relative w-full mb-5 overflow-hidden rounded-[12px] flex-shrink-0"
           style={{
-            height: 200,
-            background: "rgba(255, 248, 240, 0.06)",
+            height: 240,
+            background: "rgba(255, 250, 245, 0.95)",
             border: `1px solid ${accent}15`,
           }}
         >
@@ -66,7 +66,7 @@ export default function CardFront({
             src={`/images/anatomy/${card.image}`}
             alt={card.term}
             fill
-            className="object-cover object-top"
+            className="object-contain"
           />
         </div>
       )}
