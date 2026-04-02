@@ -29,6 +29,16 @@ export default function CardSession({
   const current = cards[index];
   const isLast = index === cards.length - 1;
 
+  const goPrev = () => {
+    if (exiting || index === 0) return;
+    setExiting(true);
+    setTimeout(() => {
+      setIndex((i) => i - 1);
+      setFlipped(false);
+      setExiting(false);
+    }, 300);
+  };
+
   const goNext = () => {
     if (exiting) return;
     if (isLast) {
@@ -80,11 +90,23 @@ export default function CardSession({
         />
       </div>
 
-      {/* Next button — pinned at bottom, never moves */}
-      <div className="flex-shrink-0 pb-4">
+      {/* Navigation — pinned at bottom */}
+      <div className="flex-shrink-0 pb-4 flex gap-2">
+        {index > 0 && (
+          <button
+            onClick={goPrev}
+            className="py-[15px] px-5 border-none rounded-full text-[15px] text-white cursor-pointer tracking-[0.04em] transition-all duration-200 hover:-translate-y-px"
+            style={{
+              fontFamily: "var(--font-mono)",
+              background: `color-mix(in srgb, ${group.accent} 50%, transparent)`,
+            }}
+          >
+            ←
+          </button>
+        )}
         <button
           onClick={goNext}
-          className="w-full py-[15px] border-none rounded-full text-[15px] text-white cursor-pointer tracking-[0.04em] transition-all duration-200 hover:-translate-y-px"
+          className="flex-1 py-[15px] border-none rounded-full text-[15px] text-white cursor-pointer tracking-[0.04em] transition-all duration-200 hover:-translate-y-px"
           style={{
             fontFamily: "var(--font-mono)",
             background: `color-mix(in srgb, ${group.accent} 85%, transparent)`,
