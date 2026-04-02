@@ -72,7 +72,7 @@ export default function CardFront({
       )}
 
       {/* Brief */}
-      <p className="type-body text-sm flex-1 overflow-y-auto">
+      <p className="type-body text-[15px] leading-[1.6] flex-1 overflow-y-auto">
         {card.brief}
       </p>
 
