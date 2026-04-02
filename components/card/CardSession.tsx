@@ -75,7 +75,7 @@ export default function CardSession({
       </div>
 
       {/* Card — fills all remaining space */}
-      <div className="flex-1 min-h-0 mb-3">
+      <div className="flex-1 min-h-0 mb-2">
         <FlashCard
           key={index}
           card={current}
@@ -100,12 +100,6 @@ export default function CardSession({
         >
           {isLast ? "Complete ❋" : "Next →"}
         </button>
-        <p
-          className="text-center text-xs mt-3.5"
-          style={{ fontFamily: "var(--font-mono)", color: "var(--text-faint)" }}
-        >
-          Tap card to flip · {cards.length - index - 1} cards remaining
-        </p>
       </div>
     </div>
   );
