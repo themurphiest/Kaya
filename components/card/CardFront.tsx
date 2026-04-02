@@ -57,7 +57,7 @@ export default function CardFront({
         <div
           className="relative w-full mb-5 overflow-hidden rounded-[12px] flex-shrink-0"
           style={{
-            height: 240,
+            height: 300,
             background: "rgba(255, 248, 240, 0.06)",
             border: `1px solid ${accent}15`,
           }}
