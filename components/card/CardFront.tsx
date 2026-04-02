@@ -66,7 +66,7 @@ export default function CardFront({
             src={`/images/anatomy/${card.image}`}
             alt={card.term}
             fill
-            className="object-contain p-2"
+            className="object-cover object-top"
           />
         </div>
       )}
