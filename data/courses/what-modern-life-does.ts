@@ -323,5 +323,71 @@ export const whatModernLifeDoes: Course = {
         },
       ],
     },
+    {
+      id: "kinetic-chain",
+      label: "The Kinetic Chain & Injury",
+      subtitle: "Why the injury site is often not the problem site",
+      icon: "⟶",
+      accent: "#5A8FAA",
+      level: 2,
+      cards: [
+        {
+          id: "the-kinetic-chain",
+          term: "The Kinetic Chain",
+          brief:
+            "A framework for understanding the body as a linked system — where movement (and dysfunction) at one joint affects every joint connected to it.",
+          mnemonic:
+            "A bicycle chain. If one link is bent or broken, the whole chain runs poorly. Fix only the bent link without fixing why it bent — and it bends again.",
+          tabs: [
+            {
+              label: "The Concept",
+              content:
+                "The kinetic chain concept, adapted from engineering by Dr. Arthur Steindler (1955) and widely applied in sports medicine and rehabilitation, describes the body as a series of interconnected segments — joints and muscles — where movement in one segment inevitably influences adjacent segments. A peer-reviewed PMC study (2023) defines the kinetic chain as \"the body's intricate coordination of various segments to perform a specific activity involving precise positioning, timing, and speed.\" The body core (lumbopelvic-hip complex) is the central hub through which forces are transferred between the upper and lower extremities. Disruption at any link — limited ankle mobility, weak hip abductors, restricted thoracic rotation — creates compensatory loading elsewhere. Over time, compensated joints develop pathology from loads they were not designed to sustain.",
+            },
+            {
+              label: "Why It Matters",
+              content:
+                "Any blockage or defect in the kinetic chain creates compensatory patterns and overuse injuries in adjacent structures (PMC, 2023). The clinical implication: treatment of the symptomatic site without assessment of the chain above and below it will reliably fail.",
+            },
+            {
+              label: "What To Do",
+              content: [
+                "Kinetic chain assessment (overhead squat, single-leg deadlift, walking gait)",
+                "movement pattern correction starting from the base of the chain",
+              ],
+            },
+          ],
+        },
+        {
+          id: "proximal-distal-force",
+          term: "Proximal-to-Distal Force Transfer",
+          brief:
+            "Power and stability generated at the center of the body (pelvis, core) are transmitted outward to the extremities — the source of most athletic power and most athletic injury.",
+          mnemonic:
+            "A bullwhip generates force at the handle (proximal) and delivers it at the tip (distal). A weak handle creates a limp whip. A strong, stable core creates powerful extremities — and a weak core forces the extremities to generate their own stability.",
+          tabs: [
+            {
+              label: "The Concept",
+              content:
+                "Proximal-to-distal sequencing describes the biomechanical principle that efficient movement begins with stabilization and force generation at the proximal segments (core, hip, shoulder girdle) before the force is transferred to the distal segments (forearm, hand, foot). This principle applies to throwing, kicking, punching, and all explosive sports movements. PMC research confirms that \"the contribution of more body segments in the total force output leads to higher potential velocity at the distal part.\" When the proximal segments (core and hip) are insufficient, the distal segments (elbow, knee, ankle) are forced to compensate — generating forces they cannot safely sustain, leading to overuse injury.",
+            },
+            {
+              label: "Why It Matters",
+              content:
+                "\"Tennis elbow\" in recreational players is often a wrist and forearm problem driven by insufficient core and shoulder rotation. Pitcher's elbow is driven by inadequate hip rotation and core stability forcing the elbow to compensate. In both cases, treating only the elbow while ignoring the chain is why these injuries recur.",
+            },
+            {
+              label: "What To Do",
+              content: [
+                "Rotational medicine ball throws",
+                "cable chops",
+                "hip-to-shoulder integrated movements",
+                "any exercise that loads the core before the extremities",
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 };

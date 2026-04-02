@@ -3,159 +3,21 @@ import type { Course } from "../types";
 export const whatYourBodyNeeds: Course = {
   id: "what-your-body-needs",
   slug: "what-your-body-needs",
-  title: "What Your Body Needs",
-  subtitle: "Why movement matters — and what to prioritize",
+  title: "How to Think About It",
+  subtitle: "The frameworks that change how you see your body",
   description:
-    "The case for mobility, the framework for action, and the principles that connect anatomy to daily life.",
+    "A small set of powerful mental models — the lenses that connect anatomy to daily life and make everything in The Practice make sense.",
   status: "available",
   accent: "#5A8FAA",
   groups: [
     {
-      id: "why-movement-matters",
-      label: "Why Movement Matters After 40",
-      subtitle:
-        "The science of aging, inactivity, and what you can do about it",
-      icon: "◎",
-      accent: "#5A8FAA",
-      level: 2,
-      cards: [
-        {
-          id: "aging-and-movement",
-          term: "Aging & Movement",
-          brief:
-            "The body loses muscle, bone density, and range of motion with age — but research shows that most of this decline is driven by inactivity, not aging itself, and is substantially reversible with movement.",
-          mnemonic:
-            "Aging is not the thief. Inactivity is. Age sets the rate of decline — but movement determines whether that decline happens at all.",
-
-          tabs: [
-            {
-              label: "The Concept",
-              content:
-                "The age-related loss of muscle mass and function — clinically termed sarcopenia — begins in the third decade of life and accelerates after 60. Research published in Physiological Reviews (Larsson et al., 2019) confirmed that muscle mass declines at approximately 1% per year from middle age, and in severe cases can result in a loss of up to 50% of muscle mass by the eighth or ninth decade. By the seventh and eighth decade, maximal strength decreases on average by 20-40% for both men and women (Doherty, 2003, Journal of Applied Physiology). Simultaneously, the thoracic spine stiffens: a systematic review published in the Journal of Orthopaedic Surgery and Research (Zappala et al., 2021) confirmed a moderate positive correlation between age and thoracic kyphosis — with hyperkyphosis (forward rounding of the upper back greater than 40 degrees) affecting 20-40% of adults over 60. A large UK Biobank study of over 41,000 participants found that kyphosis angle increases approximately 2.28 degrees per decade of life — and that increased spinal curvature is strongly associated with decreased muscle mass (medRxiv, 2024). This is the chain: inactivity → muscle loss → reduced spinal support → progressive kyphosis → reduced mobility → further inactivity.",
-            },
-            {
-              label: "Why It Matters",
-              content:
-                "The critical reframe is this: most of what people attribute to \"getting older\" is more accurately attributed to moving less. Harvard Health (2021) summarizes the consensus: one of the most important causes of reduced strength and coordination with aging is reduced physical activity — not the passage of time itself. And the good news, confirmed by NIA-supported research conducted over more than 40 years, is that resistance and mobility training can maintain or increase muscle strength at any age, slow the loss of bone density, and preserve the range of motion that makes daily life functional. The body does not stop responding to movement. It continues to respond for the rest of a person's life.",
-            },
-            {
-              label: "What To Do",
-              content: [
-                "The National Institute on Aging recommends four types of exercise for older adults: endurance (continuous movement like walking), strength (resistance training at least twice weekly), balance (single-leg work, yoga, tai chi), and flexibility (stretching and mobility work)",
-                "Of these, flexibility and mobility training are the most underprescribed — and the most directly connected to the practices in this curriculum",
-              ],
-            },
-          ],
-        },
-        {
-          id: "freedom-framework",
-          term: "The Freedom Framework",
-          brief:
-            "Mobility and flexibility are not about performance or touching your toes — they are about the physical freedom to live without unnecessary limitation.",
-          mnemonic:
-            "No one wants to be the person who can't kneel to garden, can't lift their arms overhead, can't get up from the floor without help. Mobility isn't about what you can do in a yoga class — it's about what you can do the rest of the time.",
-
-          tabs: [
-            {
-              label: "The Concept",
-              content:
-                "Physical therapist Grayson Wickham articulates what research consistently confirms: as we age, we lose the ability to access full ranges of motion without pain or compensation — and that compensation happens when there's limited mobility in key joints. The knee and ankle move more than they should to allow the body to move the way it's being asked to. The back overarches when the shoulder can't reach. Research published in Arthritis Care & Research shows that mobility-focused exercise programs reduce joint stiffness, pain, and disability in people with osteoarthritis. The American College of Sports Medicine confirms that flexibility training improves posture, reduces musculoskeletal injuries, and enhances functional capacity in older populations. And studies on tai chi and yoga — two practices that combine mobility, balance, and strength — show scientifically verified reductions in fall risk, improved balance, and better overall quality of life in older adults. The freedom to walk to the park, kneel in the garden, lift groceries, or dance at a family wedding is not a small thing. It is the whole thing.",
-            },
-            {
-              label: "Why It Matters",
-              content:
-                "One in four adults over age 65 falls each year — and once a person falls, the risk of falling again increases significantly. Research shows that balance is independently predictive of longevity. Mobility and proprioception work — the exact practices in this curriculum — are among the most effective and accessible fall-prevention interventions available.",
-            },
-            {
-              label: "What To Do",
-              content: [
-                "Hip mobility (pigeon, 90/90)",
-                "ankle dorsiflexion (malasana, calf stretching)",
-                "thoracic rotation (spinal twists, thread-the-needle)",
-                "balance training (single-leg work, tree pose)",
-                "strength work through full range of motion",
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
-      id: "kinetic-chain",
-      label: "The Kinetic Chain & Injury",
-      subtitle: "Why the injury site is often not the problem site",
-      icon: "⟶",
-      accent: "#5A8FAA",
-      level: 2,
-      cards: [
-        {
-          id: "the-kinetic-chain",
-          term: "The Kinetic Chain",
-          brief:
-            "A framework for understanding the body as a linked system — where movement (and dysfunction) at one joint affects every joint connected to it.",
-          mnemonic:
-            "A bicycle chain. If one link is bent or broken, the whole chain runs poorly. Fix only the bent link without fixing why it bent — and it bends again.",
-
-          tabs: [
-            {
-              label: "The Concept",
-              content:
-                "The kinetic chain concept, adapted from engineering by Dr. Arthur Steindler (1955) and widely applied in sports medicine and rehabilitation, describes the body as a series of interconnected segments — joints and muscles — where movement in one segment inevitably influences adjacent segments. A peer-reviewed PMC study (2023) defines the kinetic chain as \"the body's intricate coordination of various segments to perform a specific activity involving precise positioning, timing, and speed.\" The body core (lumbopelvic-hip complex) is the central hub through which forces are transferred between the upper and lower extremities. Disruption at any link — limited ankle mobility, weak hip abductors, restricted thoracic rotation — creates compensatory loading elsewhere. Over time, compensated joints develop pathology from loads they were not designed to sustain.",
-            },
-            {
-              label: "Why It Matters",
-              content:
-                "Any blockage or defect in the kinetic chain creates compensatory patterns and overuse injuries in adjacent structures (PMC, 2023). The clinical implication: treatment of the symptomatic site without assessment of the chain above and below it will reliably fail.",
-            },
-            {
-              label: "What To Do",
-              content: [
-                "Kinetic chain assessment (overhead squat, single-leg deadlift, walking gait)",
-                "movement pattern correction starting from the base of the chain",
-              ],
-            },
-          ],
-        },
-        {
-          id: "proximal-distal-force",
-          term: "Proximal-to-Distal Force Transfer",
-          brief:
-            "Power and stability generated at the center of the body (pelvis, core) are transmitted outward to the extremities — the source of most athletic power and most athletic injury.",
-          mnemonic:
-            "A bullwhip generates force at the handle (proximal) and delivers it at the tip (distal). A weak handle creates a limp whip. A strong, stable core creates powerful extremities — and a weak core forces the extremities to generate their own stability.",
-
-          tabs: [
-            {
-              label: "The Concept",
-              content:
-                "Proximal-to-distal sequencing describes the biomechanical principle that efficient movement begins with stabilization and force generation at the proximal segments (core, hip, shoulder girdle) before the force is transferred to the distal segments (forearm, hand, foot). This principle applies to throwing, kicking, punching, and all explosive sports movements. PMC research confirms that \"the contribution of more body segments in the total force output leads to higher potential velocity at the distal part.\" When the proximal segments (core and hip) are insufficient, the distal segments (elbow, knee, ankle) are forced to compensate — generating forces they cannot safely sustain, leading to overuse injury.",
-            },
-            {
-              label: "Why It Matters",
-              content:
-                "\"Tennis elbow\" in recreational players is often a wrist and forearm problem driven by insufficient core and shoulder rotation. Pitcher's elbow is driven by inadequate hip rotation and core stability forcing the elbow to compensate. In both cases, treating only the elbow while ignoring the chain is why these injuries recur.",
-            },
-            {
-              label: "What To Do",
-              content: [
-                "Rotational medicine ball throws",
-                "cable chops",
-                "hip-to-shoulder integrated movements",
-                "any exercise that loads the core before the extremities",
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    {
       id: "mobility-stability",
       label: "Mobility vs. Stability",
       subtitle:
-        "Why some joints need to move freely, and others need to brace — and what happens when they get confused",
+        "Why some joints need to move freely, and others need to hold — and what happens when they get confused",
       icon: "⇌",
       accent: "#7BA688",
-      level: 2,
+      level: 3,
       cards: [
         {
           id: "joint-by-joint",
@@ -164,7 +26,6 @@ export const whatYourBodyNeeds: Course = {
             "Joints alternate between needing mobility (freedom to move) and needing stability (resistance to unwanted movement) — and when a mobility joint loses range, the stability joint above or below it is forced to compensate.",
           mnemonic:
             "Mobility-Stability-Mobility-Stability up the chain, from ankle to skull. When mobility is lost at one joint, the stability joint takes up the slack — doing a job it wasn't designed for, and eventually breaking down.",
-
           tabs: [
             {
               label: "The Concept",
@@ -194,7 +55,6 @@ export const whatYourBodyNeeds: Course = {
             "The mid-back should be the body's primary rotational region — but it is chronically stiff in most people, forcing the lumbar spine and neck to compensate for every twist and reach.",
           mnemonic:
             "The thoracic spine is the trunk of the body's rotational tree. When the trunk is stiff, the branches (neck, lower back) bend more than they should — and eventually break.",
-
           tabs: [
             {
               label: "The Concept",
@@ -216,6 +76,70 @@ export const whatYourBodyNeeds: Course = {
                 "spinal twists",
                 "yoga poses that demand thoracic rotation (revolved triangle, half lord of the fishes)",
               ],
+            },
+          ],
+        },
+      ],
+    },
+    {
+      id: "reading-the-chain",
+      label: "How to Read Your Body",
+      subtitle:
+        "The skill of tracing symptoms back to their source",
+      icon: "⇌",
+      accent: "#5A8FAA",
+      level: 3,
+      cards: [
+        {
+          id: "pain-not-source",
+          term: "The Site of Pain Is Not the Source",
+          brief:
+            "The body compensates silently. By the time something hurts, the problem has usually been somewhere else for months.",
+          mnemonic:
+            "The check engine light is not the engine problem. Treating only where it hurts — without asking why it hurts there — is changing the light bulb.",
+          tabs: [
+            {
+              label: "The Idea",
+              content:
+                "When one part of the body can't do its job — a stiff joint, a weak muscle, a restricted fascia — the body doesn't stop moving. It reroutes. An adjacent joint picks up the slack, doing work it wasn't designed for. This compensation is silent at first. You don't feel anything wrong because the body is solving the problem for you. But the compensating structure is now under chronic, inappropriate load. Over weeks and months, that load accumulates — until the compensating structure reaches its tolerance limit. That's when you feel pain. The pain is real, but it's the last domino, not the first. The actual problem — the joint or muscle that stopped doing its job — is often painless, quiet, and somewhere else entirely.",
+            },
+            {
+              label: "Why It Changes Everything",
+              content:
+                "This reframe changes how you approach every ache and restriction. Instead of asking only \"what hurts?\" you start asking \"what stopped working that made this hurt?\" It explains why foam rolling and stretching the painful area often provides only temporary relief — because the load returns as soon as you stop, since the source hasn't changed. It explains why the same injury keeps coming back after treatment. And it's why the most effective movement practitioners spend more time assessing above and below the pain than at the pain itself.",
+            },
+            {
+              label: "What to Ask",
+              content: [
+                "Where does it hurt? (the symptom — acknowledge it, but don't stop here)",
+                "What moves above it? (is the joint above restricted, forcing this area to compensate?)",
+                "What moves below it? (is the joint below stiff or weak, sending excess load upward?)",
+              ],
+            },
+          ],
+        },
+        {
+          id: "body-as-system",
+          term: "The Body Is a System, Not a Collection of Parts",
+          brief:
+            "Every isolated fix that fails is evidence of a system that wasn't addressed.",
+          mnemonic:
+            "You don't fix a traffic jam by widening one intersection. You model the whole network. The body is the same — one restriction changes flow everywhere downstream.",
+          tabs: [
+            {
+              label: "The Idea",
+              content:
+                "The body is not a machine made of independent components. It is a continuous, interconnected system — muscles linked by fascia, joints linked by kinetic chains, movement patterns linked by the nervous system. When you treat one part in isolation — stretching only the tight muscle, strengthening only the weak one, releasing only the painful spot — you are intervening in a network without considering the network. This is why so many common approaches fail: the hamstring that keeps getting tight despite years of stretching (because the restriction is in the calf or thoracolumbar fascia), the shoulder that keeps getting impinged despite rotator cuff exercises (because the thoracic spine won't rotate), the knee that keeps hurting despite quad strengthening (because the hip can't stabilize in the frontal plane). Each of these is a systems problem treated as a parts problem.",
+            },
+            {
+              label: "Why It Changes Everything",
+              content:
+                "Once you see the body as a system, you stop chasing symptoms. You start asking what pattern produced this symptom. You stop treating muscles and start treating movement. You stop isolating and start integrating. This is the shift from reactive treatment to proactive understanding — and it's what separates the person who keeps getting injured from the person who finally stops.",
+            },
+            {
+              label: "An Example",
+              content:
+                "A person has chronic lower back pain. The isolated approach: stretch the lower back, strengthen the core, take anti-inflammatories. The systems approach: check ankle dorsiflexion (restricted — heels rise in a squat), check hip mobility (limited external rotation — femur internally rotates during movement), observe the knee (collapses inward under load — valgus), observe the hip (drops on one side — Trendelenburg sign), observe the lumbar spine (compensating with rotation and extension it wasn't designed for). One restriction at the ankle created a chain of compensations through the knee, hip, and into the lower back. Five symptoms. One source. The fix isn't a back exercise — it's restoring ankle mobility and hip control. The back pain resolves because the system no longer needs the back to compensate.",
             },
           ],
         },

@@ -501,7 +501,7 @@ export const thePractice: Course = {
     },
     {
       id: "mobility-stability-practice",
-      label: "Mobility & Stability in Practice",
+      label: "The Frontal Plane & Rotation",
       subtitle:
         "Poses that train the distinction between mobile and stable joints",
       icon: "❋",

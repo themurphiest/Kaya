@@ -1121,5 +1121,75 @@ export const howYourBodyWorks: Course = {
         },
       ],
     },
+
+    /* ───── Part C: Why It Matters ───── */
+    {
+      id: "why-it-matters",
+      label: "Why the Body You Have Now Matters",
+      subtitle:
+        "The case for understanding your own anatomy — at any age",
+      icon: "◎",
+      accent: "#5A8FAA",
+      level: 1,
+      cards: [
+        {
+          id: "aging-and-movement",
+          term: "Aging & Movement",
+          brief:
+            "The body loses muscle, bone density, and range of motion with age — but research shows that most of this decline is driven by inactivity, not aging itself, and is substantially reversible with movement.",
+          mnemonic:
+            "Aging is not the thief. Inactivity is. Age sets the rate of decline — but movement determines whether that decline happens at all.",
+          tabs: [
+            {
+              label: "The Concept",
+              content:
+                "The age-related loss of muscle mass and function — clinically termed sarcopenia — begins in the third decade of life and accelerates after 60. Research published in Physiological Reviews (Larsson et al., 2019) confirmed that muscle mass declines at approximately 1% per year from middle age, and in severe cases can result in a loss of up to 50% of muscle mass by the eighth or ninth decade. By the seventh and eighth decade, maximal strength decreases on average by 20-40% for both men and women (Doherty, 2003, Journal of Applied Physiology). Simultaneously, the thoracic spine stiffens: a systematic review published in the Journal of Orthopaedic Surgery and Research (Zappala et al., 2021) confirmed a moderate positive correlation between age and thoracic kyphosis — with hyperkyphosis (forward rounding of the upper back greater than 40 degrees) affecting 20-40% of adults over 60. A large UK Biobank study of over 41,000 participants found that kyphosis angle increases approximately 2.28 degrees per decade of life — and that increased spinal curvature is strongly associated with decreased muscle mass (medRxiv, 2024). This is the chain: inactivity → muscle loss → reduced spinal support → progressive kyphosis → reduced mobility → further inactivity.",
+            },
+            {
+              label: "Why It Matters",
+              content:
+                "The critical reframe is this: most of what people attribute to \"getting older\" is more accurately attributed to moving less. Harvard Health (2021) summarizes the consensus: one of the most important causes of reduced strength and coordination with aging is reduced physical activity — not the passage of time itself. And the good news, confirmed by NIA-supported research conducted over more than 40 years, is that resistance and mobility training can maintain or increase muscle strength at any age, slow the loss of bone density, and preserve the range of motion that makes daily life functional. The body does not stop responding to movement. It continues to respond for the rest of a person's life.",
+            },
+            {
+              label: "What To Do",
+              content: [
+                "The National Institute on Aging recommends four types of exercise for older adults: endurance (continuous movement like walking), strength (resistance training at least twice weekly), balance (single-leg work, yoga, tai chi), and flexibility (stretching and mobility work)",
+                "Of these, flexibility and mobility training are the most underprescribed — and the most directly connected to the practices in this curriculum",
+              ],
+            },
+          ],
+        },
+        {
+          id: "freedom-framework",
+          term: "The Freedom Framework",
+          brief:
+            "Mobility and flexibility are not about performance or touching your toes — they are about the physical freedom to live without unnecessary limitation.",
+          mnemonic:
+            "No one wants to be the person who can't kneel to garden, can't lift their arms overhead, can't get up from the floor without help. Mobility isn't about what you can do in a yoga class — it's about what you can do the rest of the time.",
+          tabs: [
+            {
+              label: "The Concept",
+              content:
+                "Physical therapist Grayson Wickham articulates what research consistently confirms: as we age, we lose the ability to access full ranges of motion without pain or compensation — and that compensation happens when there's limited mobility in key joints. The knee and ankle move more than they should to allow the body to move the way it's being asked to. The back overarches when the shoulder can't reach. Research published in Arthritis Care & Research shows that mobility-focused exercise programs reduce joint stiffness, pain, and disability in people with osteoarthritis. The American College of Sports Medicine confirms that flexibility training improves posture, reduces musculoskeletal injuries, and enhances functional capacity in older populations. And studies on tai chi and yoga — two practices that combine mobility, balance, and strength — show scientifically verified reductions in fall risk, improved balance, and better overall quality of life in older adults. The freedom to walk to the park, kneel in the garden, lift groceries, or dance at a family wedding is not a small thing. It is the whole thing.",
+            },
+            {
+              label: "Why It Matters",
+              content:
+                "One in four adults over age 65 falls each year — and once a person falls, the risk of falling again increases significantly. Research shows that balance is independently predictive of longevity. Mobility and proprioception work — the exact practices in this curriculum — are among the most effective and accessible fall-prevention interventions available.",
+            },
+            {
+              label: "What To Do",
+              content: [
+                "Hip mobility (pigeon, 90/90)",
+                "ankle dorsiflexion (malasana, calf stretching)",
+                "thoracic rotation (spinal twists, thread-the-needle)",
+                "balance training (single-leg work, tree pose)",
+                "strength work through full range of motion",
+              ],
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
