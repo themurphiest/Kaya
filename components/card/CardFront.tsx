@@ -25,6 +25,8 @@ export default function CardFront({
         boxShadow: "var(--card-shadow)",
       }}
     >
+      <FlipCue accent={accent} />
+
       {/* Module tag */}
       <div className="type-label mb-2" style={{ color: accent }}>
         {groupLabel}
@@ -57,7 +59,7 @@ export default function CardFront({
         <div
           className="relative w-full mb-3 overflow-hidden rounded-[12px] flex-shrink-0"
           style={{
-            height: 300,
+            height: 360,
             background: "rgba(255, 248, 240, 0.06)",
             border: `1px solid ${accent}15`,
           }}
@@ -75,8 +77,6 @@ export default function CardFront({
       <p className="type-body text-[15px] leading-[1.6] flex-1 overflow-y-auto">
         {card.brief}
       </p>
-
-      <FlipCue accent={accent} />
     </div>
   );
 }
