@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useCallback } from "react";
 import type { Card } from "@/data/types";
 import CardFront from "./CardFront";
 import CardBack from "./CardBack";
@@ -24,16 +24,39 @@ export default function FlashCard({
   onFlip,
 }: FlashCardProps) {
   const [activeTab, setActiveTab] = useState(0);
+  const [animating, setAnimating] = useState(false);
+  const lockRef = useRef(false);
+
+  const handleClick = useCallback(() => {
+    if (lockRef.current || exiting) return;
+    lockRef.current = true;
+    setAnimating(true);
+    onFlip();
+    setTimeout(() => {
+      setAnimating(false);
+    }, 500);
+    setTimeout(() => {
+      lockRef.current = false;
+    }, 520);
+  }, [onFlip, exiting]);
+
+  const flipClass = animating
+    ? flipped
+      ? "flipping-to-back"
+      : "flipping-to-front"
+    : flipped
+      ? "resting-back"
+      : "resting-front";
 
   return (
     <div
       className="card-flip-container cursor-pointer h-full overflow-visible"
-      onClick={onFlip}
+      onClick={handleClick}
     >
       <div
         className={cn(
           "card-flip-inner relative w-full h-full",
-          flipped && "flipped",
+          flipClass,
           exiting && "exiting"
         )}
       >

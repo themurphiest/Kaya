@@ -58,9 +58,9 @@ export default function CardSession({
   };
 
   return (
-    <div className="flex flex-col h-dvh max-w-[520px] mx-auto px-5">
+    <div className="flex flex-col h-dvh items-center px-3">
       {/* Header — fixed, does not grow */}
-      <div className="flex justify-between items-center gap-4 pt-6 mb-3 flex-shrink-0">
+      <div className="flex justify-between items-center gap-4 pt-6 mb-3 flex-shrink-0 w-full" style={{ maxWidth: "min(400px, 100vw - 28px)" }}>
         <div className="min-w-0 shrink">
           <BackButton href={backHref} label={`← ${courseTitle}`} />
         </div>
@@ -77,8 +77,8 @@ export default function CardSession({
         </div>
       </div>
 
-      {/* Card — fills all remaining space */}
-      <div className="flex-1 min-h-0 mb-2">
+      {/* Card — sized with min() pattern for consistent family feel */}
+      <div className="flex-1 min-h-0 mb-2" style={{ width: "min(400px, 100vw - 28px)", maxHeight: "min(720px, 100vh - 120px)" }}>
         <FlashCard
           key={index}
           card={current}
@@ -91,7 +91,7 @@ export default function CardSession({
       </div>
 
       {/* Navigation — pinned at bottom */}
-      <div className="flex-shrink-0 pb-4 flex gap-2">
+      <div className="flex-shrink-0 pb-4 flex gap-2" style={{ width: "min(400px, 100vw - 28px)" }}>
         {index > 0 && (
           <button
             onClick={goPrev}

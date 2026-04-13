@@ -23,8 +23,8 @@
   --card-bg:     rgba(255, 255, 255, 0.06);
   --card-border: rgba(255, 255, 255, 0.10);
   --card-radius: 24px;
-  --card-shadow: 0 8px 40px rgba(0, 0, 0, 0.40),
-                 0 2px 8px rgba(0, 0, 0, 0.25);
+  --card-shadow: 0 30px 80px rgba(0, 0, 0, 0.45),
+                 0 12px 30px rgba(0, 0, 0, 0.25);
 
   /* Course accents */
   --accent-body:        #4AADA8;
@@ -133,23 +133,48 @@ body::after {
 /* ─── 3D Card Flip ──────────────────────────────────────────────────────────── */
 
 .card-flip-container {
-  perspective: 1400px;
+  perspective: 1200px;
   height: 100%;
 }
 
 .card-flip-inner {
   transform-style: preserve-3d;
-  transition: transform 0.65s cubic-bezier(0.35, 0, 0.2, 1), min-height 0.3s ease;
   height: 100%;
-}
-
-.card-flip-inner.flipped {
-  transform: rotateY(180deg);
 }
 
 .card-flip-inner.exiting {
   transition: opacity 0.3s ease;
   opacity: 0;
+}
+
+/* Flip animation — shared family feel: mid-flip scale bump + lift */
+@keyframes flipToBack {
+  0%   { transform: rotateY(0deg)   scale(1)    translateY(0);    }
+  50%  { transform: rotateY(90deg)  scale(1.02) translateY(-4px); }
+  100% { transform: rotateY(180deg) scale(1)    translateY(0);    }
+}
+
+@keyframes flipToFront {
+  0%   { transform: rotateY(180deg) scale(1)    translateY(0);    }
+  50%  { transform: rotateY(90deg)  scale(1.02) translateY(-4px); }
+  100% { transform: rotateY(0deg)   scale(1)    translateY(0);    }
+}
+
+.card-flip-inner.flipping-to-back {
+  animation: flipToBack 0.5s ease-in-out forwards;
+}
+
+.card-flip-inner.flipping-to-front {
+  animation: flipToFront 0.5s ease-in-out forwards;
+}
+
+/* Resting states (after animation completes or initial) */
+.card-flip-inner.resting-back {
+  transform: rotateY(180deg);
+}
+
+.card-flip-inner.resting-front {
+  transform: rotateY(0deg);
 }
 
 .card-face {
