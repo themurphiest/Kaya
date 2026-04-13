@@ -142,11 +142,6 @@ body::after {
   height: 100%;
 }
 
-.card-flip-inner.exiting {
-  transition: opacity 0.3s ease;
-  opacity: 0;
-}
-
 /* Flip animation — shared family feel: mid-flip scale bump + lift */
 @keyframes flipToBack {
   0%   { transform: rotateY(0deg)   scale(1)    translateY(0);    }
@@ -210,18 +205,6 @@ body::after {
   padding: clamp(16px, 3.5vw, 28px);
   padding-top: clamp(24px, 4vw, 32px);
   padding-bottom: clamp(20px, 3vw, 28px);
-}
-
-/* ─── Nav arrow hover (non-touch) ──────────────────────────────────────────── */
-
-.nav-arrow {
-  -webkit-tap-highlight-color: transparent;
-}
-
-@media (hover: hover) {
-  .nav-arrow:hover {
-    filter: brightness(1.1);
-  }
 }
 
 /* ─── Utility ───────────────────────────────────────────────────────────────── */

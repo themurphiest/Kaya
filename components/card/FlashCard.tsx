@@ -10,7 +10,6 @@ interface FlashCardProps {
   card: Card;
   groupLabel: string;
   accent: string;
-  exiting: boolean;
   flipped: boolean;
   onFlip: () => void;
 }
@@ -19,7 +18,6 @@ export default function FlashCard({
   card,
   groupLabel,
   accent,
-  exiting,
   flipped,
   onFlip,
 }: FlashCardProps) {
@@ -28,7 +26,7 @@ export default function FlashCard({
   const lockRef = useRef(false);
 
   const handleClick = useCallback(() => {
-    if (lockRef.current || exiting) return;
+    if (lockRef.current) return;
     lockRef.current = true;
     setAnimating(true);
     onFlip();
@@ -38,7 +36,7 @@ export default function FlashCard({
     setTimeout(() => {
       lockRef.current = false;
     }, 520);
-  }, [onFlip, exiting]);
+  }, [onFlip]);
 
   const flipClass = animating
     ? flipped
@@ -57,7 +55,6 @@ export default function FlashCard({
         className={cn(
           "card-flip-inner relative w-full h-full",
           flipClass,
-          exiting && "exiting"
         )}
       >
         <CardFront card={card} groupLabel={groupLabel} accent={accent} />

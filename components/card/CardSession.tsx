@@ -1,9 +1,8 @@
 "use client";
 
-import { useState, useMemo, useCallback } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import type { Group } from "@/data/types";
 import FlashCard from "./FlashCard";
-import BackButton from "@/components/ui/BackButton";
 import { shuffle } from "@/lib/utils";
 
 interface CardSessionProps {
@@ -12,22 +11,6 @@ interface CardSessionProps {
   courseTitle: string;
   onComplete: () => void;
   backHref: string;
-}
-
-/* ── Press-state hook (shared family interaction: translateY(1px) on press) ── */
-function usePressState() {
-  const [pressed, setPressed] = useState(false);
-  const handlers = {
-    onPointerDown: () => setPressed(true),
-    onPointerUp: () => setPressed(false),
-    onPointerLeave: () => setPressed(false),
-  };
-  const style = {
-    transform: pressed ? "translateY(1px)" : "translateY(0)",
-    transition: "transform 0.15s ease",
-    WebkitTapHighlightColor: "transparent" as const,
-  };
-  return { handlers, style };
 }
 
 export default function CardSession({
@@ -41,22 +24,45 @@ export default function CardSession({
   const [index, setIndex] = useState(0);
   const [flipped, setFlipped] = useState(false);
   const [exiting, setExiting] = useState(false);
-
-  const prevPress = usePressState();
-  const nextPress = usePressState();
+  const [entered, setEntered] = useState(false);
+  const [prevPressed, setPrevPressed] = useState(false);
+  const [nextPressed, setNextPressed] = useState(false);
 
   const current = cards[index];
+  const isFirst = index === 0;
   const isLast = index === cards.length - 1;
 
+  // Entry animation on mount + each card change
+  useEffect(() => {
+    setEntered(false);
+    const raf = requestAnimationFrame(() => setEntered(true));
+    return () => cancelAnimationFrame(raf);
+  }, [index]);
+
+  // Keyboard: arrow keys for nav, Escape to close
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        window.location.href = backHref;
+      } else if (e.key === "ArrowLeft" && !isFirst) {
+        goPrev();
+      } else if (e.key === "ArrowRight") {
+        goNext();
+      }
+    };
+    window.addEventListener("keydown", handleKey);
+    return () => window.removeEventListener("keydown", handleKey);
+  });
+
   const goPrev = useCallback(() => {
-    if (exiting || index === 0) return;
+    if (exiting || isFirst) return;
     setExiting(true);
     setTimeout(() => {
       setIndex((i) => i - 1);
       setFlipped(false);
       setExiting(false);
-    }, 300);
-  }, [exiting, index]);
+    }, 280);
+  }, [exiting, isFirst]);
 
   const goNext = useCallback(() => {
     if (exiting) return;
@@ -69,7 +75,7 @@ export default function CardSession({
       setIndex((i) => i + 1);
       setFlipped(false);
       setExiting(false);
-    }, 300);
+    }, 280);
   }, [exiting, isLast, onComplete]);
 
   const handleFlip = () => {
@@ -77,98 +83,173 @@ export default function CardSession({
   };
 
   return (
-    <div className="flex flex-col h-dvh items-center px-3">
-      {/* Header */}
-      <div className="flex justify-between items-center gap-4 pt-6 mb-3 flex-shrink-0 w-full" style={{ maxWidth: "min(400px, 100vw - 28px)" }}>
-        <div className="min-w-0 shrink">
-          <BackButton href={backHref} label={`← ${courseTitle}`} />
-        </div>
-        <div className="text-right shrink-0">
-          <div className="type-heading text-sm">
-            {group.label}
-          </div>
-          <div
-            className="text-xs"
-            style={{ fontFamily: "var(--font-mono)", color: "var(--text-muted)" }}
-          >
-            {index + 1} of {cards.length}
-          </div>
-        </div>
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        zIndex: 9000,
+        background: "rgba(16, 22, 18, 0.85)",
+        backdropFilter: "blur(3px)",
+        WebkitBackdropFilter: "blur(3px)",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        WebkitTapHighlightColor: "transparent",
+      }}
+    >
+      {/* Close button (×) — top-right */}
+      <button
+        onClick={() => (window.location.href = backHref)}
+        aria-label="Close card session"
+        style={{
+          position: "absolute",
+          top: 14,
+          right: 14,
+          width: 36,
+          height: 36,
+          borderRadius: "50%",
+          border: "none",
+          background: "rgba(255,255,255,0.08)",
+          color: "rgba(255,255,255,0.7)",
+          fontSize: 20,
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 10,
+          WebkitTapHighlightColor: "transparent",
+        }}
+      >
+        ×
+      </button>
+
+      {/* Card counter — top-left */}
+      <div
+        style={{
+          position: "absolute",
+          top: 18,
+          left: 18,
+          fontFamily: "var(--font-mono)",
+          fontSize: 12,
+          color: "rgba(255,255,255,0.35)",
+          letterSpacing: "0.06em",
+          zIndex: 10,
+        }}
+      >
+        {index + 1} / {cards.length}
       </div>
 
-      {/* Card */}
-      <div className="flex-1 min-h-0 mb-2" style={{ width: "min(400px, 100vw - 28px)", maxHeight: "min(720px, 100vh - 120px)" }}>
+      {/* Group label — top-center */}
+      <div
+        style={{
+          position: "absolute",
+          top: 18,
+          left: "50%",
+          transform: "translateX(-50%)",
+          fontFamily: "var(--font-mono)",
+          fontSize: 11,
+          textTransform: "uppercase" as const,
+          letterSpacing: "0.14em",
+          color: "rgba(255,255,255,0.3)",
+          zIndex: 10,
+          whiteSpace: "nowrap",
+        }}
+      >
+        {group.label}
+      </div>
+
+      {/* Prev arrow — left side */}
+      <button
+        onClick={goPrev}
+        onPointerDown={() => setPrevPressed(true)}
+        onPointerUp={() => setPrevPressed(false)}
+        onPointerLeave={() => setPrevPressed(false)}
+        aria-label="Previous card"
+        tabIndex={0}
+        style={{
+          position: "absolute",
+          left: "max(8px, calc((100vw - min(400px, 100vw - 28px)) / 2 - 52px))",
+          top: "50%",
+          transform: `translateY(-50%) ${prevPressed ? "translateY(1px)" : ""}`,
+          transition: "transform 0.15s ease, opacity 0.2s ease",
+          width: 40,
+          height: 40,
+          borderRadius: "50%",
+          border: "none",
+          background: "rgba(255,255,255,0.06)",
+          color: "rgba(255,255,255,0.5)",
+          fontSize: 16,
+          cursor: isFirst ? "default" : "pointer",
+          opacity: isFirst ? 0 : 1,
+          pointerEvents: isFirst ? "none" : "auto",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 10,
+          fontFamily: "var(--font-mono)",
+          WebkitTapHighlightColor: "transparent",
+        }}
+      >
+        ←
+      </button>
+
+      {/* Next arrow — right side */}
+      <button
+        onClick={goNext}
+        onPointerDown={() => setNextPressed(true)}
+        onPointerUp={() => setNextPressed(false)}
+        onPointerLeave={() => setNextPressed(false)}
+        aria-label={isLast ? "Complete group" : "Next card"}
+        tabIndex={0}
+        style={{
+          position: "absolute",
+          right: "max(8px, calc((100vw - min(400px, 100vw - 28px)) / 2 - 52px))",
+          top: "50%",
+          transform: `translateY(-50%) ${nextPressed ? "translateY(1px)" : ""}`,
+          transition: "transform 0.15s ease",
+          width: 40,
+          height: 40,
+          borderRadius: "50%",
+          border: "none",
+          background: isLast
+            ? `color-mix(in srgb, ${group.accent} 60%, transparent)`
+            : "rgba(255,255,255,0.06)",
+          color: isLast ? "white" : "rgba(255,255,255,0.5)",
+          fontSize: isLast ? 14 : 16,
+          cursor: "pointer",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 10,
+          fontFamily: "var(--font-mono)",
+          WebkitTapHighlightColor: "transparent",
+        }}
+      >
+        {isLast ? "❋" : "→"}
+      </button>
+
+      {/* Card — centered, entry animation */}
+      <div
+        style={{
+          width: "min(400px, 100vw - 28px)",
+          height: "min(720px, 100vh - 120px)",
+          transition: "transform 0.32s cubic-bezier(0.2, 0.7, 0.2, 1), opacity 0.25s ease",
+          transform: entered && !exiting
+            ? "scale(1) translateY(0)"
+            : exiting
+              ? "scale(0.96) translateY(4px)"
+              : "scale(0.92) translateY(12px)",
+          opacity: entered && !exiting ? 1 : 0,
+        }}
+      >
         <FlashCard
           key={index}
           card={current}
           groupLabel={group.label}
           accent={group.accent}
-          exiting={exiting}
           flipped={flipped}
           onFlip={handleFlip}
         />
-      </div>
-
-      {/* Navigation — press-state arrows, family interaction pattern */}
-      <div className="flex-shrink-0 pb-4 flex items-center gap-3" style={{ width: "min(400px, 100vw - 28px)" }}>
-        {index > 0 ? (
-          <button
-            onClick={goPrev}
-            role="button"
-            tabIndex={0}
-            aria-label="Previous card"
-            className="nav-arrow"
-            style={{
-              ...prevPress.style,
-              width: 48,
-              height: 48,
-              borderRadius: "50%",
-              border: "none",
-              cursor: "pointer",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              flexShrink: 0,
-              background: `color-mix(in srgb, ${group.accent} 40%, transparent)`,
-              color: "white",
-              fontSize: 18,
-              fontFamily: "var(--font-mono)",
-            }}
-            {...prevPress.handlers}
-          >
-            ←
-          </button>
-        ) : (
-          <div style={{ width: 48, flexShrink: 0 }} />
-        )}
-
-        <button
-          onClick={goNext}
-          role="button"
-          tabIndex={0}
-          aria-label={isLast ? "Complete group" : "Next card"}
-          className="nav-arrow"
-          style={{
-            ...nextPress.style,
-            flex: 1,
-            height: 48,
-            borderRadius: 24,
-            border: "none",
-            cursor: "pointer",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontFamily: "var(--font-mono)",
-            fontSize: 15,
-            letterSpacing: "0.04em",
-            color: "white",
-            background: `color-mix(in srgb, ${group.accent} 85%, transparent)`,
-            boxShadow: `0 4px 18px ${group.accent}35`,
-          }}
-          {...nextPress.handlers}
-        >
-          {isLast ? "Complete ❋" : "Next →"}
-        </button>
       </div>
     </div>
   );
