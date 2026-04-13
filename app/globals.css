@@ -198,19 +198,29 @@ body::after {
   animation: arrowPulse 1.8s ease-in-out infinite;
 }
 
-/* ─── Mobile Polish (≤ 480px) ──────────────────────────────────────────────── */
+/* ─── Responsive — no media queries, all via min()/clamp()/flex ────────────── */
 
-@media (max-width: 480px) {
-  .card-face {
-    padding: 32px 20px 24px;
-  }
+.card-face {
+  padding: clamp(20px, 4vw, 28px);
+  padding-top: clamp(24px, 4vw, 28px);
+  padding-bottom: clamp(20px, 3vw, 24px);
+}
 
-  .card-face-back {
-    padding: 24px 16px 20px;
-  }
+.card-face-back {
+  padding: clamp(16px, 3.5vw, 28px);
+  padding-top: clamp(24px, 4vw, 32px);
+  padding-bottom: clamp(20px, 3vw, 28px);
+}
 
-  :root {
-    --card-radius: 20px;
+/* ─── Nav arrow hover (non-touch) ──────────────────────────────────────────── */
+
+.nav-arrow {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (hover: hover) {
+  .nav-arrow:hover {
+    filter: brightness(1.1);
   }
 }
 

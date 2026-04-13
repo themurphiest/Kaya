@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback } from "react";
 import type { Group } from "@/data/types";
 import FlashCard from "./FlashCard";
 import BackButton from "@/components/ui/BackButton";
@@ -12,6 +12,22 @@ interface CardSessionProps {
   courseTitle: string;
   onComplete: () => void;
   backHref: string;
+}
+
+/* ── Press-state hook (shared family interaction: translateY(1px) on press) ── */
+function usePressState() {
+  const [pressed, setPressed] = useState(false);
+  const handlers = {
+    onPointerDown: () => setPressed(true),
+    onPointerUp: () => setPressed(false),
+    onPointerLeave: () => setPressed(false),
+  };
+  const style = {
+    transform: pressed ? "translateY(1px)" : "translateY(0)",
+    transition: "transform 0.15s ease",
+    WebkitTapHighlightColor: "transparent" as const,
+  };
+  return { handlers, style };
 }
 
 export default function CardSession({
@@ -26,10 +42,13 @@ export default function CardSession({
   const [flipped, setFlipped] = useState(false);
   const [exiting, setExiting] = useState(false);
 
+  const prevPress = usePressState();
+  const nextPress = usePressState();
+
   const current = cards[index];
   const isLast = index === cards.length - 1;
 
-  const goPrev = () => {
+  const goPrev = useCallback(() => {
     if (exiting || index === 0) return;
     setExiting(true);
     setTimeout(() => {
@@ -37,9 +56,9 @@ export default function CardSession({
       setFlipped(false);
       setExiting(false);
     }, 300);
-  };
+  }, [exiting, index]);
 
-  const goNext = () => {
+  const goNext = useCallback(() => {
     if (exiting) return;
     if (isLast) {
       onComplete();
@@ -51,7 +70,7 @@ export default function CardSession({
       setFlipped(false);
       setExiting(false);
     }, 300);
-  };
+  }, [exiting, isLast, onComplete]);
 
   const handleFlip = () => {
     if (!exiting) setFlipped((f) => !f);
@@ -59,7 +78,7 @@ export default function CardSession({
 
   return (
     <div className="flex flex-col h-dvh items-center px-3">
-      {/* Header — fixed, does not grow */}
+      {/* Header */}
       <div className="flex justify-between items-center gap-4 pt-6 mb-3 flex-shrink-0 w-full" style={{ maxWidth: "min(400px, 100vw - 28px)" }}>
         <div className="min-w-0 shrink">
           <BackButton href={backHref} label={`← ${courseTitle}`} />
@@ -77,7 +96,7 @@ export default function CardSession({
         </div>
       </div>
 
-      {/* Card — sized with min() pattern for consistent family feel */}
+      {/* Card */}
       <div className="flex-1 min-h-0 mb-2" style={{ width: "min(400px, 100vw - 28px)", maxHeight: "min(720px, 100vh - 120px)" }}>
         <FlashCard
           key={index}
@@ -90,28 +109,63 @@ export default function CardSession({
         />
       </div>
 
-      {/* Navigation — pinned at bottom */}
-      <div className="flex-shrink-0 pb-4 flex gap-2" style={{ width: "min(400px, 100vw - 28px)" }}>
-        {index > 0 && (
+      {/* Navigation — press-state arrows, family interaction pattern */}
+      <div className="flex-shrink-0 pb-4 flex items-center gap-3" style={{ width: "min(400px, 100vw - 28px)" }}>
+        {index > 0 ? (
           <button
             onClick={goPrev}
-            className="py-[15px] px-5 border-none rounded-full text-[15px] text-white cursor-pointer tracking-[0.04em] transition-all duration-200 hover:-translate-y-px"
+            role="button"
+            tabIndex={0}
+            aria-label="Previous card"
+            className="nav-arrow"
             style={{
+              ...prevPress.style,
+              width: 48,
+              height: 48,
+              borderRadius: "50%",
+              border: "none",
+              cursor: "pointer",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              flexShrink: 0,
+              background: `color-mix(in srgb, ${group.accent} 40%, transparent)`,
+              color: "white",
+              fontSize: 18,
               fontFamily: "var(--font-mono)",
-              background: `color-mix(in srgb, ${group.accent} 50%, transparent)`,
             }}
+            {...prevPress.handlers}
           >
             ←
           </button>
+        ) : (
+          <div style={{ width: 48, flexShrink: 0 }} />
         )}
+
         <button
           onClick={goNext}
-          className="flex-1 py-[15px] border-none rounded-full text-[15px] text-white cursor-pointer tracking-[0.04em] transition-all duration-200 hover:-translate-y-px"
+          role="button"
+          tabIndex={0}
+          aria-label={isLast ? "Complete group" : "Next card"}
+          className="nav-arrow"
           style={{
+            ...nextPress.style,
+            flex: 1,
+            height: 48,
+            borderRadius: 24,
+            border: "none",
+            cursor: "pointer",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
             fontFamily: "var(--font-mono)",
+            fontSize: 15,
+            letterSpacing: "0.04em",
+            color: "white",
             background: `color-mix(in srgb, ${group.accent} 85%, transparent)`,
             boxShadow: `0 4px 18px ${group.accent}35`,
           }}
+          {...nextPress.handlers}
         >
           {isLast ? "Complete ❋" : "Next →"}
         </button>

@@ -16,7 +16,7 @@ export default function CardFront({
 }: CardFrontProps) {
   return (
     <div
-      className="card-face relative flex flex-col rounded-[var(--card-radius)] p-[28px_28px_24px] absolute inset-0 overflow-hidden"
+      className="card-face relative flex flex-col rounded-[var(--card-radius)] absolute inset-0 overflow-hidden"
       style={{
         background: "var(--card-bg)",
         backdropFilter: "blur(14px)",

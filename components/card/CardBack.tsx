@@ -22,7 +22,7 @@ export default function CardBack({
 
   return (
     <div
-      className="card-face card-face-back absolute inset-0 flex flex-col rounded-[var(--card-radius)] p-[32px_28px_28px] overflow-y-auto"
+      className="card-face card-face-back absolute inset-0 flex flex-col rounded-[var(--card-radius)] overflow-y-auto"
       style={{
         background: "rgba(255, 255, 255, 0.08)",
         backdropFilter: "blur(14px)",
